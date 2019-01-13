@@ -1,0 +1,2 @@
+Changes too css file didnt work
+Solved: F12 and empty cache

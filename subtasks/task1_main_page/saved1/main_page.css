@@ -1,0 +1,24 @@
+#top_bar {
+	margin-bottom:50px;
+	background-color:yellow;
+}
+
+#top_bar_right {
+	float:left;
+}
+
+#taskopedia_title {
+	font-size:20pt;
+}
+
+#taskopedia_subtitle {
+	margin-top:8px;
+}
+
+#logo_img {
+	float:left;
+}
+
+#content {
+	clear:left;
+}
