@@ -1,0 +1,6 @@
+"reads entire file into string:"
+http://php.net/manual/en/function.file-get-contents.php
+
+https://stackoverflow.com/questions/12335885/php-add-string-to-text-file
+
+Reads text from example_file.txt and outputs it to example_file2.txt <-- works!!

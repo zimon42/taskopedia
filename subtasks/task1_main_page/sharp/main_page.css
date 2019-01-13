@@ -1,10 +1,10 @@
 #top_bar {
-	/* background-color:#ddd; */
 	margin-bottom:15px;
 }
 
 #taskopedia_title {
 	font-size:40pt;
+	color:#999;
 }
 
 #taskopedia_subtitle {
@@ -18,23 +18,27 @@
 
 #current_tasks_title {
 	font-size:15pt;
-	/*font-weight:600;*/
+	color:#777;
 }
 
 .main_task {
 	border:1px dashed gray;
 	width:350px;
-	padding:8px;
+	padding:12px;
 	font-size:12pt;
 	margin:10px;
+	margin-left:0px;
 	background-color:#eee;
-}
-
-#about_taskopedia_title {
-	font-size:15pt;
-	/*font-weight:600;*/
+	font-size:11pt;
+	font-family:arial;
 }
 
 .main_task_link {
 	color:black;
 }
+
+#about_taskopedia_title {
+	font-size:15pt;
+	color:#777;	
+}
+
