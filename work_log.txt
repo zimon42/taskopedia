@@ -1,2 +1,4 @@
 Task 1 Main page complete
 Task 2 FileHandler complete
+Task 3 JsonPrettyPrinter complete
+Task 4 php lock complete
