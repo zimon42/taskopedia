@@ -1,0 +1,5 @@
+https://stackoverflow.com/questions/7097374/php-pretty-print-json-encode/8014854
+
+json_decode didnt return array, but stdObject
+Solved: Use second argument assoc as TRUE to convert object into array:
+$arr2 = json_decode($json, TRUE); 
