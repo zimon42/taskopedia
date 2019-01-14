@@ -1,0 +1,26 @@
+https://stackoverflow.com/questions/325806/best-way-to-obtain-a-lock-in-php
+
+mysql lock:
+https://www.brainbell.com/tutors/php/php_mysql/The_LOCK_TABLES_and_UNLOCK_TABLES_statements_in_MySQL.html
+
+https://locallost.net/?p=1091
+
+mysql lock tables:
+https://stackoverflow.com/questions/12179290/lock-mysql-table-with-php
+
+<?php
+ini_set('display_errors', 1);
+$con=mysqli_connect("127.0.0.1","root","","test");
+ 
+mysqli_query($con,"LOCK TABLES testTable WRITE;");
+ 
+//Do something or sleep for 30 seconds, no other users can access this table
+sleep(30);
+ 
+mysqli_query($con, "UNLOCK TABLES;");
+ 
+mysqli_close($con);
+?>
+
+Flush echo:
+https://stackoverflow.com/questions/3133209/how-to-flush-output-after-each-echo-call
