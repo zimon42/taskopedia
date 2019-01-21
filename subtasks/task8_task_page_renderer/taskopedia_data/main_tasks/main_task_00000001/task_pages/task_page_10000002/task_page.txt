@@ -1,0 +1,21 @@
+{
+    "title": "Monitoring current research on DIPG",
+    "background": "There is currently research on DIPG. In this task we gather all news on research progress",
+    "more_info": "",
+    "status": "work_in_progress",
+    "result": "",
+    "team_members": [
+        "Anna",
+        "Betsy"
+    ],
+    "subtasks": [
+    ],
+    "worklogs": [
+        {
+            "Anna": ""
+        },
+        {
+            "Betsy": ""
+        }
+    ]
+}

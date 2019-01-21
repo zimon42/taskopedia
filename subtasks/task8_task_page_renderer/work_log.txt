@@ -1,0 +1,2 @@
+Weird print out
+Solved: Removed <pre>..</pre> from test.php

@@ -1,0 +1,44 @@
+#taskopedia_title {
+	font-size:14pt;
+}
+
+#top_panel {
+	color:gray;
+}
+
+#menu_panel {
+	color:gray;
+}
+
+#menu_panel a {
+	color:gray;
+}
+
+#content {
+	margin-left:10px;
+	margin-top:15px;
+}
+
+.header {
+	font-size:18pt;
+	font-weight:600;	
+}
+
+.header_content {
+	margin-left:20px;
+}
+
+.task_title {
+	font-size:18pt;
+}
+
+.header2 {
+	font-size:12pt;
+	font-weight:600;
+	margin-bottom:5px;
+}
+
+a {
+	color:gray;
+}
+
