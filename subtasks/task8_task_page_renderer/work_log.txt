@@ -1,2 +1,6 @@
 Weird print out
 Solved: Removed <pre>..</pre> from test.php
+
+Task 8 complete. 
+Next: index.php
+Next: ancestor tasks
