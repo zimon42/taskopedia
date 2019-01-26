@@ -31,11 +31,11 @@ class LoginHandler {
 	
 	// Check if user is logged in via cookie
 	public static function checkLoginCookie() {
-		$cookieUserName = CookieHandler::getCookie("user_name");
-		$cookiePassword = CookieHandler::getCookie("password");
 		if (CookieHandler::isSetCookie("user_name") && CookieHandler::isSetCookie("password")) {
+			$cookieUserName = CookieHandler::getCookie("user_name");
+			$cookiePassword = CookieHandler::getCookie("password");			
 			if (LoginHandler::checkLogin($cookieUserName, $cookiePassword) == "ok") {
-				LoginHandler::loginUser($cookieUserName, $cookiePassword)
+				LoginHandler::loginUser($cookieUserName, $cookiePassword);
 			}
 		}
 	}

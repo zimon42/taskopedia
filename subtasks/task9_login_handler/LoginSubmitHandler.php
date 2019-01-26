@@ -1,14 +1,16 @@
 <?php
 
 include_once("LoginHandler.php");
+include_once("LoginSuccessPageContentRenderer.php");
+include_once("LoginPageContentRenderer.php");
 
 class LoginSubmitHandler {
 	
-	public static function handle($userName, $password) {
+	public static function handleAndRender($userName, $password) {
 		$result = LoginHandler::checkLogin($userName, $password);
-		if ($result == ok) {
+		if ($result == "ok") {
 			LoginHandler::loginUser($userName, $password);
-			return LoginSuccessPageRenderer::render();
+			return LoginSuccessPageContentRenderer::render();
 		} else {
 			if ($result == "error_username_does_not_exist") {
 				$errorMsg = "An error occurred: the user name '".$userName."' does not exist";
@@ -17,8 +19,8 @@ class LoginSubmitHandler {
 			} else {
 				$errorMsg = "An unknown error occurred";
 			}
-			LoginPageRenderer::$errorMsg = $errorMsg;
-			return LoginPageRenderer::render();
+			LoginPageContentRenderer::$errorMsg = $errorMsg;
+			return LoginPageContentRenderer::render();
 		}
 	}
 	
