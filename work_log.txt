@@ -5,3 +5,5 @@ Task 4 php lock complete
 Working on Task 5 task_page
 
 Working on task 8 task page renderer. Next insert variables in html
+
+Working on task 10 resource locker
