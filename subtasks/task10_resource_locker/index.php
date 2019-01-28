@@ -18,12 +18,14 @@ $(document).ready(function() {
 		function (data, status) {
 			// alert("data:"+data);
 			var arr = JSON.parse(data);
-			var is_locked = arr["is_locked"];
-			if (is_locked) {
-				alert("Resource is locked");
+			var resource_acquired = arr["resource_acquired"];
+			var user_name = arr["resource_user_name"];
+			if (!resource_acquired) {
+				alert("Resource is locked. It is currently being edited by "+user_name);
 			}
 			else {
-				alert("Resource is free");
+				// alert("Resource is free");
+				location='edit_result.php';
 			}
 		}
 		);

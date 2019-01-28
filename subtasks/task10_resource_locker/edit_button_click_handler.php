@@ -9,13 +9,14 @@ ResourceLocker::tryDeleteLock($resId);
 
 if (ResourceLocker::isLocked($resId)) {
 	$reply = array();
-	$reply["is_locked"] = true;
+	$reply["resource_acquired"] = false;
+	$reply["resource_user_name"] = ResourceLocker::getUserName($resId);
 	echo json_encode($reply);
 }
 
 else {
 	$reply = array();
-	$reply["is_locked"] = false;
+	$reply["resource_acquired"] = true;
 	ResourceLocker::lock($resId, $userName);
 	echo json_encode($reply);	
 }
