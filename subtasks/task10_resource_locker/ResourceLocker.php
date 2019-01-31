@@ -47,6 +47,13 @@ class ResourceLocker {
 		$db_conn->query($sql) || die("ResourceLocker::updateLatestTime error: ".$db_conn->error());		
 	}
 	
+	public static function unlock($resId) {
+		global $db_conn;
+		$sql = "DELETE FROM resource_locks WHERE resource_id='".$resId."'";
+		$db_conn->query($sql) || die("ResourceLocker::unlock error: ".$db_conn->error());		
+	}
+	
+	
 }
 
 ?>
