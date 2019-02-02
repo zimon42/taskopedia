@@ -8,3 +8,5 @@ Working on task 8 task page renderer. Next insert variables in html
 
 Working on task 10 resource locker
 Resource is free <-> Resource is locked works
+
+Working on task 11 forum, next: view_topic.php
