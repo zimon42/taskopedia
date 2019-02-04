@@ -7,6 +7,10 @@ class TaskForumData {
 	public static function getTopics() {
 		return JsonFileHandler::readPhpArray("task_forum.txt");
 	}
+
+	public static function setTopics($topics_arr) {
+		return JsonFileHandler::writePhpArray("task_forum.txt", $topics_arr);
+	}
 	
 	public static function getTopic($topicId) {
 		$topics = self::getTopics();

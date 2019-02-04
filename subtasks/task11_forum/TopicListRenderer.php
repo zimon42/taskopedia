@@ -6,6 +6,8 @@ class TopicListRenderer {
 		
 		$html = "";
 		$html .= "<h3>Task Forum</h3>";
+
+		$html .= "<button class=new_topic_button>New Topic</button><br><br>";
 		
 		$html .= "<table id=topics_table cellspacing=0>";
 		$html .= self::renderHeaderRow();
@@ -16,6 +18,8 @@ class TopicListRenderer {
 		}
 		
 		$html .= "</table>";
+
+		$html .= "<br><button class=new_topic_button>New Topic</button><br>";
 		
 		return $html;
 		

@@ -10,3 +10,7 @@ Working on task 10 resource locker
 Resource is free <-> Resource is locked works
 
 Working on task 11 forum, next: view_topic.php
+
+Working on task 11 forum, new_topic.php
+
+..new_topic_submit.php works!

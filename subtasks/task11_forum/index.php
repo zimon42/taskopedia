@@ -7,6 +7,15 @@ echo <<<HTML
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="task_forum.css">
+<script src=jquery.js></script>
+<script>
+$(document).ready(function() {
+	$(".new_topic_button").click(function() {
+		location="new_topic.php";
+	});
+});
+</script>
+
 </head>
 <body>
 HTML;

@@ -1,5 +1,7 @@
 <?php
 
+include_once("LoginHandler.php");
+
 class TopicRenderer {
 	
 	public static function render($topic) {
@@ -24,23 +26,32 @@ class TopicRenderer {
 	}
 	
 	public static function renderPost($post) {
-		return <<<HTML
+		$html = "";
+		$html .= <<<HTML
 <tr>
 	<td rowspan="2" valign="top" class="td_left">
 		<img src="forum_avatar.png">
 		<br>
 		{$post["user"]}
 	</td>
-	<td class="td_top_right">
-		{$post["date"]}
+	<td class="td_top_right" valign="top">
+		<span class=date>{$post["date"]}</span>
+		<br>
+		{$post["content"]}
 	</td>
 </tr>
 <tr>
-	<td class="td_bottom_right">
-		<button>Edit</button>
+	<td class="td_bottom_right" valign=bottom align=right>
+HTML;
+		if (LoginHandler::userIsLoggedIn() && LoginHandler::loggedInUserName()==$post["user"]) {
+			$html .= "<button>Edit</button>";
+		}
+		
+		$html .= <<<HTML
 	</td>
 </tr>		
 HTML;
+		return $html;
 	}
 	
 	// Concatenates topic with reply list
