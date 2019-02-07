@@ -14,3 +14,9 @@ Working on task 11 forum, next: view_topic.php
 Working on task 11 forum, new_topic.php
 
 ..new_topic_submit.php works!
+
+Separating edit_topic from edit_reply works!
+
+new_reply works!
+
+Working on edit_topic.php

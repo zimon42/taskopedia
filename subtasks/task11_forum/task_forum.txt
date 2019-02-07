@@ -15,9 +15,21 @@
             },
             {
                 "reply_id": "10000002",
-                "user": "Arthur",
+                "user": "Simon",
                 "date": "05 aug 2017",
                 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            },
+            {
+                "reply_id": "10000004",
+                "user": "Simon",
+                "content": "Hi",
+                "date": "06 aug 2019"
+            },
+            {
+                "reply_id": "10000004",
+                "user": "Simon",
+                "content": "Woohoo",
+                "date": "06 aug 2019"
             }
         ]
     },
@@ -64,6 +76,15 @@
                 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
             }
         ]
+    },
+    {
+        "topic_id": "00000004",
+        "title": "Hi",
+        "user": "Simon",
+        "content": "Hello",
+        "date": "06 aug 2019",
+        "views": 0,
+        "replies": []
     },
     {
         "topic_id": "00000004",
