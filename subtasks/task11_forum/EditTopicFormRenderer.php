@@ -14,7 +14,7 @@ Title:<br>
 Content:<br>
 <textarea rows=10 id=content>{$topic["content"]}</textarea>
 </div><br>
-<button id=new_topic_done_button>Done</button>
+<button id=edit_topic_done_button data-topic-id={$topicId}>Done</button>
 HTML;
 		return $html;
 		

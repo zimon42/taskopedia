@@ -23,6 +23,18 @@ class TaskForumData {
 		echo ("Error TaskForumData::getTopic, no such id: $topicId");
 		return null;
 	}
+
+	public static function getTopicRef($topics, $topicId) {
+		for ($i=0; $i<count($topics); $i++) {
+			$topic = $topics[$i];
+			if ($topicId == $topic["topic_id"]) {
+				$topicRef = &$topic;
+				return $topicRef;
+			}
+		}
+		echo ("Error TaskForumData::getTopicRef, no such id: $topicId");
+		return null;		
+	}
 	
 }
 

@@ -20,3 +20,5 @@ Separating edit_topic from edit_reply works!
 new_reply works!
 
 Working on edit_topic.php
+
+Edit topic submit works!
