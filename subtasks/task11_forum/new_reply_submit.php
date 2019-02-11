@@ -2,12 +2,13 @@
 
 include_once("LoginHandler.php");
 include_once("TaskForumData.php");
+include_once("GuidCreator.php");
 
 $topicId = $_GET["topic_id"];
 $content = $_GET["content"];
 
 $new_reply = array();
-$new_reply["reply_id"] = "10000004";
+$new_reply["reply_id"] = GuidCreator::create();
 $new_reply["user"] = LoginHandler::loggedInUserName(); 
 $new_reply["content"] = $content;
 $new_reply["date"] = "06 aug 2019";

@@ -1,0 +1,7 @@
+Problem: Not creating new id's for new topics and replies
+
+Must use php references:
+http://php.net/manual/en/language.references.pass.php
+http://php.net/manual/en/language.references.return.php
+
+Edit reply works!

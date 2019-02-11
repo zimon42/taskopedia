@@ -2,7 +2,7 @@
 
 include_once("TaskForumData.php");
 include_once("LoginHandler.php");
-
+include_once("GuidCreator.php");
 
 $title = $_GET["title"];
 $content = $_GET["content"];
@@ -10,7 +10,7 @@ $content = $_GET["content"];
 $topics_arr = TaskForumData::getTopics();
 
 $new_topic = array();
-$new_topic["topic_id"] = "00000004";
+$new_topic["topic_id"] = GuidCreator::create();
 $new_topic["title"] = $title;
 $new_topic["user"] = LoginHandler::loggedInUserName();
 $new_topic["content"] = $content;

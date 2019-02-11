@@ -24,15 +24,28 @@ class TaskForumData {
 		return null;
 	}
 
-	public static function getTopicRef($topics, $topicId) {
+	public static function &getTopicRef(&$topics, $topicId) {
 		for ($i=0; $i<count($topics); $i++) {
-			$topic = $topics[$i];
+			$topic = &$topics[$i];
 			if ($topicId == $topic["topic_id"]) {
 				$topicRef = &$topic;
 				return $topicRef;
 			}
 		}
 		echo ("Error TaskForumData::getTopicRef, no such id: $topicId");
+		return null;		
+	}
+	
+	public static function &getReplyRef(&$topic, $replyId) {
+		$replies = &$topic["replies"];
+		for ($i=0; $i<count($replies); $i++) {
+			$reply = &$replies[$i];
+			if ($replyId == $reply["reply_id"]) {
+				$replyRef = &$reply;
+				return $replyRef;
+			}
+		}
+		echo ("Error TaskForumData::getReplyRef, no such id: $replyId");
 		return null;		
 	}
 	
