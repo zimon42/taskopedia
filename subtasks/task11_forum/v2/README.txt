@@ -1,0 +1,1 @@
+Sending the SkeletonPage to the forum module creates for example the problem that jquery.js must be put in the forum_module folder plus other modules too.

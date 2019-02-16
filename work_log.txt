@@ -22,3 +22,5 @@ new_reply works!
 Working on edit_topic.php
 
 Edit topic submit works!
+
+Working on forum_module v3
