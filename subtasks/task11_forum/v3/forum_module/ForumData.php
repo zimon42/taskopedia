@@ -12,15 +12,15 @@ class ForumData {
 		return JsonFileHandler::writePhpArray($forumFile, $topics_arr);
 	}
 	
-	public static function getTopic($topicId) {
-		$topics = self::getTopics();
+	public static function getTopic($forumFile, $topicId) {
+		$topics = self::getTopics($forumFile);
 		for ($i=0; $i<count($topics); $i++) {
 			$topic = $topics[$i];
 			if ($topicId == $topic["topic_id"]) {
 				return $topic;
 			}
 		}
-		echo ("Error TaskForumData::getTopic, no such id: $topicId");
+		echo ("Error ForumData::getTopic, no such id: $topicId");
 		return null;
 	}
 

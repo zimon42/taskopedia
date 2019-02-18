@@ -49,7 +49,7 @@ HTML;
 		return <<<HTML
 <tr class=topic_row>
 	<td class=topic_title>
-		<a href=$path?page=forum_view_topic&topic_id={$topic["topic_id"]}>
+		<a href=$path?page=forum_view_topic&forum_file={$this->forumFile}&topic_id={$topic["topic_id"]}>
 			{$topic["title"]}
 		</a>
 	</td>
@@ -66,8 +66,21 @@ HTML;
 	}
 	
 	public function getAddToHead() {
-		$path = ForumConfig::$forumModulePath . "/" . "task_forum.css";
-		return "<link rel=\"stylesheet\" type=\"text/css\" href=\"$path\">";
+		$html = "";
+		$styleFilePath = ForumConfig::$forumModulePath . "/" . "forum.css";
+		$mainPagePath = ForumConfig::$mainPagePath;
+		$html .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"$styleFilePath\">\n";
+		$html .= <<<HTML
+<script>
+$(document).ready(function() {
+	$(".new_topic_button").click(function() {
+		location="{$mainPagePath}?page=forum_new_topic&forum_file={$this->forumFile}";
+	});
+});
+</script>			
+HTML;
+
+		return $html;
 	}
 	
 }

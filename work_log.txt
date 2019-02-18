@@ -24,3 +24,6 @@ Working on edit_topic.php
 Edit topic submit works!
 
 Working on forum_module v3
+
+view_topic works. Next new_topic
+new_reply_submit works. Next edit topic and reply

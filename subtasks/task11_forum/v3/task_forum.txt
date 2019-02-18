@@ -18,6 +18,12 @@
                 "user": "Simon",
                 "date": "05 aug 2017",
                 "content": "Morem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            },
+            {
+                "reply_id": "3fe925c6",
+                "user": "Simon",
+                "content": "Wee",
+                "date": "06 aug 2019"
             }
         ]
     },
@@ -77,6 +83,22 @@
                 "reply_id": "94e9e202",
                 "user": "Simon",
                 "content": "Heeeeeeee",
+                "date": "06 aug 2019"
+            }
+        ]
+    },
+    {
+        "topic_id": "e8a654a3",
+        "title": "Hej",
+        "user": "Simon",
+        "content": "hej hej",
+        "date": "06 aug 2019",
+        "views": 0,
+        "replies": [
+            {
+                "reply_id": "931c65fb",
+                "user": "Simon",
+                "content": "Reeeeee",
                 "date": "06 aug 2019"
             }
         ]
