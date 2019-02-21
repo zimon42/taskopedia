@@ -2,6 +2,7 @@
 
 include_once("ForumData.php");
 include_once("GuidCreator.php");
+include_once("DateHandler.php");
 
 class NewReplySubmitPage {
 	
@@ -14,7 +15,7 @@ class NewReplySubmitPage {
 		$new_reply["reply_id"] = GuidCreator::create();
 		$new_reply["user"] = "Simon"; // LoginHandler::loggedInUserName(); 
 		$new_reply["content"] = $this->content;
-		$new_reply["date"] = "06 aug 2019";
+		$new_reply["date"] = DateHandler::getNowDateTimeString();
 
 		// Add reply to topic
 

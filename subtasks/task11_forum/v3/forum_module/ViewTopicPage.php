@@ -2,6 +2,7 @@
 
 include_once("ForumConfig.php");
 include_once("ForumData.php");
+include_once("DateHandler.php");
 
 class ViewTopicPage {
 	
@@ -41,6 +42,7 @@ class ViewTopicPage {
 	
 	public static function renderPost($topic, $post, $postIndex) {
 		$imagePath = ForumConfig::$forumModulePath . "/" . "forum_avatar.png";
+		$date = DateHandler::getFormattedDate($post["date"]);
 		$html = "";
 		$html .= <<<HTML
 <tr>
@@ -50,7 +52,7 @@ class ViewTopicPage {
 		{$post["user"]}
 	</td>
 	<td class="td_top_right" valign="top">
-		<span class=date>{$post["date"]}</span>
+		<span class=date>$date</span>
 		<br>
 		{$post["content"]}
 	</td>

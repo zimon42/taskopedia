@@ -25,7 +25,7 @@ HTML;
 		$mainPagePath = ForumConfig::$mainPagePath;
 		$html = "";
 		$html .= <<<HTML
-<link rel=\"stylesheet\" type=\"text/css\" href=\"$styleFilePath\">
+<link rel="stylesheet" type="text/css" href="$styleFilePath">
 <script>
 $(document).ready(function() {
 	$("#new_topic_done_button").click(function() {
