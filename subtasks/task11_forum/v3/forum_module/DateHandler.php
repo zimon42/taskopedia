@@ -18,7 +18,10 @@ class DateHandler {
 		$date = self::getDateTimeFromString($str);
 		if ($date === FALSE) return "Unproper date string";
 		$monthNum = $date->format('m');
-		return $monthNum;
+		$monthName = self::getMonthName($monthNum);
+		$dateNum = $date->format('d');
+		$dateYear = $date->format('Y');
+		return $dateNum . " " . $monthName . " " . $dateYear;
 	}
 	
 	private static function getMonthName() {
@@ -37,7 +40,51 @@ class DateHandler {
 		 if ($monthNum == "12") return "dec";
 		 return "Unknown month";
 	}
+
+	public static function compareDateTimeStrings($str1, $str2) {
+		$datetime1 = new DateTime($str1);
+		$datetime2 = new DateTime($str2);
+		if ($datetime1 == $datetime2) {
+			return 0;
+		}
+		if ($datetime1 < $datetime2) {
+			return -1;
+		}
+		if ($datetime1 > $datetime2) {
+			return 1;
+		}		
+		echo "DateHandler::compareDateTimeStrings error: No integer value";
+	}
 	
+	public static function sortDateTimeStrings(&$arr) {
+		usort($arr, function($a, $b) { return DateHandler::compareDateTimeStrings($a, $b); } );
+	}
+	
+	public static function test() {
+		$nowString = self::getNowDateTimeString();
+		echo "Now: " . self::getFormattedDate($nowString);
+	}
+	
+	public static function test2() {
+		$format = "Y-m-d H:i:s";
+		$str = '2019-02-05 13:14:15';
+		$date = DateTime::createFromFormat($format, $str);
+		echo "Date num: " . $date->format('d');
+	}
+		
+	public static function test3() {
+		echo self::compareDateTimeStrings("2018-08-12 12:13:14", "2018-08-14 12:13:14");
+	}
+		
+	public static function test4() {
+		$arr = array("2018-08-11 12:13:14", "2018-08-14 12:13:14", "2018-08-12 12:13:14", "2018-08-10 12:13:14");
+		self::sortDateTimeStrings($arr);
+		echo "<pre>";
+		print_r($arr);
+		echo "</pre>";
+	}
 }
+
+// DateHandler::test4();
 
 ?>

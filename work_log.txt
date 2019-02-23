@@ -29,3 +29,10 @@ view_topic works. Next new_topic
 new_reply_submit works. Next edit topic and reply
 
 Working on forum v3 DateHandler
+
+DateHandler sorts DateTime string correctly
+
+Next fix NewReplyHandler -> works!
+
+Next fix edit topic and reply
+Working on EditTopicSubmitPage

@@ -112,6 +112,18 @@ $(document).ready(function() {
 		\$topic_id = \$button.attr("data-topic-id");
 		location="$mainPagePath?page=forum_new_reply&forum_file={$this->forumFile}&topic_id="+\$topic_id;
 	});
+	$(".edit_post_button").click(function(event) {
+		\$button = $(event.target);
+		\$topic_id = \$button.attr("data-topic-id");
+		\$post_id = \$button.attr("data-post-id");
+		\$post_index = \$button.attr("data-post-index");
+		if (\$post_index == 0) {
+			location="$mainPagePath?page=forum_edit_topic&forum_file={$this->forumFile}&topic_id="+\$topic_id;
+		}
+		else {
+			location="$mainPagePath?page=forum_edit_reply&forum_file={$this->forumFile}&topic_id="+\$topic_id+"&reply_id="+\$post_id;
+		}
+	});	
 });
 </script>		
 HTML;
