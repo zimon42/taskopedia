@@ -23,6 +23,7 @@ Working on edit_topic.php
 
 Edit topic submit works!
 
+Edit reply works!
 Working on forum_module v3
 
 view_topic works. Next new_topic
@@ -36,3 +37,4 @@ Next fix NewReplyHandler -> works!
 
 Next fix edit topic and reply
 Working on EditTopicSubmitPage
+..works! Next EditReplySubmitPage

@@ -1,11 +1,11 @@
 [
     {
         "topic_id": "00000001",
-        "title": "Topic number 1",
+        "title": "Topic Simon",
         "user": "Simon",
         "date": "04 aug 2017",
         "views": 21,
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        "content": "Simon ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         "replies": [
             {
                 "reply_id": "10000001",

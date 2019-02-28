@@ -8,6 +8,7 @@ include_once ("NewReplyPage.php");
 include_once ("NewReplySubmitPage.php");
 include_once ("EditTopicPage.php");
 include_once ("EditTopicSubmitPage.php");
+include_once ("EditReplyPage.php");
 
 class ForumRequestHandler {
 	
@@ -57,6 +58,17 @@ class ForumRequestHandler {
 		}
 		if ($pageName == "forum_edit_topic_submit") {
 			$page = new EditTopicSubmitPage();
+			$page->forumFile = $_GET["forum_file"];
+			$page->topicId = $_GET["topic_id"];
+			$page->title = $_GET["title"];
+			$page->content = $_GET["content"];
+			return $page;
+		}
+		if ($pageName == "forum_edit_reply") {
+			$page = new EditReplyPage();
+			$page->forumFile = $_GET["forum_file"];
+			$page->topicId = $_GET["topic_id"];
+			$page->replyId = $_GET["reply_id"];
 			return $page;
 		}
 		return FALSE;
