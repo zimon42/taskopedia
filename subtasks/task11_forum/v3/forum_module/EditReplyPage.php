@@ -32,7 +32,24 @@ HTML;
 	}
 	
 	public function getAddToHead() {
-		return "";
+		$styleFilePath = ForumConfig::$forumModulePath . "/" . "forum.css";
+		$mainPagePath = ForumConfig::$mainPagePath;		
+		$html = "";
+		$html .= <<<HTML
+<link rel="stylesheet" type="text/css" href="$styleFilePath">
+<script>
+$(document).ready(function() {
+	$("#edit_reply_done_button").click(function(event) {
+		\$button = $(event.target);
+		\$topicId = \$button.attr("data-topic-id");
+		\$replyId = \$button.attr("data-reply-id");
+		content = $("#content").val();
+		location="$mainPagePath?page=forum_edit_reply_submit&forum_file={$this->forumFile}&topic_id="+\$topicId+"&reply_id="+\$replyId+"&content="+content;
+	});
+});
+</script>
+HTML;
+		return $html;
 	}
 	
 }
