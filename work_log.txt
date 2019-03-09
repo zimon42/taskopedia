@@ -40,3 +40,5 @@ Working on EditTopicSubmitPage
 ..works! Next EditReplySubmitPage
 
 EditReplySubmitPage works!
+
+TopicSorter works, using usort
