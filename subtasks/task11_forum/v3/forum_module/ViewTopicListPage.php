@@ -2,6 +2,7 @@
 
 include_once("ForumConfig.php");
 include_once("ForumData.php");
+include_once("TopicSorter.php");
 
 class ViewTopicListPage {
 	
@@ -9,6 +10,7 @@ class ViewTopicListPage {
 	
 	public function getContent() {
 		$topics = ForumData::getTopics($this->forumFile);
+		TopicSorter::sort($topics);
 		
 		$html = "";
 		$html .= "<h3>Forum</h3>";

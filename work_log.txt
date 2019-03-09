@@ -42,3 +42,8 @@ Working on EditTopicSubmitPage
 EditReplySubmitPage works!
 
 TopicSorter works, using usort
+
+TopicSorter getDate works
+.. not quite, -1 index error in getNumReplies for Topic 5
+
+Next fix that error plus implement stickies

@@ -3,6 +3,7 @@
 include_once("ForumConfig.php");
 include_once("ForumData.php");
 include_once("DateHandler.php");
+include_once("ViewsUpdater.php");
 
 class ViewTopicPage {
 	
@@ -10,6 +11,9 @@ class ViewTopicPage {
 	public $topicId;
 	
 	public function getContent() {
+		
+		ViewsUpdater::update($this->forumFile, $this->topicId);
+		
 		$topic = ForumData::getTopic($this->forumFile, $this->topicId);
 		
 		$html = "";
