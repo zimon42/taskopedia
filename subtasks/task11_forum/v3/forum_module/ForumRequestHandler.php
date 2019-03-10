@@ -36,6 +36,7 @@ class ForumRequestHandler {
 			$page->forumFile = $_GET["forum_file"];
 			$page->title = $_GET["title"];
 			$page->content = $_GET["content"];
+			$page->sticky = $_GET["sticky"]=="true";
 			return $page;
 		}
 		if ($pageName == "forum_new_reply") {
@@ -63,6 +64,7 @@ class ForumRequestHandler {
 			$page->topicId = $_GET["topic_id"];
 			$page->title = $_GET["title"];
 			$page->content = $_GET["content"];
+			$page->sticky = $_GET["sticky"]=="true";
 			return $page;
 		}
 		if ($pageName == "forum_edit_reply") {

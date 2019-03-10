@@ -7,6 +7,31 @@ class TopicSorter {
 	
 	public static function sort(&$topics_arr) {
 		usort($topics_arr, function($topic1, $topic2) { 
+			$reply1 = self::getDate($topic1);
+			$reply2 = self::getDate($topic2);
+			return DateHandler::compareDateTimeStrings($reply1, $reply2); 
+		});		
+	}
+
+	public static function sortIncludingStickies(&$topics_arr) {
+		// Extract sticky and non-sticky topics
+		$stickyTopics = array();
+		$nonStickyTopics = array();
+		for ($i=0; $i<count($topics_arr); $i++) {
+			$topic = $topics_arr[$i];
+			if (isset($topic["sticky"]) && $topic["sticky"])
+				array_push($stickyTopics, $topic);
+			else
+				array_push($nonStickyTopics, $topic);
+		}
+		// Sort non-sticky topics
+		self::sort($nonStickyTopics);
+		// Merge two arrays:
+		$topics_arr = array_merge($stickyTopics, $nonStickyTopics);
+	}
+	
+	public static function sort_old(&$topics_arr) {
+		usort($topics_arr, function($topic1, $topic2) { 
 			$reply1 = self::getMostRecentReply($topic1);
 			$reply2 = self::getMostRecentReply($topic2);
 			return DateHandler::compareDateTimeStrings($reply1["date"], $reply2["date"]); 

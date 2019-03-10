@@ -4,7 +4,7 @@
         "title": "Topic number 1",
         "user": "Simon",
         "date": "04 aug 2017",
-        "views": 28,
+        "views": 88,
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         "replies": [
             {

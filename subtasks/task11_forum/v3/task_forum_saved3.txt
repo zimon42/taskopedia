@@ -4,7 +4,7 @@
         "title": "Topic Simon",
         "user": "Simon",
         "date": "2019-03-09 10:28:34",
-        "views": 26,
+        "views": 24,
         "content": "Simon ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         "replies": [
             {
@@ -20,7 +20,7 @@
                 "content": "Morem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
             }
         ],
-        "sticky": false
+		"sticky": false
     },
     {
         "topic_id": "00000002",
@@ -66,7 +66,7 @@
                 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
             }
         ],
-        "sticky": false
+		"sticky": false
     },
     {
         "topic_id": "00000004",
@@ -93,7 +93,7 @@
         "date": "2019-03-09 10:28:30",
         "views": 0,
         "replies": [],
-        "sticky": false
+		"sticky": false
     },
     {
         "topic_id": "5dd9b38f",
@@ -111,7 +111,7 @@
         "user": "Simon",
         "content": "",
         "date": "2019-03-10 19:01:39",
-        "views": 1,
+        "views": 0,
         "replies": [],
         "sticky": true
     },

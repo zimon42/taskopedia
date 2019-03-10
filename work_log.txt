@@ -47,3 +47,16 @@ TopicSorter getDate works
 .. not quite, -1 index error in getNumReplies for Topic 5
 
 Next fix that error plus implement stickies
+
+Fixed error: Had changed to the getDate function in the test2 method and not the sort method
+
+Starting on sticky.
+
+How do we get value from checkbox?
+https://stackoverflow.com/questions/2834350/get-checkbox-value-in-jquery
+
+Sticky displays in list - next sort stickies to the top of the list
+
+Sorts stickies correct
+
+Edit topic with stickies works!

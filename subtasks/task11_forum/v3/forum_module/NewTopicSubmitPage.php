@@ -9,12 +9,14 @@ class NewTopicSubmitPage {
 	public $forumFile;
 	public $title;
 	public $content;
+	public $sticky;
 	
 	public function getContent() {
 		$response = NewTopicHandler::addNewTopic(array(
 			"forum_file" => $this->forumFile,
 			"title" => $this->title,
-			"content" => $this->content
+			"content" => $this->content,
+			"sticky" => $this->sticky
 		));
 		if ($response["status"] == "ok") {
 			$html = $response["html"];

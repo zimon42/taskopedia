@@ -1,4 +1,0 @@
-Working on ViewTopicListPage. Prints file content
-
-ViewTopicListPage works!!
-Next viewTopicPage

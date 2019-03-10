@@ -10,7 +10,9 @@ class ViewTopicListPage {
 	
 	public function getContent() {
 		$topics = ForumData::getTopics($this->forumFile);
-		TopicSorter::sort($topics);
+		
+		// TopicSorter::sort($topics);
+		TopicSorter::sortIncludingStickies($topics);
 		
 		$html = "";
 		$html .= "<h3>Forum</h3>";
@@ -48,10 +50,12 @@ HTML;
 	public function renderTopicRow($topic) {
 		$path = ForumConfig::$mainPagePath;
 		$numReplies = $this->getNumReplies($topic);
+		$stickyImgPath = ForumConfig::$forumModulePath . "/" . "sticky.png";
+		$stickyHtml = isset($topic["sticky"]) && $topic["sticky"] ? "<img src='{$stickyImgPath}' class=sticky_img align=top />" : ""; 
 		return <<<HTML
 <tr class=topic_row>
 	<td class=topic_title>
-		<a href=$path?page=forum_view_topic&forum_file={$this->forumFile}&topic_id={$topic["topic_id"]}>
+	{$stickyHtml}<a href=$path?page=forum_view_topic&forum_file={$this->forumFile}&topic_id={$topic["topic_id"]}>
 			{$topic["title"]}
 		</a>
 	</td>

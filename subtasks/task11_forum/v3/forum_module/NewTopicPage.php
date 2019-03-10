@@ -13,7 +13,8 @@ class NewTopicPage {
 Title:<br>
 <input type=text id=title /><br><br>
 Content:<br>
-<textarea rows=10 id=content></textarea>
+<textarea rows=10 id=content></textarea><br><br>
+<input type=checkbox id=sticky>Sticky
 </div><br>
 <button id=new_topic_done_button>Done</button>
 HTML;
@@ -31,8 +32,9 @@ $(document).ready(function() {
 	$("#new_topic_done_button").click(function() {
 		title = $("#title").val();
 		content = $("#content").val();
+		sticky = $('#sticky').is(":checked");
 		// Add random number to url so doesn't cache response
-		location="$mainPagePath?page=forum_new_topic_submit&forum_file={$this->forumFile}&title="+title+"&content="+content+"&randnum="+Math.random();
+		location="$mainPagePath?page=forum_new_topic_submit&forum_file={$this->forumFile}&title="+title+"&content="+content+"&sticky="+sticky+"&randnum="+Math.random();
 	});
 });
 </script>

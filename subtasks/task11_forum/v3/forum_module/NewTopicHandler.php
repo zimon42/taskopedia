@@ -11,7 +11,8 @@ class NewTopicHandler {
 		$title = isset($args["title"]) ? $args["title"] : "No title set";
 		$user = isset($args["user"]) ? $args["user"] : "Simon"; // LoginHandler::loggedInUserName();
 		$content = isset($args["content"]) ? $args["content"] : "No content set";
-		$date = isset($args["date"]) ? $args["date"] : DateHandler::getNowDateString(); // "06 aug 2019";
+		$date = isset($args["date"]) ? $args["date"] : DateHandler::getNowDateTimeString(); // "06 aug 2019";
+		$sticky = isset($args["sticky"]) ? $args["sticky"] : false;
 		
 		$html = "";
 		$html .= "forumFile: $forumFile<br>";
@@ -20,6 +21,7 @@ class NewTopicHandler {
 		$html .= "user: $user<br>";
 		$html .= "content: $content<br>";
 		$html .= "date: $date<br>";
+		$html .= "sticky: $sticky<br>";
 		
 		$topics_arr = ForumData::getTopics($forumFile);
 
@@ -31,7 +33,8 @@ class NewTopicHandler {
 		$new_topic["date"] = $date;
 		$new_topic["views"] = 0;
 		$new_topic["replies"] = [];
-
+		$new_topic["sticky"] = $sticky;
+		
 		array_push($topics_arr, $new_topic);
 
 		ForumData::setTopics($forumFile, $topics_arr);
