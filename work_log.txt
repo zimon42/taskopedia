@@ -60,3 +60,5 @@ Sticky displays in list - next sort stickies to the top of the list
 Sorts stickies correct
 
 Edit topic with stickies works!
+
+Working on login v2 LoginSubmitHandler
