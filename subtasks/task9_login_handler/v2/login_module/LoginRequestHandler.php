@@ -2,6 +2,7 @@
 
 include_once ("LoginPage.php");
 include_once ("LoginSubmitHandler.php");
+include_once ("LogoutPage.php");
 
 class LoginRequestHandler {
 	
@@ -17,7 +18,10 @@ class LoginRequestHandler {
 			$page = LoginSubmitHandler::getPage();
 			return $page;
 		}
-		
+		if ($pageName == "login_logout") {
+			$page = new LogoutPage();
+			return $page;
+		}
 		return FALSE;
 	}
 	

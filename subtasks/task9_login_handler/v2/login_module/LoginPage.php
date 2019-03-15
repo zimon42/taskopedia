@@ -2,8 +2,15 @@
 
 class LoginPage {
 	
+	public $errorMsg;
+	
 	public function getContent() {
 		$html = "";
+		
+		if (isset($this->errorMsg)) {
+			$html .= "<div style='color:red'>" . $this->errorMsg . "</div>";
+		}		
+		
 		$html .= <<<HTML
 User name:<br>
 <input type=text size=20 id=login_user_name tabindex=1/><br>
