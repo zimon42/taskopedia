@@ -66,3 +66,5 @@ Working on login v2 LoginSubmitHandler
 Login v2 complete
 
 Task 12 DragableList works! Next resource locker
+
+Working on task 10 resouce_locker v2
