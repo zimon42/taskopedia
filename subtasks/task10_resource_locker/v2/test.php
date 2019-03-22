@@ -1,0 +1,1 @@
+<a href=index.php?page=task_page>Task page</a>
