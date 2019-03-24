@@ -1,1 +1,1 @@
-<a href=index.php?page=task_page>Task page</a>
+<a href=index.php?page=task_page&task_id=00000001>Task page</a>

@@ -69,3 +69,10 @@ Task 12 DragableList works! Next resource locker
 
 Working on task 10 resouce_locker v2
 
+About to implement save_resource
+
+Save resource works!
+
+Exit resource works!
+
+Working on update_lock

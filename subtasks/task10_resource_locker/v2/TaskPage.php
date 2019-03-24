@@ -4,10 +4,15 @@ include_once("JsonFileHandler.php");
 
 class TaskPage {
 
+	public $taskId;
+
 	public function getContent() {
 		
 		$html = "";
 		$html = <<<HTML
+		
+User: <input type=text id=user_text value=simon></input><br>		
+		
 <h3>Result</h3>
 HTML;
 
@@ -42,15 +47,26 @@ HTML;
 		$html = "";
 		
 		$html .= <<<HTML
-<script src=resource_locker_module/ResourceLock.js></script>
-<script src=resource_locker_module/Hello.js></script>
+<script src=resource_locker_module/ResourceLocker.js></script>
 <script>
 $(document).ready(function() {
 	$("#edit_result_button").click(function() {
-		ResourceLocker.editButtonClickHandler();
+		ResourceLocker.editButtonClickHandler(
+		{
+			res_id: "task_{$this->taskId}_result",
+			user_name: $("#user_text").val(),
+			edit_page: "index.php?page=task_edit_result&task_id={$this->taskId}"
+		}
+		);
 	});
 	$("#edit_subtasks_button").click(function() {
-		ResourceLocker.editButtonClickHandler();
+		ResourceLocker.editButtonClickHandler(
+		{
+			res_id: "task_00000001_subtasks",
+			user_name: $("#user_text").val(),
+			edit_page: "index.php?page=task_edit_subtasks"
+		}
+		);
 	});	
 })
 </script>
