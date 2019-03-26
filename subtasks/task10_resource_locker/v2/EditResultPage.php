@@ -36,14 +36,14 @@ $(document).ready(function() {
 	$("#save_result_button").click(function() {
 		ResourceLocker.save_resource(
 		{
-			save_page:"index.php?page=task_save_result"
+			save_page: getResourceSavePage()
 		}
 		);
 	});
 	$("#exit_button").click(function() {
 		ResourceLocker.exit_resource(
 		{
-			save_page:"index.php?page=task_save_result"
+			save_page: getResourceSavePage()
 		}
 		);
 	});		
@@ -52,6 +52,16 @@ $(document).ready(function() {
 function getResourceCurrentState() {
 	return $("#resource_text").val();
 }
+
+function getResourceIdentifier() {
+	return "task_{$this->taskId}_result";
+}
+
+function getResourceSavePage() {
+	return "index.php?page=task_save_result";
+}
+
+ResourceLocker.start();
 
 </script>
 HTML;

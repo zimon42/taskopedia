@@ -3,6 +3,7 @@
 include_once ("TaskPage.php");
 include_once ("EditResultPage.php");
 include_once ("SaveResultPage.php");
+include_once ("EditSubtasksPage.php");
 
 class RequestHandler {
 	
@@ -21,7 +22,11 @@ class RequestHandler {
 		if ($pageName == "task_save_result") {
 			$page = new SaveResultPage();
 			return $page;
-		}		
+		}
+		if ($pageName == "task_edit_subtasks") {
+			$page = new EditSubtasksPage();
+			return $page;
+		}
 		return FALSE;
 	}
 	

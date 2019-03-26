@@ -1,6 +1,16 @@
 ResourceLocker = function() {}
 
+var num_times_no_change = 0;
+var max_times_no_change = 3;
+var resource_previous_state;
 var resource_saved_state;
+
+ResourceLocker.start = function() {
+	resource_previous_state = getResourceCurrentState();
+	resource_saved_state = getResourceCurrentState();
+	setInterval(update_resource_latest_time, 2500);
+	setInterval(update_resource_no_change, 20*60*1000); // 20 minutes
+}
 
 ResourceLocker.editButtonClickHandler = function (args) {
 	$.post(
@@ -51,4 +61,52 @@ ResourceLocker.exit_resource = function(args) {
 		}
 	}
 	location="index.php";
+}
+
+function update_resource_latest_time() {
+	$.post(
+	"resource_locker_module/update_resource_latest_time.php",
+	{
+		res_id: getResourceIdentifier()
+	},
+	function (data, status) {			
+	}
+	);
+}
+
+function update_resource_no_change() {
+	resource_current_state = getResourceCurrentState();
+	if (resource_current_state != resource_previous_state) {
+		num_times_no_change = 0;
+		resource_previous_state = getResourceCurrentState();
+	}
+	else {
+		num_times_no_change++;
+		if (num_times_no_change >= max_times_no_change) {
+			unlock_not_changed_resource();
+		}
+	}
+}
+
+function unlock_not_changed_resource() {
+	console.log("unlock not changed resource");
+	$.post(
+		"resource_locker_module/unlock_not_changed_resource.php",
+		{
+			res_id: getResourceIdentifier()
+		},
+		function (data, status) {			
+			$.post(
+				getResourceSavePage(),
+				{
+					res_id: getResourceIdentifier(),
+					res_state: getResourceCurrentState()
+				},
+				function (data, status) {			
+					alert("Due to inactivity your work has been saved and you will be exited");
+				}
+			);
+			location="index.php";
+		}
+	);	
 }
