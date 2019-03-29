@@ -79,3 +79,5 @@ Working on update_lock
 - works!
 
 unlock no change resource works!
+
+Drag list works - can reorder subtasks, next save to file
