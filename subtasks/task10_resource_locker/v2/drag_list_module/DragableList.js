@@ -137,4 +137,14 @@ function DragableList() {
 		update();
 	}
 	
+	function getDataList() {
+		var arr = [];
+		$(".block").each(function() {
+			arr.push($(this).data());
+		});
+		return arr;
+	}
+	
+	this.getDataList = getDataList;
+	
 }

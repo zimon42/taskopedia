@@ -30,7 +30,7 @@ HTML;
 		$subtasks_arr = JsonFileHandler::readPhpArray("subtasks.txt");
 		for ($i=0; $i<count($subtasks_arr); $i++) {
 			$subtask = $subtasks_arr[$i];
-			$html .= ($i+1) . ". " . $subtask["title"] . "<br>";
+			$html .= ($i+1) . ". " . $subtask["id"] . "<br>";
 		}
 
 		$html .= <<<HTML

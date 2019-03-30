@@ -26,7 +26,7 @@ function addDragableSubtask(subtask) {
 		"<div class=block style='display:block'>"+ // <-- Changed none to block
 		"    <div style='float:left;width:200px'>"+
 	    "        <img class='cross no_select none_dragable' src=drag_list_module/cross.png width=20 height=20></img>"+
-		"        <span id=vat_display style='position:relative;bottom:3px'>"+subtask.title+"</span>"+
+		"        <span id=vat_display style='position:relative;bottom:3px'>"+subtask.id+"</span>"+
 		"    </div>"+
 		"    <div style='float:left;width:275px;text-align:right'>"+
 		"        <button id=vat_block_edit>Redigera</button>"+
@@ -45,13 +45,21 @@ HTML;
 		$subtasks_arr = JsonFileHandler::readPhpArray("subtasks.txt");
 		for ($i=0; $i<count($subtasks_arr); $i++) {
 			$subtask = $subtasks_arr[$i];
-			$html .= "addDragableSubtask({title:'" . $subtask["title"] . "'});\n";
+			$html .= "addDragableSubtask({id:'" . $subtask["id"] . "'});\n";
 		}
 
 		$html .= <<<HTML
 		
 	$("#save_subtask_list_button").click(function() {
-		alert("save");
+		var arr = dragableList.getDataList();
+		// join subtask id's
+		var str = "";
+		for (var i=0; i<arr.length; i++) {
+			str += arr[i].id;
+			if (i<arr.length-1)
+				str += ",";
+		}
+		alert(str);
 	});		
 		
 });
