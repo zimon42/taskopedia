@@ -25,8 +25,13 @@ class RequestHandler {
 		}
 		if ($pageName == "task_edit_subtasks") {
 			$page = new EditSubtasksPage();
+			$page->taskId = $_GET["task_id"];
 			return $page;
 		}
+		if ($pageName == "task_save_subtasks") {
+			$page = new SaveSubtasksPage();
+			return $page;
+		}		
 		return FALSE;
 	}
 	

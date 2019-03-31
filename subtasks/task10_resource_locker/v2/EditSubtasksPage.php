@@ -2,6 +2,8 @@
 
 class EditSubtasksPage {
 	
+	public $taskId;
+	
 	public function getContent() {
 		$html = "";
 		$html .= <<<HTML
@@ -51,19 +53,36 @@ HTML;
 		$html .= <<<HTML
 		
 	$("#save_subtask_list_button").click(function() {
-		var arr = dragableList.getDataList();
-		// join subtask id's
-		var str = "";
-		for (var i=0; i<arr.length; i++) {
-			str += arr[i].id;
-			if (i<arr.length-1)
-				str += ",";
+		ResourceLocker.save_resource(
+		{
+			save_page: getResourceSavePage()
 		}
-		alert(str);
+		);
 	});		
 		
 });
 
+function getResourceCurrentState() {
+	var arr = dragableList.getDataList();
+	// join subtask id's
+	var str = "";
+	for (var i=0; i<arr.length; i++) {
+		str += arr[i].id;
+		if (i<arr.length-1)
+			str += ",";
+	}
+	return str;
+}
+
+function getResourceIdentifier() {
+	return "task_{$this->taskId}_subtasks";
+}
+
+function getResourceSavePage() {
+	return "index.php?page=task_save_subtasks";
+}
+
+ResourceLocker.start();
 
 </script>
 HTML;

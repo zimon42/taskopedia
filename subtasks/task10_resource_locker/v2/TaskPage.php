@@ -62,9 +62,9 @@ $(document).ready(function() {
 	$("#edit_subtasks_button").click(function() {
 		ResourceLocker.editButtonClickHandler(
 		{
-			res_id: "task_00000001_subtasks",
+			res_id: "task_{$this->taskId}_subtasks",
 			user_name: $("#user_text").val(),
-			edit_page: "index.php?page=task_edit_subtasks"
+			edit_page: "index.php?page=task_edit_subtasks&task_id={$this->taskId}"
 		}
 		);
 	});	
