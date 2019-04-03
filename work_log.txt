@@ -83,3 +83,5 @@ unlock no change resource works!
 Drag list works - can reorder subtasks, next save to file
 
 Working on save subtasks - SaveSubtasksPage
+
+All taskopedia 12 subtasks complete - next start on Iteration 1.

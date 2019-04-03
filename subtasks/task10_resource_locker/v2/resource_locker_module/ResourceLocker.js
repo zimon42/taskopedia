@@ -42,6 +42,7 @@ ResourceLocker.save_resource = function(args) {
 		},
 		function (data, status) {			
 			alert("Your resource has been saved");
+			console.log("data: "+data);
 		}
 	);
 	resource_saved_state = getResourceCurrentState();

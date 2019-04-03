@@ -19,6 +19,7 @@ HTML;
 		$html .= <<<HTML
 <link rel="stylesheet" type="text/css" href="drag_list_module/dragable_list.css">
 <script src=drag_list_module/DragableList.js></script>
+<script src=resource_locker_module/ResourceLocker.js></script>
 <script>
 
 var dragableList = new DragableList();

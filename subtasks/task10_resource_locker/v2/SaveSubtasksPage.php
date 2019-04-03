@@ -2,16 +2,20 @@
 
 include_once("JsonFileHandler.php");
 
-class SaveResultPage {
+class SaveSubtasksPage {
 	
 	public function getContent() {
 
 		$resState = $_POST["res_state"];
-		$resArr = explode(",", $resState);
+		$subtaskIdArr = explode(",", $resState);
 		
-		$subtaskArr = array();
+		$newSubtaskArr = array();
 		
-		JsonFileHandler::writePhpArray("subtasks.txt", $arr);
+		for ($i=0; $i<count($subtaskIdArr); $i++) {
+			array_push($newSubtaskArr, array("id" => $subtaskIdArr[$i]));
+		}
+		
+		JsonFileHandler::writePhpArray("subtasks.txt", $newSubtaskArr);
 		
 	}
 	
