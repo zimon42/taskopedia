@@ -85,3 +85,5 @@ Drag list works - can reorder subtasks, next save to file
 Working on save subtasks - SaveSubtasksPage
 
 All taskopedia 12 subtasks complete - next start on Iteration 1.
+
+Created Page.php and SkeletonPage.php - main page working, next create TaskPage
