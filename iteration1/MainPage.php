@@ -10,7 +10,15 @@ class MainPage extends Page {
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="main_page.css">
+<link rel="stylesheet" type="text/css" href="main_page.css">
+<script src=jquery.js></script>
+<script>
+$(document).ready(function() {
+	$("#go_to_task_button").click(function() {
+		location="index.php?page=main_task_page&main_task_id=00000001";
+	});
+});
+</script>
 </head>
 <body>		
 
@@ -26,9 +34,9 @@ class MainPage extends Page {
 	<span id=current_tasks_title>Current tasks:</span>
 
 	<div class=main_task>
-		<b>Main task</b>: <a href="index.php?page=task_page" class=main_task_link>Finding treatments for DIPG cancer</a><br>
+		<b>Main task</b>: <a href="index.php?page=main_task_page&main_task_id=00000001" class=main_task_link>Finding treatments for DIPG cancer</a><br>
 		<b>Background:</b> DIPG stands for Diffuse intrinsic pontine glioma and is a type of brain cancer that effects children. There is currently no cure. We will change that. Together we will find treatments for DIPG!<br>
-		<button>Go to task</button>
+		<button id=go_to_task_button>Go to task</button>
 	</div>
 
 	<span id=about_taskopedia_title>About taskopedia:</span>
