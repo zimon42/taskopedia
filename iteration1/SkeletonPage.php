@@ -1,5 +1,8 @@
 <?php
 
+include_once ("TaskopediaData.php");
+include_once ("utils/JsonFileHandler.php");
+
 class SkeletonPage extends Page {
 
 	public $taskType;
@@ -36,12 +39,25 @@ HTML;
 	}
 	
 	public function getTop() {
+		
+		$mainTaskInfo = "";
+		$subtaskInfo = "";
+		
+		$rootTask = TaskopediaData::getRootTaskPageData($this->mainTaskId);
+		$mainTaskInfo = "Main task: " . $rootTask["title"];
+		
+		if ($this->taskType == "subtask") {
+			$subtask = TaskopediaData::getTaskPageData($this->mainTaskId, $this->taskId);
+			$subtaskInfo = "<br>Subtask: " . $subtask["title"];
+		}
+		
 		$html = "";
 		$html .= <<<HTML
 <div id=top_panel>
 	<img src=puzzle_piece.png width=30 />
 	<span id=taskopedia_title>Taskopedia task page</span><br>
-	Main task: Finding treatments for DIPG cancer
+	$mainTaskInfo
+	$subtaskInfo
 </div>		
 HTML;
 		return $html;

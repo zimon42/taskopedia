@@ -89,3 +89,5 @@ All taskopedia 12 subtasks complete - next start on Iteration 1.
 Created Page.php and SkeletonPage.php - main page working, next create TaskPage
 
 Working on TaskPage and SkeletonPage and TaskopediaData.php
+
+Prints main and subtask info in top bar correctly

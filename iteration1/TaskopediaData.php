@@ -1,5 +1,5 @@
 <?php
-include_once("JsonFileHandler.php");
+include_once("utils/JsonFileHandler.php");
 
 class TaskopediaData {
 
@@ -31,6 +31,14 @@ class TaskopediaData {
 	public static function setTaskPageData($main_task_id, $task_page_id, $arr) {
 		$path = self::getTaskPagePath($main_task_id, $task_page_id);
 		$arr = JsonFileHandler::writePhpArray($path, $arr);		
+	}
+	
+	// Gets the task that is pointed out as root task in the main_task_info file
+	public static function getRootTaskPageData($main_task_id) {
+		$mainTaskArr = self::getMainTaskPageData($main_task_id);
+		$rootTaskId = $mainTaskArr["root_task_id"];
+		$rootTaskArr = self::getTaskPageData($main_task_id, $rootTaskId);
+		return $rootTaskArr;
 	}
 	
 }
