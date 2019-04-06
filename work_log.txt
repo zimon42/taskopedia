@@ -91,3 +91,7 @@ Created Page.php and SkeletonPage.php - main page working, next create TaskPage
 Working on TaskPage and SkeletonPage and TaskopediaData.php
 
 Prints main and subtask info in top bar correctly
+
+Task pages print correctly
+
+Working on login handler

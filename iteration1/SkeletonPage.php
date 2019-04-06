@@ -2,6 +2,7 @@
 
 include_once ("TaskopediaData.php");
 include_once ("utils/JsonFileHandler.php");
+include_once ("login_module/LoginHandler.php");
 
 class SkeletonPage extends Page {
 
@@ -42,6 +43,7 @@ HTML;
 		
 		$mainTaskInfo = "";
 		$subtaskInfo = "";
+		$loginInfo = "";
 		
 		$rootTask = TaskopediaData::getRootTaskPageData($this->mainTaskId);
 		$mainTaskInfo = "Main task: " . $rootTask["title"];
@@ -51,13 +53,23 @@ HTML;
 			$subtaskInfo = "<br>Subtask: " . $subtask["title"];
 		}
 		
+		if (LoginHandler::userIsLoggedIn()) {
+			$loginInfo .= "Logged in as " . LoginHandler::loggedInUserName() . ", ";
+			$loginInfo .= "<a href=index.php?page=login_logout>Logout</a> ";
+		} else {
+			$loginInfo .= "Not logged in, ";
+			$loginInfo .= "<a href=index.php?page=login_form>Login</a> ";			
+		}
+
+		
 		$html = "";
 		$html .= <<<HTML
 <div id=top_panel>
 	<img src=puzzle_piece.png width=30 />
-	<span id=taskopedia_title>Taskopedia task page</span><br>
+	<span id=taskopedia_title>Taskopedia</span><br>
 	$mainTaskInfo
 	$subtaskInfo
+	<br>$loginInfo
 </div>		
 HTML;
 		return $html;
