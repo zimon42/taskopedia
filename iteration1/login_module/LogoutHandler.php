@@ -1,6 +1,6 @@
 <?php
 
-include_once("CookieHandler.php");
+include_once("utils/CookieHandler.php");
 
 class LogoutHandler {
 	

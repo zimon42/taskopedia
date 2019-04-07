@@ -95,3 +95,5 @@ Prints main and subtask info in top bar correctly
 Task pages print correctly
 
 Working on login handler
+
+Login form displays correctly in SkeletonPage

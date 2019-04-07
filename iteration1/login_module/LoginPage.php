@@ -1,6 +1,8 @@
 <?php
 
-class LoginPage {
+include_once("SkeletonPage.php");
+
+class LoginPage extends SkeletonPage {
 	
 	public $errorMsg;
 	

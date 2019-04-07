@@ -3,8 +3,11 @@
 include_once ("TaskopediaData.php");
 include_once ("utils/JsonFileHandler.php");
 include_once ("login_module/LoginHandler.php");
+include_once ("TaskHandler.php");
 
 class SkeletonPage extends Page {
+
+	public $isSkeletonPage = true;
 
 	public $taskType;
 	public $mainTaskId;
@@ -55,10 +58,10 @@ HTML;
 		
 		if (LoginHandler::userIsLoggedIn()) {
 			$loginInfo .= "Logged in as " . LoginHandler::loggedInUserName() . ", ";
-			$loginInfo .= "<a href=index.php?page=login_logout>Logout</a> ";
+			$loginInfo .= "<a href=index.php?page=login_logout&" . TaskHandler::getTaskParams($this) . ">Logout</a> ";
 		} else {
 			$loginInfo .= "Not logged in, ";
-			$loginInfo .= "<a href=index.php?page=login_form>Login</a> ";			
+			$loginInfo .= "<a href=index.php?page=login_form&" . TaskHandler::getTaskParams($this) . ">Login</a> ";			
 		}
 
 		
