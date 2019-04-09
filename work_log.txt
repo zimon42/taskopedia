@@ -97,3 +97,5 @@ Task pages print correctly
 Working on login handler
 
 Login form displays correctly in SkeletonPage
+
+Login/logout in Skeleton page works!

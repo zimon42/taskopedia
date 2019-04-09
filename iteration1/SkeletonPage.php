@@ -26,7 +26,7 @@ class SkeletonPage extends Page {
 <!DOCTYPE html>
 <html>
 <head>
-<link rel=\"stylesheet\" type=\"text/css\" href=\"skeleton_page.css\">
+<link rel=stylesheet type=text/css href=skeleton_page.css>
 <script src=jquery.js></script>
 $addToHead
 </head>

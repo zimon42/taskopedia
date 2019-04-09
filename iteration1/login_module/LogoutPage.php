@@ -1,8 +1,9 @@
 <?php
 
 include_once("LogoutHandler.php");
+include_once("SkeletonPage.php");
 
-class LogoutPage {
+class LogoutPage extends SkeletonPage {
 		
 	public function getContent() {
 				

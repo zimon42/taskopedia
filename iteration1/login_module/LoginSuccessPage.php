@@ -1,8 +1,9 @@
 <?php
 
 include_once("LoginConfig.php");
+include_once("SkeletonPage.php");
 
-class LoginSuccessPage {
+class LoginSuccessPage extends SkeletonPage {
 	
 	public function getContent() {
 		$html = "You have been logged in! ";

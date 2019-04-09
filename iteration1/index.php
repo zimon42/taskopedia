@@ -3,7 +3,12 @@
 include_once("RequestHandler.php");
 include_once("MainPage.php");
 include_once("login_module/LoginRequestHandler.php");
+include_once("login_module/LoginHandler.php");
 include_once("TaskHandler.php");
+
+session_start();
+
+LoginHandler::checkLoginCookie();
 
 $pageName = isset($_GET["page"]) ? $_GET["page"] : "main_page";
 
