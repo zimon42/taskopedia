@@ -6,6 +6,7 @@
 
 include_once("SkeletonPage.php");
 include_once("TaskopediaData.php");
+include_once("TaskHandler.php");
 
 class TaskPage extends SkeletonPage {
 	
@@ -42,6 +43,8 @@ class TaskPage extends SkeletonPage {
 <hr>
 
 <span class=header3>Subtasks:</span><br>{$subtasks}
+
+<button id=create_new_subtask_button>Create new subtask</button>
 
 <hr>
 
@@ -86,7 +89,19 @@ HTML;
 	}
 		
 	public function getAddToHead() {
-		return "<link rel=\"stylesheet\" type=\"text/css\" href=\"task_page.css\">";
+		$taskParams = TaskHandler::getTaskParams($this);
+		$html = "";
+		$html .= <<<HTML
+<link rel=stylesheet type=text/css href=task_page.css>
+<script>
+$(document).ready(function() {
+	$("#create_new_subtask_button").click(function() {
+		location="index.php?page=create_task_page&$taskParams";
+	});
+});
+</script>
+HTML;
+		return $html;
 	}
 	
 }

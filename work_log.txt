@@ -99,3 +99,5 @@ Working on login handler
 Login form displays correctly in SkeletonPage
 
 Login/logout in Skeleton page works!
+
+Working on CreateTaskPage.php

@@ -2,6 +2,8 @@
 
 include_once("MainPage.php");
 include_once("TaskPage.php");
+include_once("TaskHandler.php");
+include_once("CreateTaskPage.php");
 
 class RequestHandler {
 	
@@ -23,7 +25,12 @@ class RequestHandler {
 			$page->mainTaskId = $_GET["main_task_id"];
 			$page->taskId = $_GET["task_id"];
 			return $page;
-		}		
+		}	
+		if ($pageName == "create_task_page") {
+			$page = new CreateTaskPage();
+			TaskHandler::setTaskParams($page);
+			return $page;
+		}
 		return FALSE;
 	}
 	
