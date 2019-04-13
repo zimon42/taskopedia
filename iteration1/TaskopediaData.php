@@ -41,6 +41,11 @@ class TaskopediaData {
 		return $rootTaskArr;
 	}
 	
+	public static function createTaskPageDir($main_task_id, $task_page_id) {
+		$path = "taskopedia_data/main_tasks/main_task_{$main_task_id}/task_pages/task_page_{$task_page_id}";
+		mkdir($path);
+	}
+	
 }
 
 ?>

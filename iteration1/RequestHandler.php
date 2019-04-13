@@ -4,6 +4,7 @@ include_once("MainPage.php");
 include_once("TaskPage.php");
 include_once("TaskHandler.php");
 include_once("CreateTaskPage.php");
+include_once("CreateTaskSubmit.php");
 
 class RequestHandler {
 	
@@ -29,6 +30,15 @@ class RequestHandler {
 		if ($pageName == "create_task_page") {
 			$page = new CreateTaskPage();
 			TaskHandler::setTaskParams($page);
+			return $page;
+		}
+		if ($pageName == "create_task_submit") {
+			$page = new CreateTaskSubmit();
+			TaskHandler::setTaskParams($page);
+			$page->title = $_GET["title"];
+			$page->desc = $_GET["desc"];
+			$page->moreInfo = $_GET["more_info"];
+			$page->handle();
 			return $page;
 		}
 		return FALSE;
