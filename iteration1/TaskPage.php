@@ -18,7 +18,7 @@ class TaskPage extends SkeletonPage {
 			$arr = TaskopediaData::getTaskPageData($this->mainTaskId, $this->taskId);
 		}
 		$title = $arr["title"];
-		$background = $arr["background"];
+		$description = $arr["description"];
 		$more_info = $arr["more_info"];
 		$team_members = self::renderTeamMembers($arr["team_members"]);
 		$status = $arr["status"];
@@ -30,7 +30,7 @@ class TaskPage extends SkeletonPage {
 		$html .= <<<HTML
 <span class=header3>Task: {$title}</span><br><br>
 <div class=header_content>
-	<span class=header2>Background:</span> {$background}<br><br>
+	<span class=header2>Description/Background:</span> {$description}<br><br>
 	<span class=header2>More info:</span> {$more_info}<br><br>
 	<span class=header2>Task team members:</span> {$team_members}<button>Join team</button><br><br>
 	<span class=header2>Task status:</span> {$status}<br><br>
@@ -68,7 +68,7 @@ HTML;
 			$subtaskPageId = $subtasksArr[$i];
 			$subtaskPageData = TaskopediaData::getTaskPageData($main_task_id, $subtaskPageId);
 			$subtaskTitle = $subtaskPageData["title"];
-			$html .= "<li><a href=''>" . $subtaskTitle . "</a></li>";
+			$html .= "<li><a href='index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=".$subtaskPageId."'>" . $subtaskTitle . "</a></li>";
 		}
 		$html .= "</ul>";
 		return $html;

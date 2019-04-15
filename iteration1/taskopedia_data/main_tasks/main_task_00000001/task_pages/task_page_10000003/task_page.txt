@@ -1,6 +1,6 @@
 {
     "title": "Gathering resources on DIPG",
-    "background": "Here we collect resuorces, such as web pages, books etc. on DIPG",
+    "description": "Here we collect resuorces, such as web pages, books etc. on DIPG",
     "more_info": "",
     "status": "work in progress",
     "result": "",
