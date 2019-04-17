@@ -7,6 +7,7 @@
 include_once("SkeletonPage.php");
 include_once("TaskopediaData.php");
 include_once("TaskHandler.php");
+include_once("TaskHierarchy.php");
 
 class TaskPage extends SkeletonPage {
 	
@@ -25,6 +26,7 @@ class TaskPage extends SkeletonPage {
 		$result = $arr["result"];
 		$subtasks = self::renderSubtasks($this->mainTaskId, $arr["subtasks"]);
 		$work_logs = self::renderWorkLogs($arr["worklogs"]);
+		$task_hierarchy = TaskHierarchy::render($this->taskType, $this->mainTaskId, $this->taskId);
 		
 		$html = "";
 		$html .= <<<HTML
@@ -49,6 +51,10 @@ class TaskPage extends SkeletonPage {
 <hr>
 
 <span class=header3>Work logs:</span><br> {$work_logs}
+
+<hr>
+
+<span class=header3>Task Hierarchy:</span><br> {$task_hierarchy}
 	
 HTML;
 		return $html;

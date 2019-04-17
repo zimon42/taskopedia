@@ -107,3 +107,11 @@ Help buttons work
 Working on CreateTaskSubmit
 
 Create task works. Next make task hierarchy
+
+Found bug: Task 10000003 has subtasks
+
+getAllTaskIds works!
+
+Task hierarcky works! Next add labels
+
+Labels work!

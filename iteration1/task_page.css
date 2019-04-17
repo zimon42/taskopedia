@@ -50,3 +50,7 @@ a {
 .subtasks_list li {
 	margin-left:0px;
 }
+
+a.current_link {
+	color:green;
+}

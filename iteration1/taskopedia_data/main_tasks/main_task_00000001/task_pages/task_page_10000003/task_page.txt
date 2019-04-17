@@ -9,10 +9,7 @@
         "Jill",
         "Rosa"
     ],
-    "subtasks": [
-        "10000002",
-        "10000003"
-    ],
+    "subtasks": [],
     "worklogs": [
         {
             "Simon": ""
