@@ -26,7 +26,14 @@ class TaskPage extends SkeletonPage {
 		$result = $arr["result"];
 		$subtasks = self::renderSubtasks($this->mainTaskId, $arr["subtasks"]);
 		$work_logs = self::renderWorkLogs($arr["worklogs"]);
-		$task_hierarchy = TaskHierarchy::render($this->taskType, $this->mainTaskId, $this->taskId);
+		
+		if ($this->taskType == "main_task") {
+			$task_hierarchy = TaskHierarchy::renderAll($this->mainTaskId);
+		}
+		if ($this->taskType == "subtask") {
+			$task_hierarchy = TaskHierarchy::render($this->taskType, $this->mainTaskId, $this->taskId);
+		}
+		
 		
 		$html = "";
 		$html .= <<<HTML

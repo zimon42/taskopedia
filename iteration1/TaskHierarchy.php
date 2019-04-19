@@ -111,6 +111,28 @@ class TaskHierarchy {
 		return array_merge($seqArr, array($to_task_id));
 	}
 	
+	// http://localhost/taskopedia/iteration1/index.php?page=main_task_page&main_task_id=00000001
+	public static function renderAll($main_task_id) {
+		// return "Render all";
+		$rootTaskId = TaskopediaData::getTaskPageId("main_task", $main_task_id, "");
+		return self::renderAllHelper($main_task_id, $rootTaskId, 0);
+	}
+	
+	public static function renderAllHelper($main_task_id, $task_id, $level) {
+		$html = "";
+		$indent = "";
+		for ($i=0; $i<$level; $i++) {
+			$indent .= "&nbsp;&nbsp;&nbsp;&nbsp;";
+		}		
+		$taskArr = TaskopediaData::getTaskPageData($main_task_id, $task_id);
+		$class = $level==0 ? "class=current_link " : "";
+		$html .= $indent . "&gt;<a {$class}href='index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=". $task_id . "'>".$taskArr["title"]."</a><br>";
+		for ($i=0; $i<count($taskArr["subtasks"]); $i++) {
+			$html .= self::renderAllHelper($main_task_id, $taskArr["subtasks"][$i], $level+1);
+		}
+		return $html;
+	}
+	
 }
 
 ?>
