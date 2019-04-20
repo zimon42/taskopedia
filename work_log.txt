@@ -117,3 +117,7 @@ Task hierarcky works! Next add labels
 Labels work!
 
 Main task hierarchy works!
+
+Top panel links work!
+
+Task hierarcy main link works

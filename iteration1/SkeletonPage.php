@@ -49,7 +49,7 @@ HTML;
 		$loginInfo = "";
 		
 		$rootTask = TaskopediaData::getRootTaskPageData($this->mainTaskId);
-		$mainTaskInfo = "Main task: " . $rootTask["title"];
+		$mainTaskInfo = "<a id=main_task_info href='index.php?page=main_task_page&main_task_id=".$this->mainTaskId."'>Main task: " . $rootTask["title"] . "</a>";
 		
 		if ($this->taskType == "subtask") {
 			$subtask = TaskopediaData::getTaskPageData($this->mainTaskId, $this->taskId);
@@ -69,7 +69,7 @@ HTML;
 		$html .= <<<HTML
 <div id=top_panel>
 	<img src=puzzle_piece.png width=30 />
-	<span id=taskopedia_title>Taskopedia</span><br>
+	<a id=taskopedia_title href=index.php>Taskopedia</a><br>
 	$mainTaskInfo
 	$subtaskInfo
 	<br>$loginInfo

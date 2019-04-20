@@ -57,7 +57,12 @@ class TaskHierarchy {
 			$subtaskTitle = $subtaskPageData["title"];
 			//$label = "Label: ";
 			$label = $i==0 ? "Main task: " : ($i==count($seqArr)-2 ? "Parent task: " : "Ancestor task: ");
-			$html .= $indent . "&gt; <a href='index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=".$subtaskPageId."'>" . $label . $subtaskTitle . "</a><br>";
+			if ($i==0) {
+				$href="index.php?page=main_task_page&task_type=main_task&main_task_id=".$main_task_id;
+			} else {
+				$href="index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=".$subtaskPageId;
+			}
+			$html .= $indent . "&gt; <a href='$href'>" . $label . $subtaskTitle . "</a><br>";
 			$indent .= "&nbsp;&nbsp;&nbsp;&nbsp;";
 		}
 			
@@ -126,7 +131,12 @@ class TaskHierarchy {
 		}		
 		$taskArr = TaskopediaData::getTaskPageData($main_task_id, $task_id);
 		$class = $level==0 ? "class=current_link " : "";
-		$html .= $indent . "&gt;<a {$class}href='index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=". $task_id . "'>".$taskArr["title"]."</a><br>";
+		if ($level==0) {
+			$href="index.php?page=main_task_page&task_type=main_task&main_task_id=".$main_task_id;
+		} else {
+			$href="index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=". $task_id;
+		}
+		$html .= $indent . "&gt;<a {$class}href='$href'>".$taskArr["title"]."</a><br>";
 		for ($i=0; $i<count($taskArr["subtasks"]); $i++) {
 			$html .= self::renderAllHelper($main_task_id, $taskArr["subtasks"][$i], $level+1);
 		}
