@@ -1,0 +1,1 @@
+When logging in, and user name does not exist, gives php error: userName does not exist

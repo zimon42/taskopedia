@@ -8,6 +8,7 @@ include_once("SkeletonPage.php");
 include_once("TaskopediaData.php");
 include_once("TaskHandler.php");
 include_once("TaskHierarchy.php");
+include_once("login_module/LoginHandler.php");
 
 class TaskPage extends SkeletonPage {
 	
@@ -48,6 +49,8 @@ class TaskPage extends SkeletonPage {
 <hr>
 
 <span class=header3>Result:</span> {$result}<br><br>
+
+<button id=edit_result_button>Edit result</button>
 
 <hr>
 
@@ -103,13 +106,33 @@ HTML;
 		
 	public function getAddToHead() {
 		$taskParams = TaskHandler::getTaskParams($this);
+		$isLoggedInBoolVal = LoginHandler::userIsLoggedIn() ? "true" : "false";
+		$loggedInUserName = LoginHandler::loggedInUserName();
 		$html = "";
 		$html .= <<<HTML
 <link rel=stylesheet type=text/css href=task_page.css>
+<script src=resource_locker_module/ResourceLocker.js></script>
 <script>
+var userIsLoggedIn = $isLoggedInBoolVal;
+var loggedInUserName = "$loggedInUserName";
 $(document).ready(function() {
 	$("#create_new_subtask_button").click(function() {
 		location="index.php?page=create_task_page&$taskParams";
+	});
+	$("#edit_result_button").click(function() {
+		if (userIsLoggedIn) {
+			// alert("Logged in");
+			ResourceLocker.editButtonClickHandler(
+			{
+				res_id: "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_result",
+				user_name: loggedInUserName,
+				edit_page: "index.php?page=edit_result_page&$taskParams"
+			}
+			);			
+		}
+		else {
+			alert("You have to be logged in to edit the result. Click the login link in the top of this page");
+		}
 	});
 });
 </script>

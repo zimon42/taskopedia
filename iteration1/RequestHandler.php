@@ -5,6 +5,7 @@ include_once("TaskPage.php");
 include_once("TaskHandler.php");
 include_once("CreateTaskPage.php");
 include_once("CreateTaskSubmit.php");
+include_once("EditResultPage.php");
 
 class RequestHandler {
 	
@@ -39,6 +40,11 @@ class RequestHandler {
 			$page->desc = $_GET["desc"];
 			$page->moreInfo = $_GET["more_info"];
 			$page->handle();
+			return $page;
+		}
+		if ($pageName == "edit_result_page") {
+			$page = new EditResultPage();
+			TaskHandler::setTaskParams($page);
 			return $page;
 		}
 		return FALSE;

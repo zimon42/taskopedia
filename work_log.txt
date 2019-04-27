@@ -121,3 +121,7 @@ Main task hierarchy works!
 Top panel links work!
 
 Task hierarcy main link works
+
+isLoggedIn in TaskPage.php works. Next add ResourceLocker
+
+EditResultPage displays result
