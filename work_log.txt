@@ -125,3 +125,5 @@ Task hierarcy main link works
 isLoggedIn in TaskPage.php works. Next add ResourceLocker
 
 EditResultPage displays result
+
+Solved bug: EditResultPage would load even though occupied. Solution: Wasnt constructing the correct res_id in EditResultPage

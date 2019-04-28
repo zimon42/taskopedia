@@ -65,6 +65,7 @@ ResourceLocker.exit_resource = function(args) {
 }
 
 function update_resource_latest_time() {
+	console.log("update_resource_latest_time");
 	$.post(
 	"resource_locker_module/update_resource_latest_time.php",
 	{

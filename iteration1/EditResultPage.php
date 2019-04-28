@@ -55,7 +55,7 @@ function getResourceCurrentState() {
 }
 
 function getResourceIdentifier() {
-	return "task_{$this->taskId}_result";
+	return "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_result";
 }
 
 function getResourceSavePage() {
