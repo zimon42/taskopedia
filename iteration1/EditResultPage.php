@@ -9,7 +9,7 @@ class EditResultPage extends SkeletonPage {
 	public function getContent() {
 		$html = "";
 		$html .= <<<HTML
-<h1>Edit Result</h1>
+<h1 id=edit_result_title>Edit Result</h1>
 
 <textarea id=resource_text rows=10 cols=50>
 HTML;
@@ -29,8 +29,15 @@ HTML;
 	}
 	
 	public function getAddToHead() {
+		$taskParams = TaskHandler::getTaskParams($this);
 		$html = "";
 		$html .= <<<HTML
+<style>
+#edit_result_title {
+	color:gray;
+	font-size:16pt;
+}
+</style>
 <script src=resource_locker_module/ResourceLocker.js></script>
 <script>
 $(document).ready(function() {
@@ -59,7 +66,7 @@ function getResourceIdentifier() {
 }
 
 function getResourceSavePage() {
-	return "index.php?page=task_save_result";
+	return "index.php?page=save_result_submit&$taskParams";
 }
 
 ResourceLocker.start();
