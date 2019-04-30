@@ -3,7 +3,7 @@
     "description": "There is currently research on DIPG. In this task we gather all news on research progress",
     "more_info": "",
     "status": "work in progress",
-    "result": "",
+    "result": "Hi2",
     "team_members": [
         "Anna",
         "Betsy"

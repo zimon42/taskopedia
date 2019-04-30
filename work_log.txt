@@ -129,3 +129,5 @@ EditResultPage displays result
 Solved bug: EditResultPage would load even though occupied. Solution: Wasnt constructing the correct res_id in EditResultPage
 
 Working on SaveResultSubmit
+
+SaveResultSubmit works!
