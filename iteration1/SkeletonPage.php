@@ -53,7 +53,7 @@ HTML;
 		
 		if ($this->taskType == "subtask") {
 			$subtask = TaskopediaData::getTaskPageData($this->mainTaskId, $this->taskId);
-			$subtaskInfo = "<br>Subtask: " . $subtask["title"];
+			$subtaskInfo = "<br><a id=subtask_info href='index.php?page=task_page&main_task_id=".$this->mainTaskId."&task_id=".$this->taskId."'>Subtask: " . $subtask["title"] . "</a>";
 		}
 		
 		if (LoginHandler::userIsLoggedIn()) {

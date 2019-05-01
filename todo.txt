@@ -1,0 +1,9 @@
+Todo iteration 1:
+-----------------
+
+Edit task
+Edit work log
+Reorder subtasks
+Delete subtasks - to waste bin
+Move task
+Task forum

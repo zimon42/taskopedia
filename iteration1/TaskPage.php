@@ -48,7 +48,7 @@ class TaskPage extends SkeletonPage {
 
 <hr>
 
-<span class=header3>Result:</span> {$result}<br><br>
+<span class=header3>Result:</span><br><br>{$result}<br><br>
 
 <button id=edit_result_button>Edit result</button>
 
