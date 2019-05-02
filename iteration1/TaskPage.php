@@ -46,6 +46,8 @@ class TaskPage extends SkeletonPage {
 	<span class=header2>Task status:</span> {$status}<br><br>
 </div>
 
+<button id=edit_task_button>Edit task info</button>
+
 <hr>
 
 <span class=header3>Result:</span><br><br>{$result}<br><br>
@@ -132,6 +134,17 @@ $(document).ready(function() {
 		}
 		else {
 			alert("You have to be logged in to edit the result. Click the login link in the top of this page");
+		}
+	});
+	$("#edit_task_button").click(function() {
+		if (userIsLoggedIn) {
+			ResourceLocker.editButtonClickHandler(
+			{
+				res_id: "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_taskinfo",
+				user_name: loggedInUserName,
+				edit_page: "index.php?page=edit_taskinfo_page&$taskParams"
+			}
+			);						
 		}
 	});
 });

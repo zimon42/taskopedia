@@ -7,6 +7,7 @@ include_once("CreateTaskPage.php");
 include_once("CreateTaskSubmit.php");
 include_once("EditResultPage.php");
 include_once("SaveResultSubmit.php");
+include_once("EditTaskinfoPage.php");
 
 class RequestHandler {
 	
@@ -50,6 +51,11 @@ class RequestHandler {
 		}
 		if ($pageName == "save_result_submit") {
 			$page = new SaveResultSubmit();
+			TaskHandler::setTaskParams($page);
+			return $page;
+		}
+		if ($pageName == "edit_taskinfo_page") {
+			$page = new EditTaskinfoPage();
 			TaskHandler::setTaskParams($page);
 			return $page;
 		}
