@@ -37,10 +37,12 @@ HTML;
 	}
 	
 	public function getAddToHead() {
+		$taskParams = TaskHandler::getTaskParams($this);
 		$html = "";
 		$html .= <<<HTML
 <link rel=stylesheet type=text/css href=create_edit_task.css>		
 <script src=CreateEditTaskHelper.js></script>
+<script src=resource_locker_module/ResourceLocker.js></script>
 <script>
 $(document).ready(function() {
 	$(".qmark_img").click(function() {
@@ -48,6 +50,41 @@ $(document).ready(function() {
 		alert(getHelp(\$field));
 	});
 });
+$(document).ready(function() {
+	$("#save_taskinfo_button").click(function() {
+		ResourceLocker.save_resource(
+		{
+			save_page: getResourceSavePage()
+		}
+		);
+	});
+	$("#exit_taskinfo_button").click(function() {
+		ResourceLocker.exit_resource(
+		{
+			save_page: getResourceSavePage()
+		}
+		);
+	});		
+});		
+
+function getResourceCurrentState() {
+	var title = \$("#title").val();
+	var desc = \$("#description").val();
+	var more_info = \$("#more_info").val();
+	var status = \$("input[name='status']:checked").val();
+	return "title="+title+"&desc="+desc+"&more_info="+more_info+"&status="+status;
+}
+
+function getResourceIdentifier() {
+	return "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_taskinfo";
+}
+
+function getResourceSavePage() {
+	return "index.php?page=save_taskinfo_submit&$taskParams";
+}
+
+ResourceLocker.start();
+
 </script>
 HTML;
 		return $html;
