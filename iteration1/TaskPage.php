@@ -62,7 +62,7 @@ class TaskPage extends SkeletonPage {
 
 <hr>
 
-<span class=header3>Work logs:</span><br> {$work_logs}
+<span class=header3>Work logs:</span><br><br> {$work_logs}
 
 <hr>
 
@@ -93,6 +93,8 @@ HTML;
 	}
 	
 	public static function renderWorkLogs($workLogArr) {
+		$isLoggedIn = LoginHandler::userIsLoggedIn();
+		$loggedInUserName = LoginHandler::loggedInUserName();
 		$html = "";
 		for ($i=0; $i<count($workLogArr); $i++) {
 			$workLog = $workLogArr[$i];
@@ -102,6 +104,10 @@ HTML;
 				$html .= "<b>$name</b>: " . $content;
 			}
 			$html .= "<br>";
+			// Add edit worklog button
+			if ($isLoggedIn && $name == $loggedInUserName) {
+				$html .= "<br><button>Edit your worklog</button><br><br>";
+			}
 		}
 		return $html;
 	}

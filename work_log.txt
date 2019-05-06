@@ -135,3 +135,5 @@ SaveResultSubmit works!
 Working on EditTaskinfoPage
 
 SaveTaskinfoSubmit page works!
+
+Edit worklog button displays!
