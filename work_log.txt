@@ -137,3 +137,9 @@ Working on EditTaskinfoPage
 SaveTaskinfoSubmit page works!
 
 Edit worklog button displays!
+
+Refactored task_page.txt worklog entry, and started on EditWorklogPage
+
+EditWorklogPage displays correctly
+
+SaveWorklogSubmit works! Fixed array reference bug

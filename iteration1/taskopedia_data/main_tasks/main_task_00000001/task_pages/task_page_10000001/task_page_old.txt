@@ -16,12 +16,10 @@
     ],
     "worklogs": [
         {
-            "name": "Simon",
-            "content": "Hello world 11"
+            "Simon": ""
         },
         {
-            "name": "Eric",
-            "content": "Hello world 2"
+            "Eric": ""
         }
     ]
 }

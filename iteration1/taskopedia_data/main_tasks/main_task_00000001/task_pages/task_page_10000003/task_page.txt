@@ -12,13 +12,16 @@
     "subtasks": [],
     "worklogs": [
         {
-            "Simon": ""
+            "name": "Simon",
+			"content": ""
         },
         {
-            "Jill": ""
+            "name": "Jill",
+			"content": ""
         },
 		{
-            "Rosa": ""
+            "name": "Rosa",
+			"content": ""
         }
 
     ]

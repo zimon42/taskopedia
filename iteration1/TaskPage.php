@@ -91,7 +91,26 @@ HTML;
 		$html .= "</ul>";
 		return $html;
 	}
+
+	public static function renderWorkLogs($workLogArr) {
+		$isLoggedIn = LoginHandler::userIsLoggedIn();
+		$loggedInUserName = LoginHandler::loggedInUserName();
+		$html = "";
+		for ($i=0; $i<count($workLogArr); $i++) {
+			$workLog = $workLogArr[$i];
+			$name = $workLog["name"];
+			$content = $workLog["content"];
+			$html .= "<b>$name</b>: " . $content;
+			$html .= "<br>";
+			// Add edit worklog button
+			if ($isLoggedIn && $name == $loggedInUserName) {
+				$html .= "<br><button id=edit_worklog_button data-user_name='$name'>Edit your worklog</button><br><br>";
+			}			
+		}
+		return $html;
+	}
 	
+	/*
 	public static function renderWorkLogs($workLogArr) {
 		$isLoggedIn = LoginHandler::userIsLoggedIn();
 		$loggedInUserName = LoginHandler::loggedInUserName();
@@ -111,7 +130,8 @@ HTML;
 		}
 		return $html;
 	}
-		
+	*/
+	
 	public function getAddToHead() {
 		$taskParams = TaskHandler::getTaskParams($this);
 		$isLoggedInBoolVal = LoginHandler::userIsLoggedIn() ? "true" : "false";
@@ -153,6 +173,22 @@ $(document).ready(function() {
 			);						
 		}
 	});
+	$("#edit_worklog_button").click(function() {
+		var user_name = $(this).attr("data-user_name");
+		if (userIsLoggedIn) {
+			// alert("Logged in");
+			ResourceLocker.editButtonClickHandler(
+			{
+				res_id: "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_username_"+user_name+"_worklog",
+				user_name: loggedInUserName,
+				edit_page: "index.php?page=edit_worklog_page&user_name="+user_name+"&$taskParams"
+			}
+			);			
+		}
+		else {
+			alert("Error: You have clicked the 'Edit your worklog' button, but you don't seem to be logged in");
+		}
+	});	
 });
 </script>
 HTML;

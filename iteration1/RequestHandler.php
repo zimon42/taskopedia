@@ -9,6 +9,8 @@ include_once("EditResultPage.php");
 include_once("SaveResultSubmit.php");
 include_once("EditTaskinfoPage.php");
 include_once("SaveTaskinfoSubmit.php");
+include_once("EditWorklogPage.php");
+include_once("SaveWorklogSubmit.php");
 
 class RequestHandler {
 	
@@ -62,6 +64,18 @@ class RequestHandler {
 		}
 		if ($pageName == "save_taskinfo_submit") {
 			$page = new SaveTaskinfoSubmit();
+			TaskHandler::setTaskParams($page);
+			return $page;
+		}
+		if ($pageName == "edit_worklog_page") {
+			$page = new EditWorklogPage();
+			$page->userName = $_GET["user_name"];
+			TaskHandler::setTaskParams($page);
+			return $page;
+		}
+		if ($pageName == "save_worklog_submit") {
+			$page = new SaveWorklogSubmit();
+			$page->userName = $_GET["user_name"];
 			TaskHandler::setTaskParams($page);
 			return $page;
 		}

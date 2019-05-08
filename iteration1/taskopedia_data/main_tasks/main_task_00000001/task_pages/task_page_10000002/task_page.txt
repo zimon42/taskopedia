@@ -13,10 +13,12 @@
     ],
     "worklogs": [
         {
-            "Anna": ""
+            "name": "Anna",
+			"content": ""
         },
         {
-            "Betsy": ""
+            "name": "Betsy",
+			"content": ""
         }
     ]
 }
