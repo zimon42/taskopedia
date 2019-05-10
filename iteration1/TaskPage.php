@@ -9,6 +9,7 @@ include_once("TaskopediaData.php");
 include_once("TaskHandler.php");
 include_once("TaskHierarchy.php");
 include_once("login_module/LoginHandler.php");
+include_once("TaskopediaDataHelper.php");
 
 class TaskPage extends SkeletonPage {
 	
@@ -22,7 +23,7 @@ class TaskPage extends SkeletonPage {
 		$title = $arr["title"];
 		$description = $arr["description"];
 		$more_info = $arr["more_info"];
-		$team_members = self::renderTeamMembers($arr["team_members"]);
+		$team_members = self::renderTeamMembers($arr);
 		$status = $arr["status"];
 		$result = $arr["result"];
 		$subtasks = self::renderSubtasks($this->mainTaskId, $arr["subtasks"]);
@@ -42,7 +43,7 @@ class TaskPage extends SkeletonPage {
 <div class=header_content>
 	<span class=header2>Description/Background:</span> {$description}<br><br>
 	<span class=header2>More info:</span> {$more_info}<br><br>
-	<span class=header2>Task team members:</span> {$team_members}<button>Join team</button><br><br>
+	<span class=header2>Task team members:</span> {$team_members}<br><br>
 	<span class=header2>Task status:</span> {$status}<br><br>
 </div>
 
@@ -72,10 +73,18 @@ HTML;
 		return $html;
 	}
 
-	public static function renderTeamMembers($teamMemberArr) {
+	public static function renderTeamMembers($taskArr) {
+		$teamMemberArr = $taskArr["team_members"];
 		$html = "";
 		for ($i=0; $i<count($teamMemberArr); $i++) {
 			$html .= "<a href=''>" . $teamMemberArr[$i] . "</a>, ";
+		}
+		// Check if "leave" button should display:
+		if (LoginHandler::userIsLoggedIn() && in_array(LoginHandler::loggedInUserName(), $taskArr["team_members"])) {
+			$html .= "<button id=leave_team_button>Leave team</button>";
+		}
+		else {
+			$html .= "<button id=join_team_button>Join team</button>";
 		}
 		return $html;
 	}
@@ -189,6 +198,18 @@ $(document).ready(function() {
 			alert("Error: You have clicked the 'Edit your worklog' button, but you don't seem to be logged in");
 		}
 	});	
+	$("#join_team_button").click(function() {
+		if (userIsLoggedIn) {
+			location="index.php?page=join_team_submit&$taskParams";
+		}
+		else {
+			alert("You need to be logged in to join the team. You can login by clicking the link at the top of this page");
+		}
+	});
+	$("#leave_team_button").click(function() {
+		location="index.php?page=leave_team_submit&$taskParams";
+	});
+	
 });
 </script>
 HTML;

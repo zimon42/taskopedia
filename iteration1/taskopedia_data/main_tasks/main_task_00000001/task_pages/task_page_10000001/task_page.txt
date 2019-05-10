@@ -6,8 +6,8 @@
     "result": "Hello world",
     "team_members": [
         "Simon",
-        "Eric",
-        "John"
+        "John",
+        "Eric"
     ],
     "subtasks": [
         "10000002",
