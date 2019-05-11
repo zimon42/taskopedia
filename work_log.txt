@@ -145,3 +145,7 @@ EditWorklogPage displays correctly
 SaveWorklogSubmit works! Fixed array reference bug
 
 Joining and leaving team works
+
+Error displaying ViewTopicListPage. TaskParams havent been set
+
+Forum page displays, but no topics

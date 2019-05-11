@@ -5,6 +5,7 @@ include_once("MainPage.php");
 include_once("login_module/LoginRequestHandler.php");
 include_once("login_module/LoginHandler.php");
 include_once("TaskHandler.php");
+include_once("forum_module/ForumRequestHandler.php");
 
 session_start();
 
@@ -20,6 +21,10 @@ if ($page === FALSE) {
 
 if ($page === FALSE) {
 	$page = LoginRequestHandler::getPage($pageName);
+}
+
+if ($page === FALSE) {
+	$page = ForumRequestHandler::getPage($pageName);
 }
 
 if ($page === FALSE) {

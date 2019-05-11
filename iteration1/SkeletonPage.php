@@ -64,6 +64,7 @@ HTML;
 			$loginInfo .= "<a href=index.php?page=login_form&" . TaskHandler::getTaskParams($this) . ">Login</a> ";			
 		}
 
+		$moreLinks = "<a href=index.php?page=forum_view_topic_list&forum_file=task_forum.txt&" . TaskHandler::getTaskParams($this) . ">Task forum</a>";
 		
 		$html = "";
 		$html .= <<<HTML
@@ -73,6 +74,7 @@ HTML;
 	$mainTaskInfo
 	$subtaskInfo
 	<br>$loginInfo
+	<br>$moreLinks
 </div>		
 HTML;
 		return $html;
