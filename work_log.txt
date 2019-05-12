@@ -149,3 +149,5 @@ Joining and leaving team works
 Error displaying ViewTopicListPage. TaskParams havent been set
 
 Forum page displays, but no topics
+
+TaskopediaData getTaskForumFilePath works
