@@ -10,7 +10,7 @@ include_once ("EditTopicPage.php");
 include_once ("EditTopicSubmitPage.php");
 include_once ("EditReplyPage.php");
 include_once ("EditReplySubmitPage.php");
-include_once ("TaskHandler.php");
+include_once ("ForumConfig.php");
 
 class ForumRequestHandler {
 	
@@ -19,7 +19,7 @@ class ForumRequestHandler {
 		if ($pageName == "forum_view_topic_list") {
 			$page = new ViewTopicListPage();
 			$page->forumFile = $_GET["forum_file"];
-			TaskHandler::setTaskParams($page);
+			ForumConfig::setExtraParams($page);
 			return $page;
 		}
 		if ($pageName == "forum_view_topic") {
@@ -31,6 +31,7 @@ class ForumRequestHandler {
 		if ($pageName == "forum_new_topic") {
 			$page = new NewTopicPage();
 			$page->forumFile = $_GET["forum_file"];
+			ForumConfig::setExtraParams($page);			
 			return $page;
 		}
 		if ($pageName == "forum_new_topic_submit") {

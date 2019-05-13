@@ -151,3 +151,6 @@ Error displaying ViewTopicListPage. TaskParams havent been set
 Forum page displays, but no topics
 
 TaskopediaData getTaskForumFilePath works
+
+Solved bug, forgot to add setTaskParams in ForumRequestHandler class
+New Topic now works

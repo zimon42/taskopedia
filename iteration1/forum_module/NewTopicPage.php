@@ -1,8 +1,9 @@
 <?php
 
 include_once ("ForumConfig.php");
+include_once ("SkeletonPage.php");
 
-class NewTopicPage {
+class NewTopicPage extends SkeletonPage {
 	
 	public $forumFile;
 	

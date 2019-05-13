@@ -76,12 +76,13 @@ HTML;
 		$html = "";
 		$styleFilePath = ForumConfig::$forumModulePath . "/" . "forum.css";
 		$mainPagePath = ForumConfig::$mainPagePath;
+		$extraParams = ForumConfig::getExtraParams($this);
 		$html .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"$styleFilePath\">\n";
 		$html .= <<<HTML
 <script>
 $(document).ready(function() {
 	$(".new_topic_button").click(function() {
-		location="{$mainPagePath}?page=forum_new_topic&forum_file={$this->forumFile}";
+		location="{$mainPagePath}?page=forum_new_topic&forum_file={$this->forumFile}&$extraParams";
 	});
 });
 </script>			
