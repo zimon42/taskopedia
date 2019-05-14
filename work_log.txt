@@ -154,3 +154,5 @@ TaskopediaData getTaskForumFilePath works
 
 Solved bug, forgot to add setTaskParams in ForumRequestHandler class
 New Topic now works
+
+Working on NewTopicSubmit handler

@@ -4,6 +4,7 @@ include_once("ForumConfig.php");
 include_once("ForumData.php");
 include_once("TopicSorter.php");
 include_once("SkeletonPage.php");
+include_once("login_module/LoginHandler.php");
 
 class ViewTopicListPage extends SkeletonPage {
 	
@@ -77,12 +78,19 @@ HTML;
 		$styleFilePath = ForumConfig::$forumModulePath . "/" . "forum.css";
 		$mainPagePath = ForumConfig::$mainPagePath;
 		$extraParams = ForumConfig::getExtraParams($this);
+		$isLoggedInBoolVal = LoginHandler::userIsLoggedIn() ? "true" : "false";
 		$html .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"$styleFilePath\">\n";
 		$html .= <<<HTML
 <script>
+var userIsLoggedIn = $isLoggedInBoolVal;
 $(document).ready(function() {
 	$(".new_topic_button").click(function() {
-		location="{$mainPagePath}?page=forum_new_topic&forum_file={$this->forumFile}&$extraParams";
+		if (userIsLoggedIn) {
+			location="{$mainPagePath}?page=forum_new_topic&forum_file={$this->forumFile}&$extraParams";
+		}
+		else {
+			alert("You have to be logged in to post a new topic. Click the login link at the top of this page");
+		}
 	});
 });
 </script>			

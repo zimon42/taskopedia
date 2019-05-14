@@ -25,6 +25,7 @@ HTML;
 	public function getAddToHead() {
 		$styleFilePath = ForumConfig::$forumModulePath . "/" . "forum.css";
 		$mainPagePath = ForumConfig::$mainPagePath;
+		$extraParams = ForumConfig::getExtraParams($this);
 		$html = "";
 		$html .= <<<HTML
 <link rel="stylesheet" type="text/css" href="$styleFilePath">
@@ -35,7 +36,7 @@ $(document).ready(function() {
 		content = $("#content").val();
 		sticky = $('#sticky').is(":checked");
 		// Add random number to url so doesn't cache response
-		location="$mainPagePath?page=forum_new_topic_submit&forum_file={$this->forumFile}&title="+title+"&content="+content+"&sticky="+sticky+"&randnum="+Math.random();
+		location="$mainPagePath?page=forum_new_topic_submit&forum_file={$this->forumFile}&title="+title+"&content="+content+"&sticky="+sticky+"&$extraParams&randnum="+Math.random();
 	});
 });
 </script>
