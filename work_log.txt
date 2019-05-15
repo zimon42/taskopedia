@@ -158,3 +158,5 @@ New Topic now works
 Working on NewTopicSubmit handler
 
 Forum module works! 
+
+Solved topic list order bug: Changed reply1 and reply2 in TopicSorter sort method becuase higher (newer) date should be sorted first

@@ -9,7 +9,8 @@ class TopicSorter {
 		usort($topics_arr, function($topic1, $topic2) { 
 			$reply1 = self::getDate($topic1);
 			$reply2 = self::getDate($topic2);
-			return DateHandler::compareDateTimeStrings($reply1, $reply2); 
+			return DateHandler::compareDateTimeStrings($reply2, $reply1); // <-- switched reply1 and reply2 to solve order bug
+			// .. the highest date should be first
 		});		
 	}
 
