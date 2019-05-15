@@ -1,8 +1,9 @@
 <?php
 
 include_once("ForumData.php");
+include_once("SkeletonPage.php");
 
-class EditReplySubmitPage {
+class EditReplySubmitPage extends SkeletonPage {
 	
 	public $forumFile;
 	public $topicId;

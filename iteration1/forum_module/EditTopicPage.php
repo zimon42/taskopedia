@@ -2,8 +2,9 @@
 
 include_once("ForumConfig.php");
 include_once("ForumData.php");
+include_once("SkeletonPage.php");
 
-class EditTopicPage {
+class EditTopicPage extends SkeletonPage {
 	
 	public $forumFile;
 	public $topicId;
@@ -28,6 +29,7 @@ HTML;
 	public function getAddToHead() {
 		$styleFilePath = ForumConfig::$forumModulePath . "/" . "forum.css";
 		$mainPagePath = ForumConfig::$mainPagePath;
+		$extraParams = ForumConfig::getExtraParams($this);
 		$html = "";
 		$html .= <<<HTML
 <link rel="stylesheet" type="text/css" href="$styleFilePath">
@@ -40,7 +42,7 @@ $(document).ready(function() {
 		content = $("#content").val();
 		sticky = $('#sticky').is(":checked");
 		// Add random number to url so doesn't cache response
-		location="$mainPagePath?page=forum_edit_topic_submit&forum_file={$this->forumFile}&topic_id="+topic_id+"&title="+title+"&content="+content+"&sticky="+sticky+"&randnum="+Math.random();
+		location="$mainPagePath?page=forum_edit_topic_submit&forum_file={$this->forumFile}&topic_id="+topic_id+"&title="+title+"&content="+content+"&sticky="+sticky+"&$extraParams&randnum="+Math.random();
 	});
 });
 </script>

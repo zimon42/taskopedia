@@ -1,6 +1,8 @@
 <?php
 
-class NewReplyPage {
+include_once("SkeletonPage.php");
+
+class NewReplyPage extends SkeletonPage {
 	
 	public $forumFile;
 	public $topicId;
@@ -20,6 +22,7 @@ HTML;
 	public function getAddToHead() {
 		$styleFilePath = ForumConfig::$forumModulePath . "/" . "forum.css";
 		$mainPagePath = ForumConfig::$mainPagePath;
+		$extraParams = ForumConfig::getExtraParams($this);
 		$html = "";
 		$html .= <<<HTML
 <link rel="stylesheet" type="text/css" href="$styleFilePath">
@@ -31,7 +34,7 @@ $(document).ready(function() {
 		topic_id = \$button.attr("data-topic-id");
 		content = $("#content").val();
 		// Add random number to url so doesn't cache response
-		location="$mainPagePath?page=forum_new_reply_submit&forum_file={$this->forumFile}&topic_id="+topic_id+"&content="+content+"&randnum="+Math.random();
+		location="$mainPagePath?page=forum_new_reply_submit&forum_file={$this->forumFile}&topic_id="+topic_id+"&content="+content+"&$extraParams&randnum="+Math.random();
 	});
 });
 </script>

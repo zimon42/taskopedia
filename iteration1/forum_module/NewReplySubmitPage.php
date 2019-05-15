@@ -4,8 +4,9 @@ include_once("ForumData.php");
 include_once("utils/GuidCreator.php");
 include_once("DateHandler.php");
 include_once("NewReplyHandler.php");
+include_once("SkeletonPage.php");
 
-class NewReplySubmitPage {
+class NewReplySubmitPage extends SkeletonPage {
 	
 	public $forumFile;
 	public $topicId;

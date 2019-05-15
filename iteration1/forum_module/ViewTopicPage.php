@@ -4,8 +4,9 @@ include_once("ForumConfig.php");
 include_once("ForumData.php");
 include_once("DateHandler.php");
 include_once("ViewsUpdater.php");
+include_once("SkeletonPage.php");
 
-class ViewTopicPage {
+class ViewTopicPage extends SkeletonPage {
 	
 	public $forumFile;
 	public $topicId;
@@ -106,6 +107,7 @@ HTML;
 	public function getAddToHead() {
 		$styleFilePath = ForumConfig::$forumModulePath . "/" . "forum.css";
 		$mainPagePath = ForumConfig::$mainPagePath;
+		$extraParams = ForumConfig::getExtraParams($this);
 		$html = "";
 		$html .= <<<HTML
 <link rel="stylesheet" type="text/css" href="$styleFilePath">
@@ -114,7 +116,7 @@ $(document).ready(function() {
 	$(".new_reply_button").click(function(event) {
 		\$button = $(event.target);
 		\$topic_id = \$button.attr("data-topic-id");
-		location="$mainPagePath?page=forum_new_reply&forum_file={$this->forumFile}&topic_id="+\$topic_id;
+		location="$mainPagePath?page=forum_new_reply&forum_file={$this->forumFile}&topic_id="+\$topic_id+"&$extraParams";
 	});
 	$(".edit_post_button").click(function(event) {
 		\$button = $(event.target);
@@ -122,10 +124,10 @@ $(document).ready(function() {
 		\$post_id = \$button.attr("data-post-id");
 		\$post_index = \$button.attr("data-post-index");
 		if (\$post_index == 0) {
-			location="$mainPagePath?page=forum_edit_topic&forum_file={$this->forumFile}&topic_id="+\$topic_id;
+			location="$mainPagePath?page=forum_edit_topic&forum_file={$this->forumFile}&topic_id="+\$topic_id+"&$extraParams";
 		}
 		else {
-			location="$mainPagePath?page=forum_edit_reply&forum_file={$this->forumFile}&topic_id="+\$topic_id+"&reply_id="+\$post_id;
+			location="$mainPagePath?page=forum_edit_reply&forum_file={$this->forumFile}&topic_id="+\$topic_id+"&reply_id="+\$post_id+"&$extraParams";
 		}
 	});	
 });

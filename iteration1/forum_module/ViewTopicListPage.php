@@ -53,11 +53,12 @@ HTML;
 		$path = ForumConfig::$mainPagePath;
 		$numReplies = $this->getNumReplies($topic);
 		$stickyImgPath = ForumConfig::$forumModulePath . "/" . "sticky.png";
-		$stickyHtml = isset($topic["sticky"]) && $topic["sticky"] ? "<img src='{$stickyImgPath}' class=sticky_img align=top />" : ""; 
+		$stickyHtml = isset($topic["sticky"]) && $topic["sticky"] ? "<img src='{$stickyImgPath}' class=sticky_img align=top />" : "";
+		$extraParams = ForumConfig::getExtraParams($this);
 		return <<<HTML
 <tr class=topic_row>
 	<td class=topic_title>
-	{$stickyHtml}<a href=$path?page=forum_view_topic&forum_file={$this->forumFile}&topic_id={$topic["topic_id"]}>
+	{$stickyHtml}<a href=$path?page=forum_view_topic&forum_file={$this->forumFile}&topic_id={$topic["topic_id"]}&$extraParams>
 			{$topic["title"]}
 		</a>
 	</td>

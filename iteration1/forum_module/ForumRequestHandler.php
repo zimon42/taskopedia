@@ -26,6 +26,7 @@ class ForumRequestHandler {
 			$page = new ViewTopicPage();
 			$page->forumFile = $_GET["forum_file"];
 			$page->topicId = $_GET["topic_id"];
+			ForumConfig::setExtraParams($page);			
 			return $page;
 		}
 		if ($pageName == "forum_new_topic") {
@@ -40,12 +41,14 @@ class ForumRequestHandler {
 			$page->title = $_GET["title"];
 			$page->content = $_GET["content"];
 			$page->sticky = $_GET["sticky"]=="true";
+			ForumConfig::setExtraParams($page);			
 			return $page;
 		}
 		if ($pageName == "forum_new_reply") {
 			$page = new NewReplyPage();
 			$page->forumFile = $_GET["forum_file"];
 			$page->topicId = $_GET["topic_id"];
+			ForumConfig::setExtraParams($page);			
 			return $page;
 		}
 		if ($pageName == "forum_new_reply_submit") {
@@ -53,12 +56,14 @@ class ForumRequestHandler {
 			$page->forumFile = $_GET["forum_file"];
 			$page->topicId = $_GET["topic_id"];
 			$page->content = $_GET["content"];	
+			ForumConfig::setExtraParams($page);			
 			return $page;
 		}
 		if ($pageName == "forum_edit_topic") {
 			$page = new EditTopicPage();
 			$page->forumFile = $_GET["forum_file"];
 			$page->topicId = $_GET["topic_id"];
+			ForumConfig::setExtraParams($page);			
 			return $page;
 		}
 		if ($pageName == "forum_edit_topic_submit") {
@@ -68,6 +73,7 @@ class ForumRequestHandler {
 			$page->title = $_GET["title"];
 			$page->content = $_GET["content"];
 			$page->sticky = $_GET["sticky"]=="true";
+			ForumConfig::setExtraParams($page);			
 			return $page;
 		}
 		if ($pageName == "forum_edit_reply") {
@@ -75,6 +81,7 @@ class ForumRequestHandler {
 			$page->forumFile = $_GET["forum_file"];
 			$page->topicId = $_GET["topic_id"];
 			$page->replyId = $_GET["reply_id"];
+			ForumConfig::setExtraParams($page);			
 			return $page;
 		}
 		if ($pageName == "forum_edit_reply_submit") {
@@ -83,6 +90,7 @@ class ForumRequestHandler {
 			$page->topicId = $_GET["topic_id"];
 			$page->replyId = $_GET["reply_id"];
 			$page->content = $_GET["content"];
+			ForumConfig::setExtraParams($page);			
 			return $page;
 		}
 		return FALSE;

@@ -3,8 +3,9 @@
 include_once ("ForumData.php");
 include_once ("utils/GuidCreator.php");
 include_once ("NewTopicHandler.php");
+include_once ("SkeletonPage.php");
 
-class NewTopicSubmitPage {
+class NewTopicSubmitPage extends SkeletonPage {
 	
 	public $forumFile;
 	public $title;

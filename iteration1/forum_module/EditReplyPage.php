@@ -1,8 +1,9 @@
 <?php
 
 include_once("ForumData.php");
+include_once("SkeletonPage.php");
 
-class EditReplyPage {
+class EditReplyPage extends SkeletonPage {
 	
 	public $forumFile;
 	public $topicId;
@@ -33,7 +34,8 @@ HTML;
 	
 	public function getAddToHead() {
 		$styleFilePath = ForumConfig::$forumModulePath . "/" . "forum.css";
-		$mainPagePath = ForumConfig::$mainPagePath;		
+		$mainPagePath = ForumConfig::$mainPagePath;	
+		$extraParams = ForumConfig::getExtraParams($this);
 		$html = "";
 		$html .= <<<HTML
 <link rel="stylesheet" type="text/css" href="$styleFilePath">
@@ -44,7 +46,7 @@ $(document).ready(function() {
 		\$topicId = \$button.attr("data-topic-id");
 		\$replyId = \$button.attr("data-reply-id");
 		content = $("#content").val();
-		location="$mainPagePath?page=forum_edit_reply_submit&forum_file={$this->forumFile}&topic_id="+\$topicId+"&reply_id="+\$replyId+"&content="+content;
+		location="$mainPagePath?page=forum_edit_reply_submit&forum_file={$this->forumFile}&topic_id="+\$topicId+"&reply_id="+\$replyId+"&content="+content+"&$extraParams";
 	});
 });
 </script>

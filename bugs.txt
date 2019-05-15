@@ -1,3 +1,5 @@
 When logging in, and user name does not exist, gives php error: userName does not exist
 
 EditResultSubmit is empty
+
+New topic appears last in topic list, but should appear at the top
