@@ -26,6 +26,7 @@ HTML;
 		$html .= <<<HTML
 <link rel=stylesheet type=text/css href=create_edit_task.css>
 <script src=CreateEditTaskHelper.js></script>
+<script src=resource_locker_module/ResourceLocker.js></script>
 <script>
 $(document).ready(function() {
 	$(".qmark_img").click(function() {
@@ -39,6 +40,20 @@ $(document).ready(function() {
 		location="index.php?page=create_task_submit&$taskParams&title="+title+"&desc="+desc+"&more_info="+more_info;
 	});
 });
+
+function getResourceCurrentState() {
+	var title = \$("#title").val();
+	var desc = \$("#description").val();
+	var more_info = \$("#more_info").val();
+	return "title="+title+"&desc="+desc+"&more_info="+more_info;
+}
+
+function getResourceIdentifier() {
+	return "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_subtasks";
+}
+
+ResourceLocker.start();
+
 </script>		
 HTML;
 		return $html;

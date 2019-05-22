@@ -154,7 +154,20 @@ var userIsLoggedIn = $isLoggedInBoolVal;
 var loggedInUserName = "$loggedInUserName";
 $(document).ready(function() {
 	$("#create_new_subtask_button").click(function() {
-		location="index.php?page=create_task_page&$taskParams";
+		// location="index.php?page=create_task_page&$taskParams";
+		if (userIsLoggedIn) {
+			// alert("Logged in");
+			ResourceLocker.editButtonClickHandler(
+			{
+				res_id: "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_subtasks",
+				user_name: loggedInUserName,
+				edit_page: "index.php?page=create_task_page&$taskParams"
+			}
+			);			
+		}
+		else {
+			alert("You have to be logged in to create a new subtask. Click the login link in the top of this page");
+		}		
 	});
 	$("#edit_result_button").click(function() {
 		if (userIsLoggedIn) {
