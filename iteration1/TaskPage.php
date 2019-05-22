@@ -59,6 +59,7 @@ class TaskPage extends SkeletonPage {
 
 <span class=header3>Subtasks:</span><br>{$subtasks}
 
+<button id=edit_subtasks_button>Edit subtasks</button>
 <button id=create_new_subtask_button>Create new subtask</button>
 
 <hr>
@@ -153,6 +154,20 @@ HTML;
 var userIsLoggedIn = $isLoggedInBoolVal;
 var loggedInUserName = "$loggedInUserName";
 $(document).ready(function() {
+	$("#edit_subtasks_button").click(function() {
+		if (userIsLoggedIn) {
+			ResourceLocker.editButtonClickHandler(
+			{
+				res_id: "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_subtasks",
+				user_name: loggedInUserName,
+				edit_page: "index.php?page=edit_subtasks_page&$taskParams"
+			}
+			);			
+		}
+		else {
+			alert("You have to be logged in to edit subtasks. Click the login link in the top of this page");
+		}				
+	});
 	$("#create_new_subtask_button").click(function() {
 		// location="index.php?page=create_task_page&$taskParams";
 		if (userIsLoggedIn) {

@@ -1,0 +1,31 @@
+.block {
+	background-color:white; /*lightgray;*/
+	border:1px solid gray;
+	height:24px;
+	padding:1px;
+}
+.space {
+	background-color:white;
+	height:10px;
+}
+
+#subtask_list_div {
+	width:500px;
+}
+
+.no_select {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+}
+.none_dragable {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}

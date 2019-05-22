@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="dragable_list.css">
+<script src=jquery.js></script>
+<script src=DragableList.js></script>
+<script>
+var dragableList = new DragableList();
+
+function addDragableSubtaskBlock(subtask) {
+	console.log("addDragableSubtaskBlock");
+	$("#subtask_list_div").append(
+		"<div class=block style='display:block'>"+ // <-- Changed none to block
+		"    <div style='float:left;width:200px'>"+
+	    "        <img class='cross no_select none_dragable' src=cross.png width=20 height=20></img>"+
+		"        <span id=vat_display style='position:relative;bottom:3px'>"+subtask.title+"</span>"+
+		"    </div>"+
+		"    <div style='float:left;width:275px;text-align:right'>"+
+		"        <button id=vat_block_edit>Redigera</button>"+
+		"        <button id=vat_block_remove>Ta bort</button>"+
+		"    </div>"+
+	    "</div>\n"
+	);
+	dragableList.update();
+	
+	// Attach subtask data to block
+	$(".block:last").data(subtask);
+	
+	// Clicked remove block button
+	$(".block:last #vat_block_remove").click(function(event) {
+		var $btn = $(event.target);
+		$deletingBlock = $btn.parents(".block");
+		$deletingBlock.slideUp(deletingBlockSlidedUp);
+	});
+
+	// Clicked edit block button
+	$(".block:last #vat_block_edit").click(function(event) {
+		var $btn = $(event.target);
+		$editingBlock = $btn.parents(".block");		
+		editBlock();
+	});
+	
+}
+
+$(document).ready(function() {
+	addDragableSubtaskBlock({title:"Subtask 1"});
+	addDragableSubtaskBlock({title:"Subtask 2"});
+	addDragableSubtaskBlock({title:"Subtask 3"});
+	addDragableSubtaskBlock({title:"Subtask 4"});
+	addDragableSubtaskBlock({title:"Subtask 5"});	
+});
+
+
+</script>
+<head>
+<body>
+<h3>Reorder subtasks</h3>
+<div id=subtask_list_div>
+</div>
+</body>
+</html>
