@@ -165,3 +165,5 @@ CreateTaskPage resource lock works.
 Next EditSubtasks
 
 Working on EditSubtasks, make static calls to addDragableListItem with ids and titles
+
+Dragable subtask bars display correctly
