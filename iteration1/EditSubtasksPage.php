@@ -1,6 +1,7 @@
 <?php
 
 include_once("SkeletonPage.php");
+include_once("TaskHandler.php");
 
 class EditSubtasksPage extends SkeletonPage {
 	
@@ -15,6 +16,7 @@ HTML;
 	}
 	
 	public function getAddToHead() {
+		$taskParams = TaskHandler::getTaskParams($this);		
 		$html = "";
 		$html .= <<<HTML
 <link rel="stylesheet" type="text/css" href="drag_list_module/dragable_list.css">
@@ -66,7 +68,38 @@ HTML;
 			$html .= "	addDragableSubtask({id:'" . $subtaskId . "',title:'". $subtaskArr["title"] . "'});\n";
 		}		
 		$html .= <<<HTML
+		
+	$("#save_subtask_list_button").click(function() {
+		ResourceLocker.save_resource(
+		{
+			save_page: getResourceSavePage()
+		}
+		);
+	});		
+		
 });
+
+function getResourceCurrentState() {
+	var arr = dragableList.getDataList();
+	// join subtask id's
+	var str = "";
+	for (var i=0; i<arr.length; i++) {
+		str += arr[i].id;
+		if (i<arr.length-1)
+			str += ",";
+	}
+	return str;
+}
+
+function getResourceIdentifier() {
+	return "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_subtasks";
+}
+
+function getResourceSavePage() {
+	return "index.php?page=save_subtasks_submit&$taskParams";
+}
+
+ResourceLocker.start();
 
 </script>
 

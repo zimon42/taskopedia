@@ -14,6 +14,7 @@ include_once("SaveWorklogSubmit.php");
 include_once("JoinTeamSubmit.php");
 include_once("LeaveTeamSubmit.php");
 include_once("EditSubtasksPage.php");
+include_once("SaveSubtasksSubmit.php");
 
 class RequestHandler {
 	
@@ -97,7 +98,11 @@ class RequestHandler {
 			TaskHandler::setTaskParams($page);
 			return $page;
 		}		
-		
+		if ($pageName == "save_subtasks_submit") {
+			$page = new SaveSubtasksSubmit();
+			TaskHandler::setTaskParams($page);
+			return $page;
+		}		
 		return FALSE;
 	}
 	
