@@ -98,6 +98,10 @@ function unlock_not_changed_resource() {
 			res_id: getResourceIdentifier()
 		},
 		function (data, status) {			
+			if (typeof should_exit_without_save !== 'undefined') {
+				alert("Due to inactivity this resource has been released and you will be exited");
+				location = "index.php";
+			}
 			$.post(
 				getResourceSavePage(),
 				{

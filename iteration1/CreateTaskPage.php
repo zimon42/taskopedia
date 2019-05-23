@@ -52,6 +52,8 @@ function getResourceIdentifier() {
 	return "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_subtasks";
 }
 
+var should_exit_without_save = "is true";
+
 ResourceLocker.start();
 
 </script>		

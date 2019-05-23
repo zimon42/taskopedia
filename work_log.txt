@@ -169,3 +169,5 @@ Working on EditSubtasks, make static calls to addDragableListItem with ids and t
 Dragable subtask bars display correctly
 
 Saves reordered subtasks!
+
+Deleting block works!

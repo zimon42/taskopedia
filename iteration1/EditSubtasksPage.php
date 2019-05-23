@@ -44,6 +44,21 @@ function addDragableSubtask(subtask) {
 	
 	// Attach subtask data to block
 	$(".block:last").data(subtask);
+	
+	// Clicked remove block button
+	$(".block:last #vat_block_remove").click(function(event) {
+		var \$btn = $(event.target);
+		\$deletingBlock = \$btn.parents(".block");
+		\$deletingBlock.slideUp(deletingBlockSlidedUp);
+	});
+	
+	
+}
+
+var \$deletingBlock;
+function deletingBlockSlidedUp() {
+	\$deletingBlock.remove();
+	dragableList.update();
 }
 
 // Cut subtask titles if they are too long
