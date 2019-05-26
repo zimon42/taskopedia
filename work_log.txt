@@ -171,3 +171,5 @@ Dragable subtask bars display correctly
 Saves reordered subtasks!
 
 Deleting block works!
+
+Working on should_show_move_task_here_button

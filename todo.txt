@@ -7,3 +7,5 @@ Reorder subtasks
 Delete subtasks - to waste bin
 Move task
 Task forum
+
+When logging in or out, maintain the page you were at

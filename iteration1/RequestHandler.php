@@ -15,6 +15,7 @@ include_once("JoinTeamSubmit.php");
 include_once("LeaveTeamSubmit.php");
 include_once("EditSubtasksPage.php");
 include_once("SaveSubtasksSubmit.php");
+include_once("MoveThisTaskSubmit.php");
 
 class RequestHandler {
 	
@@ -103,6 +104,11 @@ class RequestHandler {
 			TaskHandler::setTaskParams($page);
 			return $page;
 		}		
+		if ($pageName == "move_this_task_submit") {
+			$page = new MoveThisTaskSubmit();
+			TaskHandler::setTaskParams($page);
+			return $page;
+		}
 		return FALSE;
 	}
 	

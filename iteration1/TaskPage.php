@@ -48,7 +48,11 @@ class TaskPage extends SkeletonPage {
 </div>
 
 <button id=edit_task_button>Edit task info</button>
-
+HTML;
+		if ($this->taskType != "main_task") {
+			$html .= " <button id=move_this_task_button>Move this task</button>";
+		}
+		$html .= <<<HTML
 <hr>
 
 <span class=header3>Result:</span><br><br>{$result}<br><br>
@@ -61,7 +65,11 @@ class TaskPage extends SkeletonPage {
 
 <button id=edit_subtasks_button>Edit subtasks</button>
 <button id=create_new_subtask_button>Create new subtask</button>
-
+HTML;
+		if ($this->should_show_move_task_here_button()) {
+			$html .= " <button id=move_task_here_button>Move task here</button>";
+		}
+		$html .= <<<HTML
 <hr>
 
 <span class=header3>Work logs:</span><br><br> {$work_logs}
@@ -142,6 +150,32 @@ HTML;
 	}
 	*/
 	
+	public function should_show_move_task_here_button() {
+		if (isset($_SESSION["task_clipboard"])) {
+			$move_this_task_main_task_id = $_SESSION["task_clipboard_main_task_id"];
+			$move_this_task_task_id = $_SESSION["task_clipboard_task_id"];
+			$move_to_task_main_task_id = $this->mainTaskId;
+			$move_to_task_task_id = $this->taskId;
+			
+			// Case 1: At the moment moving tasks between different main tasks, not allowed
+			if ($move_this_task_main_task_id != $move_to_task_main_task_id) {
+				return FALSE;
+			}
+			
+			// Case 2: Move a task to its subtasks, not allowed
+			if ($move_this_task_main_task_id == $move_to_task_main_task_id &&
+				$move_this_task_task_id == $move_to_task_task_id) {
+				return FALSE;
+			}
+			
+			// Case 3: Move a task to a decendant task, not allowed
+			
+			
+			return TRUE;
+		}
+		return FALSE;
+	}		
+	
 	public function getAddToHead() {
 		$taskParams = TaskHandler::getTaskParams($this);
 		$isLoggedInBoolVal = LoginHandler::userIsLoggedIn() ? "true" : "false";
@@ -210,6 +244,22 @@ $(document).ready(function() {
 			);						
 		}
 	});
+	$("#move_this_task_button").click(function() {
+		if (userIsLoggedIn) {
+			$.post(
+			"index.php?page=move_this_task_submit&$taskParams",
+			{
+			},
+			function (data, status) {
+				console.log(data);
+				alert("This task has now been placed in the task clipboard. To move this task to a another task, go to that task, scroll down to the \"subtasks\" section, and click the \"move task here\" button");
+			}
+			);
+		}
+		else {
+			alert("You need to be logged in to move this task. Click the login link at the top of this page");
+		}
+	});	
 	$("#edit_worklog_button").click(function() {
 		var user_name = $(this).attr("data-user_name");
 		if (userIsLoggedIn) {
