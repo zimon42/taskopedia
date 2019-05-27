@@ -155,7 +155,8 @@ HTML;
 			$move_this_task_main_task_id = $_SESSION["task_clipboard_main_task_id"];
 			$move_this_task_task_id = $_SESSION["task_clipboard_task_id"];
 			$move_to_task_main_task_id = $this->mainTaskId;
-			$move_to_task_task_id = $this->taskId;
+			$move_to_task_task_id = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
+			// error: $move_to_task_task_id = $this->taskId;
 			
 			// Case 1: At the moment moving tasks between different main tasks, not allowed
 			if ($move_this_task_main_task_id != $move_to_task_main_task_id) {
@@ -169,7 +170,10 @@ HTML;
 			}
 			
 			// Case 3: Move a task to a decendant task, not allowed
-			
+			$rootTaskId = TaskopediaData::getTaskPageId("main_task", $move_to_task_main_task_id, "");
+			if (TaskHierarchy::isAncestor($move_to_task_main_task_id, $rootTaskId, $move_this_task_task_id, $move_to_task_task_id)) {
+				return FALSE;
+			}
 			
 			return TRUE;
 		}

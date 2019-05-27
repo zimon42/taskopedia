@@ -173,3 +173,5 @@ Saves reordered subtasks!
 Deleting block works!
 
 Working on should_show_move_task_here_button
+
+TaskPage should_show_move_task_here button seems to be working!

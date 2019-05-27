@@ -106,6 +106,32 @@ class TaskHierarchy {
 		}
 		return FALSE;
 	}
+
+	public static function isAncestor($main_task_id, $root_task_id, $task1_id, $task2_id) {
+		/*
+		echo "isAncestor<br>";
+		echo "main_task_id: ".$main_task_id."<br>";
+		echo "root_task_id: ".$root_task_id."<br>";
+		echo "task1_id: ".$task1_id."<br>";
+		echo "task2_id: ".$task2_id."<br>";		
+		echo "-----------------------<br>";
+		*/
+		if ($task2_id == $root_task_id) {
+			// The main task has no ancestors
+			return FALSE;
+		}
+		if ($task1_id == $task2_id) {
+			// The same task cannot be ancestor to itself
+			return FALSE;
+		}
+		$task2_parent_id = self::getParentTaskId($main_task_id, $root_task_id, $task2_id);
+		if ($task1_id == $task2_parent_id) {
+			// A parent is the direct ancestor
+			return TRUE;
+		}
+		// Recursive call
+		return self::isAncestor($main_task_id, $root_task_id, $task1_id, $task2_parent_id);
+	}
 	
 	public static function getTaskSequence($main_task_id, $root_task_id, $from_task_id, $to_task_id) {
 		if ($from_task_id == $to_task_id) {
