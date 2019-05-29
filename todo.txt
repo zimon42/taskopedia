@@ -9,3 +9,5 @@ Move task
 Task forum
 
 When logging in or out, maintain the page you were at
+
+Person can circumvent the resouce lock by browsing directly to a page. Check that person arrived at the page from clicking the edit button

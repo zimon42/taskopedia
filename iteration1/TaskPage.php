@@ -10,6 +10,7 @@ include_once("TaskHandler.php");
 include_once("TaskHierarchy.php");
 include_once("login_module/LoginHandler.php");
 include_once("TaskopediaDataHelper.php");
+include_once("MoveTaskHandler.php");
 
 class TaskPage extends SkeletonPage {
 	
@@ -156,6 +157,19 @@ HTML;
 			$move_this_task_task_id = $_SESSION["task_clipboard_task_id"];
 			$move_to_task_main_task_id = $this->mainTaskId;
 			$move_to_task_task_id = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
+			$result = MoveTaskHandler::checkMove($move_this_task_main_task_id, $move_this_task_task_id, $move_to_task_main_task_id, $move_to_task_task_id);
+			return $result["status"] == "ok";
+		}
+		return false;
+	}	
+	
+	/*
+	public function should_show_move_task_here_button() {
+		if (isset($_SESSION["task_clipboard"])) {
+			$move_this_task_main_task_id = $_SESSION["task_clipboard_main_task_id"];
+			$move_this_task_task_id = $_SESSION["task_clipboard_task_id"];
+			$move_to_task_main_task_id = $this->mainTaskId;
+			$move_to_task_task_id = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
 			// error: $move_to_task_task_id = $this->taskId;
 			
 			// Case 1: At the moment moving tasks between different main tasks, not allowed
@@ -179,6 +193,7 @@ HTML;
 		}
 		return FALSE;
 	}		
+	*/
 	
 	public function getAddToHead() {
 		$taskParams = TaskHandler::getTaskParams($this);
@@ -263,6 +278,21 @@ $(document).ready(function() {
 		else {
 			alert("You need to be logged in to move this task. Click the login link at the top of this page");
 		}
+	});	
+	$("#move_task_here_button").click(function() {
+		if (userIsLoggedIn) {
+			// alert("Logged in");
+			ResourceLocker.editButtonClickHandler(
+			{
+				res_id: "maintask_{$this->mainTaskId}_subtask_{$this->taskId}_subtasks",
+				user_name: loggedInUserName,
+				edit_page: "index.php?page=move_task_here_submit&$taskParams"
+			}
+			);			
+		}
+		else {
+			alert("You have to be logged in to move a task here. Click the login link in the top of this page");
+		}		
 	});	
 	$("#edit_worklog_button").click(function() {
 		var user_name = $(this).attr("data-user_name");
