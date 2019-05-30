@@ -8,17 +8,15 @@
         "Anna",
         "Betsy"
     ],
-    "subtasks": [
-        "7b0707bd"
-    ],
+    "subtasks": [],
     "worklogs": [
         {
             "name": "Anna",
-			"content": ""
+            "content": ""
         },
         {
             "name": "Betsy",
-			"content": ""
+            "content": ""
         }
     ]
 }

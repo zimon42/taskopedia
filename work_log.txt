@@ -178,3 +178,5 @@ TaskPage should_show_move_task_here button seems to be working!
 
 Move task here button displays correctly
 Resource locker hooked in, next create move_task_here_submit page
+
+MoveTaskHereSubmit works! Next fix Task_page link
