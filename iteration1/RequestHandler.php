@@ -17,6 +17,9 @@ include_once("EditSubtasksPage.php");
 include_once("SaveSubtasksSubmit.php");
 include_once("MoveThisTaskSubmit.php");
 include_once("MoveTaskHereSubmit.php");
+include_once("YourPage.php");
+include_once("login_module/LoginHandler.php");
+include_once("login_module/LoginPage.php");
 
 class RequestHandler {
 	
@@ -114,7 +117,21 @@ class RequestHandler {
 			$page = new MoveTaskHereSubmit();
 			TaskHandler::setTaskParams($page);
 			return $page;
-		}		
+		}
+		if ($pageName == "your_page") {
+			if (LoginHandler::userIsLoggedIn()) {
+				$page = new YourPage();
+				TaskHandler::setTaskParams($page);
+				return $page;			
+			}
+			else {
+				$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				$_SESSION["navigate_to_url_after_login"] = $actual_link;				
+				$page = new LoginPage();	
+				TaskHandler::setTaskParams($page);
+				return $page;							
+			}
+		}
 		return FALSE;
 	}
 	

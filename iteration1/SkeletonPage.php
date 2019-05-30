@@ -64,10 +64,20 @@ HTML;
 			$loginInfo .= "<a href=index.php?page=login_form&" . TaskHandler::getTaskParams($this) . ">Login</a> ";			
 		}
 
+		$loginInfo .= "<a href=index.php?page=your_page&" . TaskHandler::getTaskParams($this) . ">Your page</a>";
+		
 		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
 		$taskForumFilePath = TaskopediaData::getTaskForumFilePath($this->mainTaskId, $taskId);
 		
-		$moreLinks = "<a href=index.php?page=forum_view_topic_list&forum_file=$taskForumFilePath&" . TaskHandler::getTaskParams($this) . ">Task forum</a>";
+		$moreLinks = "";
+		
+		if ($this->taskType == "main_task") {
+			$moreLinks .= "<a href=index.php?page=main_task_page&" . TaskHandler::getTaskParams($this) . ">Task page</a> ";
+		}
+		if ($this->taskType == "subtask") {
+			$moreLinks .= "<a href=index.php?page=task_page&" . TaskHandler::getTaskParams($this) . ">Task page</a> ";
+		}		
+		$moreLinks .= "<a href=index.php?page=forum_view_topic_list&forum_file=$taskForumFilePath&" . TaskHandler::getTaskParams($this) . ">Task forum</a>";
 		
 		$html = "";
 		$html .= <<<HTML

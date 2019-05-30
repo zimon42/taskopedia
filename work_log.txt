@@ -180,3 +180,11 @@ Move task here button displays correctly
 Resource locker hooked in, next create move_task_here_submit page
 
 MoveTaskHereSubmit works! Next fix Task_page link
+
+Warning: array_diff deletes the element but array keys are not updated: https://stackoverflow.com/questions/369602/deleting-an-element-from-an-array-in-php
+
+Task page link works
+
+Navigates to Your page after login
+
+Your page displays member tasks!
