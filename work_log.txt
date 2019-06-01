@@ -188,3 +188,5 @@ Task page link works
 Navigates to Your page after login
 
 Your page displays member tasks!
+
+Working on TaskNewsPage, make TaskNewsData

@@ -20,6 +20,7 @@ include_once("MoveTaskHereSubmit.php");
 include_once("YourPage.php");
 include_once("login_module/LoginHandler.php");
 include_once("login_module/LoginPage.php");
+include_once("TaskNewsPage.php");
 
 class RequestHandler {
 	
@@ -132,6 +133,12 @@ class RequestHandler {
 				return $page;							
 			}
 		}
+		if ($pageName == "task_news_page") {
+			$page = new TaskNewsPage();
+			TaskHandler::setTaskParams($page);
+			return $page;
+		}
+		
 		return FALSE;
 	}
 	

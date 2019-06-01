@@ -60,6 +60,10 @@ class TaskopediaData {
 	public static function getTaskForumFilePath($main_task_id, $task_page_id) {
 		return "taskopedia_data/main_tasks/main_task_{$main_task_id}/task_pages/task_page_{$task_page_id}/task_forum.txt";
 	}	
+
+	public static function getTaskNewsFilePath($main_task_id, $task_page_id) {
+		return "taskopedia_data/main_tasks/main_task_{$main_task_id}/task_pages/task_page_{$task_page_id}/task_news.txt";
+	}	
 	
 }
 

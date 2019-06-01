@@ -77,7 +77,9 @@ HTML;
 		if ($this->taskType == "subtask") {
 			$moreLinks .= "<a href=index.php?page=task_page&" . TaskHandler::getTaskParams($this) . ">Task page</a> ";
 		}		
-		$moreLinks .= "<a href=index.php?page=forum_view_topic_list&forum_file=$taskForumFilePath&" . TaskHandler::getTaskParams($this) . ">Task forum</a>";
+		$moreLinks .= "<a href=index.php?page=forum_view_topic_list&forum_file=$taskForumFilePath&" . TaskHandler::getTaskParams($this) . ">Task forum</a> ";
+		$moreLinks .= "<a href=index.php?page=task_news_page&" . TaskHandler::getTaskParams($this) . ">Task news</a> ";
+		
 		
 		$html = "";
 		$html .= <<<HTML
