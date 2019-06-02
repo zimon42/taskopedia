@@ -194,3 +194,5 @@ Working on TaskNewsPage, make TaskNewsData
 RenderNewSubtaskEvent works. Next create RenderNewTopicEvent
 
 RenderNewTopicEvent works!
+
+All renderEvents complete. Next create addEvent

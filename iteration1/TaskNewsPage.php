@@ -33,7 +33,28 @@ class TaskNewsPage extends SkeletonPage {
 		} 
 		elseif ($evArr["type"] == "new_forum_topic") {
 			$html .= $this->renderNewForumTopicEvent($evArr);
+		} 
+		elseif ($evArr["type"] == "updated_result") {
+			$html .= $this->renderUpdatedResultEvent($evArr);
 		} 		
+		elseif ($evArr["type"] == "changed_title") {
+			$html .= $this->renderChangedTitleEvent($evArr);
+		} 				
+		elseif ($evArr["type"] == "changed_status") {
+			$html .= $this->renderChangedStatusEvent($evArr);
+		} 						
+		elseif ($evArr["type"] == "user_joined") {
+			$html .= $this->renderUserJoinedEvent($evArr);
+		} 						
+		elseif ($evArr["type"] == "user_left") {
+			$html .= $this->renderUserLeftEvent($evArr);
+		} 						
+		elseif ($evArr["type"] == "moved_task_away") {
+			$html .= $this->renderMovedTaskAwayEvent($evArr);
+		} 
+		elseif ($evArr["type"] == "moved_task_here") {
+			$html .= $this->renderMovedTaskHereEvent($evArr);
+		} 
 		else {
 			$html .= $this->renderUnknownEvent($evArr);
 		}
@@ -54,6 +75,46 @@ class TaskNewsPage extends SkeletonPage {
 		$topicArr = ForumData::getTopic($taskForumFilePath, $evArr["topic_id"]);
 		
 		return "New forum topic with the title '" . $topicArr["title"] . "' was added by user " . $evArr["user"];
+	}
+	
+	public function renderUpdatedResultEvent($evArr) {
+		return "The task result was updated by user " . $evArr["user"];
+	}
+
+	public function renderChangedTitleEvent($evArr) {
+		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
+		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
+		
+		return "The task title was changed to '" . $taskArr["title"] . "' by user " . $evArr["user"];
+	}
+
+	public function renderChangedStatusEvent($evArr) {
+		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
+		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
+		
+		return "The task status was changed to '" . $taskArr["status"] . "' by user " . $evArr["user"];
+	}
+
+	public function renderUserJoinedEvent($evArr) {
+		return "User " . $evArr["user"] . " has joined the task";
+	}
+
+	public function renderUserLeftEvent($evArr) {
+		return "User " . $evArr["user"] . " has left the task";
+	}
+
+	public function renderMovedTaskAwayEvent($evArr) {
+		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $evArr["task_id"]);
+		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
+		
+		return "The subtask with the title '" . $taskArr["title"] . "' was moved to another task by user " . $evArr["user"];
+	}
+
+	public function renderMovedTaskHereEvent($evArr) {
+		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $evArr["task_id"]);
+		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
+		
+		return "The subtask with the title '" . $taskArr["title"] . "' was moved here by user " . $evArr["user"];
 	}
 	
 	public function renderUnknownEvent($evArr) {
