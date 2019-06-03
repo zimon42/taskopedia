@@ -63,5 +63,12 @@
         "event_id": "01658ec8",
         "user": "Simon",
         "date_time": "2019-06-03 18:44:32"
+    },
+    {
+        "type": "new_forum_topic",
+        "topic_id": "b6b5a665",
+        "event_id": "76ddcc8f",
+        "user": "Simon",
+        "date_time": "2019-06-03 21:35:08"
     }
 ]

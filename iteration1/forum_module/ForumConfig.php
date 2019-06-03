@@ -1,6 +1,7 @@
 <?php
 
 include_once("TaskHandler.php");
+include_once("TaskNewsData.php");
 
 class ForumConfig {
 	
@@ -13,6 +14,14 @@ class ForumConfig {
 
 	public static function setExtraParams($page) {
 		return TaskHandler::setTaskParams($page);
+	}
+	
+	public static function newTopicListener($args) {
+		$evArr = array(
+			"type" => "new_forum_topic",
+			"topic_id" => $args["topic_id"]
+		);
+		TaskNewsData::addEvent3($args["task_type"], $args["main_task_id"], $args["task_id"], $evArr);
 	}
 	
 }

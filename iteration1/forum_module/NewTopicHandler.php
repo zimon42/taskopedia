@@ -39,7 +39,7 @@ class NewTopicHandler {
 
 		ForumData::setTopics($forumFile, $topics_arr);
 		
-		return array("status" => "ok", "html" => $html);
+		return array("status" => "ok", "html" => $html, "topic_id" => $topicId);
 	}
 	
 }

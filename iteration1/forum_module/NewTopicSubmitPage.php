@@ -4,6 +4,7 @@ include_once ("ForumData.php");
 include_once ("utils/GuidCreator.php");
 include_once ("NewTopicHandler.php");
 include_once ("SkeletonPage.php");
+include_once ("ForumConfig.php");
 
 class NewTopicSubmitPage extends SkeletonPage {
 	
@@ -21,8 +22,17 @@ class NewTopicSubmitPage extends SkeletonPage {
 		));
 		if ($response["status"] == "ok") {
 			$html = $response["html"];
+			
+			ForumConfig::newTopicListener(array(
+				"task_type" => $this->taskType,
+				"main_task_id" => $this->mainTaskId,
+				"task_id" => $this->taskId,
+				"topic_id" => $response["topic_id"]
+			));			
+			
 			return "$html<br>New topic has been added";
 		}
+				
 	}
 	
 	public function getAddToHead() {

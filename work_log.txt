@@ -198,3 +198,5 @@ RenderNewTopicEvent works!
 All renderEvents complete. Next create addEvent
 
 Solved TaskNewsPage bugs. First changed $this->taskType to "subtask". Still error at top of page, changed 00000001 to 10000002 for first new_subtask event (there were two) in task_news.txt.
+
+Solved new_topic bug, the call to ForumConfig was made after the return statement
