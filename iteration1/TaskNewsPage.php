@@ -15,6 +15,7 @@ class TaskNewsPage extends SkeletonPage {
 		$taskNewsFilePath = TaskopediaData::getTaskNewsFilePath($this->mainTaskId, $taskId);
 		
 		$eventsArr = TaskNewsData::getEvents($taskNewsFilePath);
+		$eventsArr = array_reverse($eventsArr);
 		
 		for ($i=0; $i<count($eventsArr); $i++) {
 			$evArr = $eventsArr[$i];
@@ -63,7 +64,7 @@ class TaskNewsPage extends SkeletonPage {
 	}
 	
 	public function renderNewSubtaskEvent($evArr) {
-		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $evArr["subtask_id"]);
+		$taskId = TaskopediaData::getTaskPageId("subtask", $this->mainTaskId, $evArr["subtask_id"]);
 		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
 		
 		return "New subtask with the title '" . $taskArr["title"] . "' was created by user " . $evArr["user"];

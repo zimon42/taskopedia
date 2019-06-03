@@ -5,6 +5,7 @@
 include_once("SkeletonPage.php");
 include_once("TaskopediaData.php");
 include_once("utils/GuidCreator.php");
+include_once("TaskNewsData.php");
 
 class CreateTaskSubmit extends SkeletonPage {
 	
@@ -33,6 +34,13 @@ class CreateTaskSubmit extends SkeletonPage {
 		$parentTaskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $parentTaskId);
 		array_push($parentTaskArr["subtasks"], $newTaskId);
 		TaskopediaData::setTaskPageData($this->mainTaskId, $parentTaskId, $parentTaskArr);
+		
+		// Add task news event
+		$evArr = array(
+			"type" => "new_subtask",
+			"subtask_id" => $newTaskId
+		);
+		TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, $evArr);
 	}
 	
 }

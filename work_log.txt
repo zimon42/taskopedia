@@ -196,3 +196,5 @@ RenderNewSubtaskEvent works. Next create RenderNewTopicEvent
 RenderNewTopicEvent works!
 
 All renderEvents complete. Next create addEvent
+
+Solved TaskNewsPage bugs. First changed $this->taskType to "subtask". Still error at top of page, changed 00000001 to 10000002 for first new_subtask event (there were two) in task_news.txt.
