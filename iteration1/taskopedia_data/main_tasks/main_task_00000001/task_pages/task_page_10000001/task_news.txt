@@ -70,5 +70,17 @@
         "event_id": "76ddcc8f",
         "user": "Simon",
         "date_time": "2019-06-03 21:35:08"
+    },
+    {
+        "type": "updated_result",
+        "event_id": "c50a8c34",
+        "user": "Simon",
+        "date_time": "2019-06-04 15:05:41"
+    },
+    {
+        "type": "changed_title",
+        "event_id": "0b50d95c",
+        "user": "Simon",
+        "date_time": "2019-06-04 15:21:55"
     }
 ]

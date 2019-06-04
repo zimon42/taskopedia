@@ -13,3 +13,7 @@ When logging in or out, maintain the page you were at
 Person can circumvent the resouce lock by browsing directly to a page. Check that person arrived at the page from clicking the edit button
 
 Move task here button remains after user pressed Move this task. However the submit page handles that.
+
+"This task was moved" news event
+
+Not post a news event every result save

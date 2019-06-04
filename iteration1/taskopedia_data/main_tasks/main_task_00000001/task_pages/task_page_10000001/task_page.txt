@@ -1,9 +1,9 @@
 {
-    "title": "Finding treatments for DIPG cancer",
+    "title": "Finding treatments for DIPG cancer..",
     "description": "DIPG stands for Diffuse intrinsic pontine glioma and is a type of brain cancer that effects children. There is currently no cure. We will change that. Together we will find treatments for DIPG!",
     "more_info": "",
     "status": "work in progress",
-    "result": "Hello world",
+    "result": "Hello world wee",
     "team_members": [
         "Simon",
         "John",
