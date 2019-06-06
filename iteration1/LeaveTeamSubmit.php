@@ -2,6 +2,7 @@
 
 include_once("SkeletonPage.php");
 include_once("login_module/LoginHandler.php");
+include_once("TaskNewsData.php");
 
 class LeaveTeamSubmit extends SkeletonPage {
 	
@@ -28,6 +29,9 @@ class LeaveTeamSubmit extends SkeletonPage {
 		$taskArr["team_members"] = $newTeamMemberArr;
 				
 		TaskopediaData::setTaskPageData($this->mainTaskId, $taskId, $taskArr);	
+	
+		// Register news event
+		TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, array("type" => "user_left"));	
 	
 		return "You have successfully left the team";
 	

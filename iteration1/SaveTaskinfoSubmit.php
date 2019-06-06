@@ -18,6 +18,10 @@ class SaveTaskinfoSubmit extends SkeletonPage {
 		// So we can check if title has changed for news data event, see below
 		$oldTitle = $taskArr["title"];
 		$newTitle = ParamsHandler::getParamValue($resState, "title");
+
+		// So we can check if status has changed, like for the reason above
+		$oldStatus = $taskArr["status"];
+		$newStatus = ParamsHandler::getParamValue($resState, "status");
 		
 		$taskArr["title"] = ParamsHandler::getParamValue($resState, "title");
 		$taskArr["description"] = ParamsHandler::getParamValue($resState, "desc");
@@ -29,6 +33,11 @@ class SaveTaskinfoSubmit extends SkeletonPage {
 		// Possible title change news data event
 		if ($oldTitle != $newTitle) {
 			TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, array("type" => "changed_title"));			
+		}
+
+		// and the same for task status
+		if ($oldStatus != $newStatus) {
+			TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, array("type" => "changed_status"));			
 		}
 		
 		return $resState;

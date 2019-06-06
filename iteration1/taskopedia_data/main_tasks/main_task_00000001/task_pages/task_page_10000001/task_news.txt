@@ -82,5 +82,23 @@
         "event_id": "0b50d95c",
         "user": "Simon",
         "date_time": "2019-06-04 15:21:55"
+    },
+    {
+        "type": "changed_status",
+        "event_id": "dd878d55",
+        "user": "Simon",
+        "date_time": "2019-06-06 15:45:06"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "daa869e1",
+        "user": "Simon",
+        "date_time": "2019-06-06 15:56:49"
+    },
+    {
+        "type": "user_left",
+        "event_id": "891addb4",
+        "user": "Simon",
+        "date_time": "2019-06-06 16:07:33"
     }
 ]

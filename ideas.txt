@@ -1,0 +1,1 @@
+Put green tics next to subtasks that have been solved

@@ -2,6 +2,7 @@
 
 include_once("SkeletonPage.php");
 include_once("login_module/LoginHandler.php");
+include_once("TaskNewsData.php");
 
 class JoinTeamSubmit extends SkeletonPage {
 	
@@ -21,7 +22,10 @@ class JoinTeamSubmit extends SkeletonPage {
 		array_push($teamMemberArr, $userName);
 		
 		TaskopediaData::setTaskPageData($this->mainTaskId, $taskId, $taskArr);	
-	
+
+		// Register news event
+		TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, array("type" => "user_joined"));
+		
 		return "You have successfully joined the team";
 	
 	}

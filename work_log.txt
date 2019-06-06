@@ -202,3 +202,5 @@ Solved TaskNewsPage bugs. First changed $this->taskType to "subtask". Still erro
 Solved new_topic bug, the call to ForumConfig was made after the return statement
 
 Fixed updated_result and changed_title news add events
+
+Fixed some news events, next fix moved away task event
