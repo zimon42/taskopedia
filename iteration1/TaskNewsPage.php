@@ -29,7 +29,10 @@ class TaskNewsPage extends SkeletonPage {
 	public function renderEvent($evArr) {
 		$html = "";
 		$html .= "<b>" . $evArr["date_time"] . "</b>:<br> ";
-		if ($evArr["type"] == "new_subtask") {
+		if ($evArr["type"] == "created_this_task") {
+			$html .= $this->renderCreatedThisTaskEvent($evArr);
+		} 		
+		elseif ($evArr["type"] == "new_subtask") {
 			$html .= $this->renderNewSubtaskEvent($evArr);
 		} 
 		elseif ($evArr["type"] == "new_forum_topic") {
@@ -62,6 +65,13 @@ class TaskNewsPage extends SkeletonPage {
 		$html .= "<br><br>";
 		return $html;
 	}
+
+	public function renderCreatedThisTaskEvent($evArr) {
+		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
+		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
+		
+		return "This task with the title '" . $taskArr["title"] . "' was created by user " . $evArr["user"];
+	}
 	
 	public function renderNewSubtaskEvent($evArr) {
 		$taskId = TaskopediaData::getTaskPageId("subtask", $this->mainTaskId, $evArr["subtask_id"]);
@@ -86,9 +96,9 @@ class TaskNewsPage extends SkeletonPage {
 		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
 		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
 		
-		return "The task title was changed to '" . $taskArr["title"] . "' by user " . $evArr["user"];
+		return "The title of this task was changed to '" . $taskArr["title"] . "' by user " . $evArr["user"];
 	}
-
+	
 	public function renderChangedStatusEvent($evArr) {
 		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
 		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);

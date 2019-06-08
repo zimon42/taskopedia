@@ -204,3 +204,5 @@ Solved new_topic bug, the call to ForumConfig was made after the return statemen
 Fixed updated_result and changed_title news add events
 
 Fixed some news events, next fix moved away task event
+
+Created this task news event works

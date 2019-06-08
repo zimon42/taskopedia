@@ -3,3 +3,5 @@ When logging in, and user name does not exist, gives php error: userName does no
 EditResultSubmit is empty
 
 New topic appears last in topic list, but should appear at the top
+
+Rendered news events retrieve for example the title field of the current task, and not what the title was when the event was created

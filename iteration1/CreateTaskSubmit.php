@@ -35,7 +35,16 @@ class CreateTaskSubmit extends SkeletonPage {
 		array_push($parentTaskArr["subtasks"], $newTaskId);
 		TaskopediaData::setTaskPageData($this->mainTaskId, $parentTaskId, $parentTaskArr);
 		
-		// Add task news event
+		// Create task news file
+		TaskopediaData::createTaskNewsFile($this->mainTaskId, $newTaskId);
+		
+		// Add "created this task" news event
+		$evArr = array(
+			"type" => "created_this_task",
+		);
+		TaskNewsData::addEvent3("subtask", $this->mainTaskId, $newTaskId, $evArr);
+		
+		// Add "new subtask" news event
 		$evArr = array(
 			"type" => "new_subtask",
 			"subtask_id" => $newTaskId

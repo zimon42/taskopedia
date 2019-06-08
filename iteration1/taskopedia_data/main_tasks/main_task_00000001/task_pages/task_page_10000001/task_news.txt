@@ -100,5 +100,26 @@
         "event_id": "891addb4",
         "user": "Simon",
         "date_time": "2019-06-06 16:07:33"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "94b88488",
+        "event_id": "ea3e5b1c",
+        "user": "Simon",
+        "date_time": "2019-06-08 14:26:37"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "1449ec29",
+        "event_id": "f0b5067d",
+        "user": "Simon",
+        "date_time": "2019-06-08 14:40:09"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "4a4c72b3",
+        "event_id": "35c04547",
+        "user": "Simon",
+        "date_time": "2019-06-08 18:53:41"
     }
 ]

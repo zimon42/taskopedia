@@ -65,6 +65,11 @@ class TaskopediaData {
 		return "taskopedia_data/main_tasks/main_task_{$main_task_id}/task_pages/task_page_{$task_page_id}/task_news.txt";
 	}	
 	
+	public static function createTaskNewsFile($main_task_id, $task_page_id) {
+		$path = self::getTaskNewsFilePath($main_task_id, $task_page_id);
+		JsonFileHandler::writePhpArray($path, array());		
+	}
+	
 }
 
 ?>
