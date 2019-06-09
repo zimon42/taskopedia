@@ -30,14 +30,24 @@ class SaveTaskinfoSubmit extends SkeletonPage {
 		
 		TaskopediaData::setTaskPageData($this->mainTaskId, $taskId, $taskArr);
 
-		// Possible title change news data event
+		// Possible title changed title news data event
+		$evArr = array(
+			"type" => "changed_title",
+			"old_title" => $oldTitle,
+			"new_title" => $newTitle
+		);
 		if ($oldTitle != $newTitle) {
-			TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, array("type" => "changed_title"));			
+			TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, $evArr);			
 		}
 
 		// and the same for task status
+		$evArr = array(
+			"type" => "changed_status",
+			"old_status" => $oldStatus,
+			"new_status" => $newStatus
+		);		
 		if ($oldStatus != $newStatus) {
-			TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, array("type" => "changed_status"));			
+			TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, $evArr);			
 		}
 		
 		return $resState;

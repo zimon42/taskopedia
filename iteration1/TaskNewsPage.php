@@ -7,6 +7,7 @@ include_once("forum_module/ForumData.php");
 
 class TaskNewsPage extends SkeletonPage {
 	
+	// Render events that are in this task's news events file
 	public function getContent() {
 
 		$html = "";
@@ -70,14 +71,14 @@ class TaskNewsPage extends SkeletonPage {
 		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
 		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
 		
-		return "This task with the title '" . $taskArr["title"] . "' was created by user " . $evArr["user"];
+		return "This task was created with the title '" . $evArr["title"] . "' by user " . $evArr["user"];
 	}
 	
 	public function renderNewSubtaskEvent($evArr) {
 		$taskId = TaskopediaData::getTaskPageId("subtask", $this->mainTaskId, $evArr["subtask_id"]);
 		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
 		
-		return "New subtask with the title '" . $taskArr["title"] . "' was created by user " . $evArr["user"];
+		return "New subtask with the title '" . $evArr["title"] . "' was created by user " . $evArr["user"];
 	}
 	
 	public function renderNewForumTopicEvent($evArr) {
@@ -96,14 +97,14 @@ class TaskNewsPage extends SkeletonPage {
 		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
 		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
 		
-		return "The title of this task was changed to '" . $taskArr["title"] . "' by user " . $evArr["user"];
+		return "The title of this task was changed from '" . $evArr["old_title"] . "' to '" . $evArr["new_title"]. "' by user " . $evArr["user"];
 	}
 	
 	public function renderChangedStatusEvent($evArr) {
 		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
 		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
 		
-		return "The task status was changed to '" . $taskArr["status"] . "' by user " . $evArr["user"];
+		return "The task status was changed from '" . $evArr["old_status"] . "' to '" . $evArr["new_status"] . "' by user " . $evArr["user"];
 	}
 
 	public function renderUserJoinedEvent($evArr) {

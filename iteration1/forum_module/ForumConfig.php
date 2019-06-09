@@ -19,7 +19,8 @@ class ForumConfig {
 	public static function newTopicListener($args) {
 		$evArr = array(
 			"type" => "new_forum_topic",
-			"topic_id" => $args["topic_id"]
+			"topic_id" => $args["topic_id"],
+			"title" => $args["title"]
 		);
 		TaskNewsData::addEvent3($args["task_type"], $args["main_task_id"], $args["task_id"], $evArr);
 	}

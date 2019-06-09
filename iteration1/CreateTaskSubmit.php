@@ -41,13 +41,15 @@ class CreateTaskSubmit extends SkeletonPage {
 		// Add "created this task" news event
 		$evArr = array(
 			"type" => "created_this_task",
+			"title" => $this->title
 		);
 		TaskNewsData::addEvent3("subtask", $this->mainTaskId, $newTaskId, $evArr);
 		
 		// Add "new subtask" news event
 		$evArr = array(
 			"type" => "new_subtask",
-			"subtask_id" => $newTaskId
+			"subtask_id" => $newTaskId,
+			"title" => $this->title
 		);
 		TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, $evArr);
 	}

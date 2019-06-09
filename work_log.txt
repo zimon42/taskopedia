@@ -206,3 +206,7 @@ Fixed updated_result and changed_title news add events
 Fixed some news events, next fix moved away task event
 
 Created this task news event works
+
+Next fix old title and new title for changed title news event
+
+Next fix the three move task news events

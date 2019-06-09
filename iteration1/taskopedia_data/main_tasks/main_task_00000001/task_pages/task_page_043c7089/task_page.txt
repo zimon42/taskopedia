@@ -1,0 +1,10 @@
+{
+    "title": "Bee",
+    "description": "",
+    "more_info": "",
+    "status": "Work in progress",
+    "result": "",
+    "team_members": [],
+    "subtasks": [],
+    "worklogs": []
+}

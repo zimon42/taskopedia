@@ -27,7 +27,8 @@ class NewTopicSubmitPage extends SkeletonPage {
 				"task_type" => $this->taskType,
 				"main_task_id" => $this->mainTaskId,
 				"task_id" => $this->taskId,
-				"topic_id" => $response["topic_id"]
+				"topic_id" => $response["topic_id"],
+				"title" => $this->title
 			));			
 			
 			return "$html<br>New topic has been added";
