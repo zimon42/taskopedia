@@ -70,6 +70,25 @@ class TaskopediaData {
 		JsonFileHandler::writePhpArray($path, array());		
 	}
 	
+	// This is the reverse of the function getTaskPageId above
+	public static function getTaskPageParams($main_task_id, $task_id) {
+		$root_task_id = TaskopediaData::getTaskPageId("main_task", $main_task_id, "");
+		if ($task_id == $root_task_id) {
+			return array(
+				"task_type" => "main_task",
+				"main_task_id" => $main_task_id,
+				"task_id" => "not_set"
+			);
+		}
+		else {
+			return array(
+				"task_type" => "subtask",
+				"main_task_id" => $main_task_id,
+				"task_id" => $task_id
+			);
+		}
+	}
+	
 }
 
 ?>

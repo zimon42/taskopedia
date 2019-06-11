@@ -5,5 +5,13 @@
         "event_id": "22f53b61",
         "user": "Simon",
         "date_time": "2019-06-09 14:49:13"
+    },
+    {
+        "type": "moved_this_task",
+        "old_parent_title": "old title",
+        "new_parent_title": "new_title",
+        "event_id": "99c86884",
+        "user": "Simon",
+        "date_time": "2019-06-11 19:58:13"
     }
 ]

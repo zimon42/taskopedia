@@ -1,14 +1,10 @@
 {
-    "title": "Bee",
+    "title": "test5",
     "description": "",
     "more_info": "",
     "status": "Work in progress",
     "result": "",
     "team_members": [],
-    "subtasks": [
-        "dce943b4",
-        "4a4c72b3",
-        "1449ec29"
-    ],
+    "subtasks": [],
     "worklogs": []
 }

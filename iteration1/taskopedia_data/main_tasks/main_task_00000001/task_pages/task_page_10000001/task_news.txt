@@ -38,5 +38,69 @@
         "event_id": "d6e8b57d",
         "user": "Simon",
         "date_time": "2019-06-09 16:39:03"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "84753f82",
+        "title": "test1",
+        "event_id": "0e973d1b",
+        "user": "Simon",
+        "date_time": "2019-06-11 20:30:51"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "be44a5f1",
+        "title": "test2",
+        "event_id": "927130d9",
+        "user": "Simon",
+        "date_time": "2019-06-11 20:31:06"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "897e6709",
+        "title": "test3",
+        "event_id": "935b3980",
+        "user": "Simon",
+        "date_time": "2019-06-11 20:35:58"
+    },
+    {
+        "type": "moved_subtask_away",
+        "subtask_title": "test3",
+        "new_parent_title": "test1",
+        "event_id": "8353c0d9",
+        "user": "Simon",
+        "date_time": "2019-06-11 20:36:19"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "9581fc11",
+        "title": "test4",
+        "event_id": "a19bedcf",
+        "user": "Simon",
+        "date_time": "2019-06-11 20:45:11"
+    },
+    {
+        "type": "moved_subtask_away",
+        "subtask_title": "test4",
+        "new_parent_title": "test1",
+        "event_id": "a65a60ab",
+        "user": "Simon",
+        "date_time": "2019-06-11 20:45:41"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "e9bbe8cb",
+        "title": "test5",
+        "event_id": "e52bd01a",
+        "user": "Simon",
+        "date_time": "2019-06-11 20:53:54"
+    },
+    {
+        "type": "moved_subtask_away",
+        "subtask_title": "test5",
+        "new_parent_title": "test1",
+        "event_id": "f45a53b0",
+        "user": "Simon",
+        "date_time": "2019-06-11 20:54:15"
     }
 ]

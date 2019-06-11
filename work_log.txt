@@ -210,3 +210,8 @@ Created this task news event works
 Next fix old title and new title for changed title news event
 
 Next fix the three move task news events
+
+"Moved this task" event works. Next give it more details
+Details work. Next make "moved subtask" events
+
+News event handling now complete

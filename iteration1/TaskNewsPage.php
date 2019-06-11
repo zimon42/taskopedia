@@ -54,10 +54,13 @@ class TaskNewsPage extends SkeletonPage {
 		elseif ($evArr["type"] == "user_left") {
 			$html .= $this->renderUserLeftEvent($evArr);
 		} 						
-		elseif ($evArr["type"] == "moved_task_away") {
+		elseif ($evArr["type"] == "moved_this_task") {
+			$html .= $this->renderMovedThisTaskEvent($evArr);
+		} 		
+		elseif ($evArr["type"] == "moved_subtask_away") {
 			$html .= $this->renderMovedTaskAwayEvent($evArr);
 		} 
-		elseif ($evArr["type"] == "moved_task_here") {
+		elseif ($evArr["type"] == "moved_subtask_here") {
 			$html .= $this->renderMovedTaskHereEvent($evArr);
 		} 
 		else {
@@ -115,18 +118,22 @@ class TaskNewsPage extends SkeletonPage {
 		return "User " . $evArr["user"] . " has left the task";
 	}
 
+	public function renderMovedThisTaskEvent($evArr) {
+		return "Moved this task from the old parent titled '" . $evArr["old_parent_title"] . "' to the new parent titled '" . $evArr["new_parent_title"] . "' by user " . $evArr["user"];
+	}
+	
 	public function renderMovedTaskAwayEvent($evArr) {
-		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $evArr["task_id"]);
-		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
+		// $taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $evArr["task_id"]);
+		// $taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
 		
-		return "The subtask with the title '" . $taskArr["title"] . "' was moved to another task by user " . $evArr["user"];
+		return "The subtask with the title '" . $evArr["subtask_title"] . "' was moved to the new parent titled '" . $evArr["new_parent_title"] . "' by user " . $evArr["user"];
 	}
 
 	public function renderMovedTaskHereEvent($evArr) {
-		$taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $evArr["task_id"]);
-		$taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
+		// $taskId = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $evArr["task_id"]);
+		// $taskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $taskId);
 		
-		return "The subtask with the title '" . $taskArr["title"] . "' was moved here by user " . $evArr["user"];
+		return "The subtask with the title '" . $evArr["subtask_title"] . "' was moved here from the old parent titled '" . $evArr["old_parent_title"] . "' by user " . $evArr["user"];
 	}
 	
 	public function renderUnknownEvent($evArr) {
