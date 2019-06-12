@@ -215,3 +215,7 @@ Next fix the three move task news events
 Details work. Next make "moved subtask" events
 
 News event handling now complete
+
+Create task forum file works
+
+Create task submit reply works

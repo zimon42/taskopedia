@@ -102,5 +102,13 @@
         "event_id": "f45a53b0",
         "user": "Simon",
         "date_time": "2019-06-11 20:54:15"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "069edf7a",
+        "title": "Gee",
+        "event_id": "222dfe32",
+        "user": "Simon",
+        "date_time": "2019-06-12 17:49:30"
     }
 ]

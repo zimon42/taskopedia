@@ -34,6 +34,9 @@ class CreateTaskSubmit extends SkeletonPage {
 		$parentTaskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $parentTaskId);
 		array_push($parentTaskArr["subtasks"], $newTaskId);
 		TaskopediaData::setTaskPageData($this->mainTaskId, $parentTaskId, $parentTaskArr);
+
+		// Create task forum file
+		TaskopediaData::createTaskForumFile($this->mainTaskId, $newTaskId);
 		
 		// Create task news file
 		TaskopediaData::createTaskNewsFile($this->mainTaskId, $newTaskId);
@@ -52,6 +55,11 @@ class CreateTaskSubmit extends SkeletonPage {
 			"title" => $this->title
 		);
 		TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, $evArr);
+		
+	}
+	
+	public function getContent() {
+		return "This task has been successfully created!";
 	}
 	
 }
