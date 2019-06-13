@@ -6,8 +6,11 @@ include_once("login_module/LoginRequestHandler.php");
 include_once("login_module/LoginHandler.php");
 include_once("TaskHandler.php");
 include_once("forum_module/ForumRequestHandler.php");
+include_once("mysql_lock_module/LockHandler.php");
 
 session_start();
+
+LockHandler::lock();
 
 LoginHandler::checkLoginCookie();
 
@@ -37,5 +40,7 @@ if ($page !== FALSE) {
 else {
 	echo "Error: page is false in index.php";
 }
+
+LockHandler::unlock();
 
 ?>

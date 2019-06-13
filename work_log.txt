@@ -219,3 +219,5 @@ News event handling now complete
 Create task forum file works
 
 Create task submit reply works
+
+Db handler and Mysql lock module working. Next make resource locker module use database handler
