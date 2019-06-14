@@ -1,6 +1,8 @@
 <?php
 
-include_once("connect_to_database.php");
+// include_once("connect_to_database.php");
+include_once("ResourceLockerConfig.php");
+include_once(ResourceLockerConfig::$connect_to_database_script_path);
 
 class ResourceLocker {
 	

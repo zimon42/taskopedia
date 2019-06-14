@@ -20,6 +20,7 @@ ResourceLocker.editButtonClickHandler = function (args) {
 		user_name: args.user_name
 	},
 	function (data, status) {
+		console.log("Data: "+data);
 		var arr = JSON.parse(data);
 		var resource_acquired = arr["resource_acquired"];
 		var user_name = arr["resource_user_name"];

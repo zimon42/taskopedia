@@ -221,3 +221,5 @@ Create task forum file works
 Create task submit reply works
 
 Db handler and Mysql lock module working. Next make resource locker module use database handler
+
+In Resource Locker module, redirected to connect_to_database script in mysql_db_handler folder 
