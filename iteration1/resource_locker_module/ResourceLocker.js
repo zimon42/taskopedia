@@ -14,7 +14,8 @@ ResourceLocker.start = function() {
 
 ResourceLocker.editButtonClickHandler = function (args) {
 	$.post(
-	"resource_locker_module/edit_button_click_handler.php",
+	// "resource_locker_module/edit_button_click_handler.php",
+	"index.php?page=edit_button_click_handler",
 	{
 		res_id: args.res_id,
 		user_name: args.user_name

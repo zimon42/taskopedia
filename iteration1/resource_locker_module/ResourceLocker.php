@@ -1,6 +1,5 @@
 <?php
 
-// include_once("connect_to_database.php");
 include_once("ResourceLockerConfig.php");
 include_once(ResourceLockerConfig::$connect_to_database_script_path);
 
@@ -27,7 +26,8 @@ class ResourceLocker {
 		global $db_conn;
 		$sql = "DELETE FROM resource_locks WHERE resource_id='".$resId."' ";
 		$sql .= "AND DATE_ADD(latest_update_time, INTERVAL ".self::$deleteLockAfterNumSecs." SECOND)<NOW()";
-		$db_conn->query($sql) || die("ResourceLocker::tryDeleteLock error: ".$db_conn->error());		
+		// $db_conn->query($sql) || die("ResourceLocker::tryDeleteLock error: ".$db_conn->error());		
+		$db_conn->query($sql) || die("ResourceLocker::tryDeleteLock error: ".mysqli_error($db_conn));		
 	}
 	
 	public static function getUserName($resId) {

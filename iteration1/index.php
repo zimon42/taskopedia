@@ -7,6 +7,8 @@ include_once("login_module/LoginHandler.php");
 include_once("TaskHandler.php");
 include_once("forum_module/ForumRequestHandler.php");
 include_once("mysql_lock_module/LockHandler.php");
+include_once("resource_locker_module/ResourceLockerRequestHandler.php");
+// include_once("resource_locker_module/ResourceLocker.php");
 
 session_start();
 
@@ -28,6 +30,10 @@ if ($page === FALSE) {
 
 if ($page === FALSE) {
 	$page = ForumRequestHandler::getPage($pageName);
+}
+
+if ($page === FALSE) {
+	$page = ResourceLockerRequestHandler::getPage($pageName);
 }
 
 if ($page === FALSE) {

@@ -223,3 +223,16 @@ Create task submit reply works
 Db handler and Mysql lock module working. Next make resource locker module use database handler
 
 In Resource Locker module, redirected to connect_to_database script in mysql_db_handler folder 
+
+ResourceLockerRequestHandler works. Just returns simple strings. Make EditButtonClickHandler return json
+
+Solved major bugs:
+1. Didnt reload ResourceLocker.js from cache. Was still calling edit_button_click_handler.php script and not index.php?page=edit_button_click_handler
+
+2. Had .php at the end in index.php?page=edit_button_click_handler.php
+
+3. Mysql error: 
+ResourceLocker::tryDeleteLock error: Table 'resource_locks' was not locked with LOCK TABLES
+To print error use mysqli_error($db_conn)
+
+Next: Fix this LOCK TABLES issue. Then call index.php?page= resource_lock pages
