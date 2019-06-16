@@ -110,5 +110,23 @@
         "event_id": "222dfe32",
         "user": "Simon",
         "date_time": "2019-06-12 17:49:30"
+    },
+    {
+        "type": "updated_result",
+        "event_id": "4a05551e",
+        "user": "Simon",
+        "date_time": "2019-06-16 17:26:02"
+    },
+    {
+        "type": "updated_result",
+        "event_id": "74cfb794",
+        "user": "Simon",
+        "date_time": "2019-06-16 17:28:33"
+    },
+    {
+        "type": "updated_result",
+        "event_id": "6126f4a3",
+        "user": "Simon",
+        "date_time": "2019-06-16 17:28:51"
     }
 ]

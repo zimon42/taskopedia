@@ -235,4 +235,12 @@ Solved major bugs:
 ResourceLocker::tryDeleteLock error: Table 'resource_locks' was not locked with LOCK TABLES
 To print error use mysqli_error($db_conn)
 
-Next: Fix this LOCK TABLES issue. Then call index.php?page= resource_lock pages
+Next: Fix this LOCK TABLES issue. Then call index.php?page= resource_lock pages. 
+
+LOCK TABLES works! Next call index.php?page= resource_lock pages. 
+
+Strange: Resource remanis locked even though update_resource_latest time is not working yet. Answer: EditButtonClickHandler locks the resource and it takes 10 secnods before tryDeleteLock works.
+
+UpdateResourceLatestTime now works! Next UnlockNotChangedResource
+
+ResourceLocker module transformation of scripts into index.php?page= is now complete

@@ -9,7 +9,7 @@ class LockHandler {
 	public static function lock() {
 		global $db_conn;
 		// mysqli_query($db_conn,"LOCK TABLES global_lock WRITE;");
-		mysqli_query($db_conn,"LOCK TABLES " . MysqlLockConfig::$lock_tables_string . " WRITE;");
+		mysqli_query($db_conn,"LOCK TABLES " . MysqlLockConfig::$lock_tables_string . ";");
 	}
 	
 	public static function unlock() {
@@ -47,4 +47,8 @@ contains is unimportant
 
 */
 
+// https://www.codexpedia.com/php/lock-a-mysql-table-in-php/
+
+// Multiple table locks:
+// https://dev.mysql.com/doc/refman/8.0/en/lock-tables.html
 ?>

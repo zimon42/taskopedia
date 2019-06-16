@@ -67,13 +67,15 @@ ResourceLocker.exit_resource = function(args) {
 }
 
 function update_resource_latest_time() {
-	console.log("update_resource_latest_time");
+	// console.log("update_resource_latest_time");
 	$.post(
-	"resource_locker_module/update_resource_latest_time.php",
+	// "resource_locker_module/update_resource_latest_time.php",
+	"index.php?page=update_resource_latest_time",
 	{
 		res_id: getResourceIdentifier()
 	},
 	function (data, status) {			
+		console.log("update resource latest time data: "+data);
 	}
 	);
 }
@@ -95,11 +97,13 @@ function update_resource_no_change() {
 function unlock_not_changed_resource() {
 	console.log("unlock not changed resource");
 	$.post(
-		"resource_locker_module/unlock_not_changed_resource.php",
+		// "resource_locker_module/unlock_not_changed_resource.php",
+		"index.php?page=unlock_not_changed_resource",
 		{
 			res_id: getResourceIdentifier()
 		},
-		function (data, status) {			
+		function (data, status) {
+			console.log("Data from unlock_not_changed_resource: "+data);
 			if (typeof should_exit_without_save !== 'undefined') {
 				alert("Due to inactivity this resource has been released and you will be exited");
 				location = "index.php";
