@@ -254,3 +254,8 @@ Problem: newSubtaskId and parentTaskId get set in getContent method. But we need
 $this->newSubtaskId = newSubtaskId and $this->parentTaskId = $parentTaskId
 
 CreateTaskSubmit buttons work! Next fix JoinTeamSubmit button
+
+JoinTeamSubmit button works!
+
+Forgot to set $this->taskId in LeaveTaskSubmit preHandle function. 
+LeaveTeamSubmit button works!

@@ -5,3 +5,9 @@ EditResultSubmit is empty
 New topic appears last in topic list, but should appear at the top
 
 Rendered news events retrieve for example the title field of the current task, and not what the title was when the event was created
+
+Join team already member of, creates duplicate names in list
+
+In LeaveTeamSubmit hadnt set $this->taskId. The program hung when clicking the button.
+
+Potential problem: $this->taskId is also set in setTaskParams. Collide?

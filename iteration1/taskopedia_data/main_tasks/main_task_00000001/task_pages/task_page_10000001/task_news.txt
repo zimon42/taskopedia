@@ -370,5 +370,113 @@
         "event_id": "f5738ede",
         "user": "Simon",
         "date_time": "2019-06-20 15:46:06"
+    },
+    {
+        "type": "user_left",
+        "event_id": "d1006863",
+        "user": "Simon",
+        "date_time": "2019-06-20 15:48:15"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "7bb8c190",
+        "user": "Simon",
+        "date_time": "2019-06-20 15:48:20"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "4de93b9c",
+        "user": "Simon",
+        "date_time": "2019-06-20 15:55:11"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "58b43b5c",
+        "user": "Simon",
+        "date_time": "2019-06-20 15:55:20"
+    },
+    {
+        "type": "user_left",
+        "event_id": "353ad295",
+        "user": "Simon",
+        "date_time": "2019-06-20 15:59:23"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "454d0bba",
+        "user": "Simon",
+        "date_time": "2019-06-20 15:59:30"
+    },
+    {
+        "type": "user_left",
+        "event_id": "521bee60",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:04:39"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "860d77e9",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:04:43"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "35bb7097",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:05:32"
+    },
+    {
+        "type": "user_left",
+        "event_id": "7678b1b2",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:08:04"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "fd1a68a8",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:12:15"
+    },
+    {
+        "type": "user_left",
+        "event_id": "c8ce4976",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:12:19"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "a2311fe8",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:14:28"
+    },
+    {
+        "type": "user_left",
+        "event_id": "571e97bb",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:14:32"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "4783240f",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:15:44"
+    },
+    {
+        "type": "user_left",
+        "event_id": "fa3598bf",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:15:48"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "84317b9a",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:19:37"
+    },
+    {
+        "type": "user_left",
+        "event_id": "14579a62",
+        "user": "Simon",
+        "date_time": "2019-06-20 16:19:42"
     }
 ]
