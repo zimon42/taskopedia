@@ -41,6 +41,7 @@ if ($page === FALSE) {
 }
 
 if ($page !== FALSE) {
+	$page->preHandle(); // <-- Read about this in the Page.php file
 	echo $page->getWhole();
 }
 else {

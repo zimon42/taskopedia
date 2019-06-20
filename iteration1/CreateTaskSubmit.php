@@ -6,14 +6,19 @@ include_once("SkeletonPage.php");
 include_once("TaskopediaData.php");
 include_once("utils/GuidCreator.php");
 include_once("TaskNewsData.php");
+include_once("TaskHandler.php");
 
 class CreateTaskSubmit extends SkeletonPage {
 	
 	public $title;
 	public $desc;
 	public $moreInfo;
+
+	// These are set in preHandle() and accessed in getAddToHead()
+	public $newTaskId;
+	public $parentTaskId;
 	
-	public function handle() {
+	public function preHandle() {
 		$newTaskId = GuidCreator::create();
 		TaskopediaData::makeTaskPageDir($this->mainTaskId, $newTaskId);
 		
@@ -55,11 +60,42 @@ class CreateTaskSubmit extends SkeletonPage {
 			"title" => $this->title
 		);
 		TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, $evArr);
+
+		// Set these class variables so they can be accessed in getAddToHead
+		$this->newTaskId = $newTaskId;
+		$this->parentTaskId = $parentTaskId;
 		
 	}
 	
 	public function getContent() {
-		return "This task has been successfully created!";
+		
+		// Output reply
+		$html = "";
+		$html .= <<<HTML
+This task has been successfully created!<br><br>
+<button id=go_to_new_task_button>Go to newly created task</button>
+&nbsp;<button id=go_back_to_parent_task_button>Go back to parent task</button>		
+HTML;
+		return $html;
+	}
+	
+	public function getAddToHead() {
+		$newTaskLink = TaskHandler::getLinkToTaskPage($this->mainTaskId, $this->newTaskId);
+		$parentTaskLink = TaskHandler::getLinkToTaskPage($this->mainTaskId, $this->parentTaskId);		
+		$html = "";
+		$html .= <<<HTML
+<script>		
+$(document).ready(function() {
+	$("#go_to_new_task_button").click(function() {
+		location = "$newTaskLink";
+	});
+	$("#go_back_to_parent_task_button").click(function() {
+		location = "$parentTaskLink";
+	});
+});
+</script>
+HTML;
+		return $html;
 	}
 	
 }

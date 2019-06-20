@@ -54,7 +54,7 @@ class RequestHandler {
 			$page->title = $_GET["title"];
 			$page->desc = $_GET["desc"];
 			$page->moreInfo = $_GET["more_info"];
-			$page->handle();
+			// $page->handle();
 			return $page;
 		}
 		if ($pageName == "edit_result_page") {

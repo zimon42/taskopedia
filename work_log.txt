@@ -244,3 +244,13 @@ Strange: Resource remanis locked even though update_resource_latest time is not 
 UpdateResourceLatestTime now works! Next UnlockNotChangedResource
 
 ResourceLocker module transformation of scripts into index.php?page= is now complete
+
+Join team info done. Working on create task submit buttons
+
+Problem: newSubtaskId and parentTaskId get set in getContent method. But we need access to them in getAddToHead method. It would work if getAddToHead is called after getContent but this is not good programming to rely on this. Idea: Create a preHandle function in SkeletonPage. Calculating parentTaskId needs access to $this->taskType and so on. So setTaskParams must be called before preHandle. Steps:
+1. Add preHandle to Page.php
+2. call $page->preHandler in index.php
+3. Move logic to preHandle function. At the end do:
+$this->newSubtaskId = newSubtaskId and $this->parentTaskId = $parentTaskId
+
+CreateTaskSubmit buttons work! Next fix JoinTeamSubmit button

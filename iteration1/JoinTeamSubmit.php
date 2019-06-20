@@ -25,8 +25,13 @@ class JoinTeamSubmit extends SkeletonPage {
 
 		// Register news event
 		TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, array("type" => "user_joined"));
-		
-		return "You have successfully joined the team";
+
+		$html = "";
+		$html .= <<<HTML
+You have successfully joined the team<br><br>
+<b>Note</b>: you do not have to be a member of a task team to work with the task page. However being member of a task team lets other users see who are currently working on the task page. Also, if you are a member of a task team, those tasks will show up when you click the "Your page" link at the top of the task page.
+HTML;
+		return $html;
 	
 	}
 	
