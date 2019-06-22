@@ -19,3 +19,7 @@ Move task here button remains after user pressed Move this task. However the sub
 Not post a news event every result save
 
 mysql lock doesnt cover locking the scripts in resource_locker module. In iteration2 make the scripts go through index.php
+
+What if you move a task that has been deleted
+
+Handle if user goes back and reloads the submit page

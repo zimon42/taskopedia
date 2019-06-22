@@ -5,5 +5,21 @@
         "event_id": "6d34f94a",
         "user": "Simon",
         "date_time": "2019-06-20 14:45:20"
+    },
+    {
+        "type": "moved_subtask_here",
+        "subtask_title": "Mee2",
+        "old_parent_title": "Finding treatments for DIPG cancer..2",
+        "event_id": "003f6572",
+        "user": "Simon",
+        "date_time": "2019-06-22 18:53:42"
+    },
+    {
+        "type": "moved_subtask_away",
+        "subtask_title": "Mee2",
+        "new_parent_title": "kee",
+        "event_id": "35657ef5",
+        "user": "Simon",
+        "date_time": "2019-06-22 19:17:02"
     }
 ]

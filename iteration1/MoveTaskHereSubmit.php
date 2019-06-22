@@ -7,6 +7,13 @@ include_once("utils/ArrayHandler.php");
 include_once("TaskNewsData.php");
 
 class MoveTaskHereSubmit extends SkeletonPage {
+
+	public $moved_task_main_id;
+	public $moved_task_id;
+	public $old_parent_main_id;
+	public $old_parent_id;
+	public $new_parent_main_id;
+	public $new_parent_id;
 	
 	public function getContent() {
 		if (isset($_SESSION["task_clipboard"])) {
@@ -16,8 +23,8 @@ class MoveTaskHereSubmit extends SkeletonPage {
 			$move_to_task_task_id = TaskopediaData::getTaskPageId($this->taskType, $this->mainTaskId, $this->taskId);
 			$result = MoveTaskHandler::checkMove($move_this_task_main_task_id, $move_this_task_task_id, $move_to_task_main_task_id, $move_to_task_task_id);
 			if ($result["status"] == "ok") {
-				return self::doMove($move_this_task_main_task_id, $move_this_task_task_id, $move_to_task_main_task_id, $move_to_task_task_id);
-				return "Task was successfully moved";
+				$this->doMove($move_this_task_main_task_id, $move_this_task_task_id, $move_to_task_main_task_id, $move_to_task_task_id);
+				return $this->getContentSuccess();
 			}
 			else {
 				return "An unexpected error occurred: " . $result["message"];
@@ -26,7 +33,50 @@ class MoveTaskHereSubmit extends SkeletonPage {
 		return "An unexpected error occurred: Cannot perform task move because task clipboard is empty";		
 	}
 	
-	public static function doMove($main_task_id, $task_id, $to_main_task_id, $to_task_id) {
+	public function getContentSuccess() {
+		$html = "";
+		$html .= "moved_task_main_id: " . $this->moved_task_main_id . "<br>";
+		$html .= "moved_task_id: " . $this->moved_task_id . "<br>";
+		$html .= "old_parent_main_id: " . $this->old_parent_main_id . "<br>";
+		$html .= "old_parent_id: " . $this->old_parent_id . "<br>";		
+		$html .= "new_parent_main_id: " . $this->new_parent_main_id . "<br>";
+		$html .= "new_parent_id: " . $this->new_parent_id . "<br>";		
+		
+		// Reset $html, discard previous debug messages
+		$html = "";
+		$html .= "Task was successfully moved!<br><br>";
+		$html .= <<<HTML
+<button id=go_to_moved_task_button>Go to moved task</button>&nbsp;
+<button id=go_to_old_parent_button>Go to old parent</button>&nbsp;
+<button id=go_to_new_parent_button>Go to new parent</button>		
+HTML;
+		return $html;
+	}
+	
+	public function getAddToHead() {
+		$movedTaskLink = TaskHandler::getLinkToTaskPage($this->moved_task_main_id, $this->moved_task_id);
+		$oldParentLink = TaskHandler::getLinkToTaskPage($this->old_parent_main_id, $this->old_parent_id);		
+		$newParentLink = TaskHandler::getLinkToTaskPage($this->new_parent_main_id, $this->new_parent_id);				
+		$html = "";
+		$html .= <<<HTML
+<script>		
+$(document).ready(function() {
+	$("#go_to_moved_task_button").click(function() {
+		location = "$movedTaskLink";
+	});
+	$("#go_to_old_parent_button").click(function() {
+		location = "$oldParentLink";
+	});
+	$("#go_to_new_parent_button").click(function() {
+		location = "$newParentLink";
+	});	
+});
+</script>
+HTML;
+		return $html;
+	}	
+	
+	public function doMove($main_task_id, $task_id, $to_main_task_id, $to_task_id) {
 		$html = "";
 		$html .= "main_task_id: " . $main_task_id . "<br>";
 		$html .= "task_id: " . $task_id . "<br>";
@@ -101,6 +151,14 @@ class MoveTaskHereSubmit extends SkeletonPage {
 		
 		
 		*/
+
+		// Set these so they can accessed in getContentSuccess()
+		$this->moved_task_main_id = $main_task_id;
+		$this->moved_task_id = $task_id;
+		$this->old_parent_main_id = $main_task_id;
+		$this->old_parent_id = $parentTaskId;
+		$this->new_parent_main_id = $to_main_task_id;
+		$this->new_parent_id = $to_task_id;
 		
 		return $html;
 	}

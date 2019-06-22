@@ -478,5 +478,13 @@
         "event_id": "14579a62",
         "user": "Simon",
         "date_time": "2019-06-20 16:19:42"
+    },
+    {
+        "type": "moved_subtask_away",
+        "subtask_title": "Mee2",
+        "new_parent_title": "Mee",
+        "event_id": "1e9a429a",
+        "user": "Simon",
+        "date_time": "2019-06-22 18:53:42"
     }
 ]
