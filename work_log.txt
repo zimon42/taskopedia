@@ -261,3 +261,7 @@ Forgot to set $this->taskId in LeaveTaskSubmit preHandle function.
 LeaveTeamSubmit button works!
 
 MovedTaskHereSubmit buttons work! Next fix more buttons
+
+New topic "go to topic" button created
+
+New reply "go to topic" button created

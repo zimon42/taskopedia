@@ -101,5 +101,13 @@
         "event_id": "9ed1e68f",
         "user": "Simon",
         "date_time": "2019-06-22 20:10:59"
+    },
+    {
+        "type": "moved_this_task",
+        "old_parent_title": "kee",
+        "new_parent_title": "kee",
+        "event_id": "4d65881b",
+        "user": "Simon",
+        "date_time": "2019-06-24 14:47:45"
     }
 ]

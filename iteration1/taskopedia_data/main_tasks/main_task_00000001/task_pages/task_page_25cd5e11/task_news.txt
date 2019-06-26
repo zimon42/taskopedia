@@ -173,5 +173,21 @@
         "event_id": "d5893f61",
         "user": "Simon",
         "date_time": "2019-06-22 20:10:59"
+    },
+    {
+        "type": "moved_subtask_away",
+        "subtask_title": "Mee2",
+        "new_parent_title": "kee",
+        "event_id": "86303bc1",
+        "user": "Simon",
+        "date_time": "2019-06-24 14:47:45"
+    },
+    {
+        "type": "moved_subtask_here",
+        "subtask_title": "Mee2",
+        "old_parent_title": "kee",
+        "event_id": "4107ccd0",
+        "user": "Simon",
+        "date_time": "2019-06-24 14:47:45"
     }
 ]
