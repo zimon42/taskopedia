@@ -283,16 +283,16 @@
     },
     {
         "topic_id": "6302c2a9",
-        "title": "Lee",
+        "title": "Lee2",
         "user": "Simon",
         "content": "",
         "date": "2019-06-26 19:23:24",
-        "views": 3,
+        "views": 6,
         "replies": [
             {
                 "reply_id": "3d799b04",
                 "user": "Simon",
-                "content": "Gee",
+                "content": "Gee2",
                 "date": "2019-06-26 19:24:52"
             },
             {

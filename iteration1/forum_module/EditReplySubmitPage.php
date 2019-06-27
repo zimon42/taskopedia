@@ -2,6 +2,7 @@
 
 include_once("ForumData.php");
 include_once("SkeletonPage.php");
+include_once("ForumConfig.php");
 
 class EditReplySubmitPage extends SkeletonPage {
 	
@@ -10,7 +11,7 @@ class EditReplySubmitPage extends SkeletonPage {
 	public $replyId;
 	public $content;
 	
-	public function getContent() {
+	public function preHandle() {
 		$html = "";
 		$html .= "Forum file: " . $this->forumFile . "<br>";
 		$html .= "Topic id: " . $this->topicId . "<br>";
@@ -25,12 +26,34 @@ class EditReplySubmitPage extends SkeletonPage {
 
 		ForumData::setTopics($this->forumFile, $topics_arr);		
 		
-		$html .= "Your changes have been submittted<br>";
+		// $html .= "Your changes have been submittted<br>";
+		// return $html;
+	}
+	
+	public function getContent() {
+		$html = "";
+		$html .= <<<HTML
+Your reply was successfully edited!<br><br>
+To view your newly edited reply, click the button below, and then scroll down the page to your reply<br><br>
+<button id=go_to_topic_button>Go to topic</button>		
+HTML;
 		return $html;
 	}
 	
 	public function getAddToHead() {
-		return "";
+		$path = ForumConfig::$mainPagePath;
+		$extraParams = ForumConfig::getExtraParams($this);		
+		$html = "";
+		$html .= <<<HTML
+<script>
+$(document).ready(function() {
+	$("#go_to_topic_button").click(function() {
+		location = "$path?page=forum_view_topic&forum_file={$this->forumFile}&topic_id={$this->topicId}&$extraParams";
+	});
+});
+</script>		
+HTML;
+		return $html;
 	}
 	
 }

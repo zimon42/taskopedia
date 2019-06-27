@@ -23,6 +23,8 @@ Working on edit_topic.php
 
 Edit topic submit works!
 
+Edit reply submit works!
+
 Edit reply works!
 Working on forum_module v3
 
@@ -265,3 +267,5 @@ MovedTaskHereSubmit buttons work! Next fix more buttons
 New topic "go to topic" button created
 
 New reply "go to topic" button created
+
+Edit topic "go to topic" button created

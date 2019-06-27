@@ -2,6 +2,7 @@
 
 include_once("ForumData.php");
 include_once("SkeletonPage.php");
+include_once("ForumConfig.php");
 
 class EditTopicSubmitPage extends SkeletonPage {
 	
@@ -11,7 +12,7 @@ class EditTopicSubmitPage extends SkeletonPage {
 	public $content;
 	public $sticky;
 	
-	public function getContent() {
+	public function preHandle() {
 		
 		$html = "";
 		$html .= "Forum file: " . $this->forumFile . "<br>";
@@ -29,12 +30,35 @@ class EditTopicSubmitPage extends SkeletonPage {
 		
 		ForumData::setTopics($this->forumFile, $topics_arr);		
 		
-		$html .= "Edited topic";
+		// $html .= "Edited topic";
+		// return $html;
+	}
+	
+	public function getContent() {
+		$html = "";
+		$html .= <<<HTML
+Your topic was successfully edited!<br><br>
+<button id=go_to_edited_topic_button>Go to newly edited topic</button>		
+HTML;
 		return $html;
 	}
+	
 	public function getAddToHead() {
-		return "";
+		$path = ForumConfig::$mainPagePath;
+		$extraParams = ForumConfig::getExtraParams($this);		
+		$html = "";
+		$html .= <<<HTML
+<script>
+$(document).ready(function() {
+	$("#go_to_edited_topic_button").click(function() {
+		location = "$path?page=forum_view_topic&forum_file={$this->forumFile}&topic_id={$this->topicId}&$extraParams";
+	});
+});
+</script>		
+HTML;
+		return $html;
 	}
+	
 }
 
 ?>
