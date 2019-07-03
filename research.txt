@@ -1,0 +1,6 @@
+https://en.wikipedia.org/wiki/Delta_encoding
+
+The diff tool:
+https://en.wikipedia.org/wiki/Diff
+
+https://en.wikipedia.org/wiki/Diff-Text
