@@ -54,3 +54,7 @@ a {
 a.current_link {
 	color:green;
 }
+
+a.deleted_subtask {
+	color:red;
+}

@@ -6,5 +6,6 @@
     "result": "",
     "team_members": [],
     "subtasks": [],
-    "worklogs": []
+    "worklogs": [],
+    "is_deleted": true
 }

@@ -273,3 +273,7 @@ Edit topic "go to topic" button created
 Deleted subtasks appended in correct order
 
 Sets is_deleted to true. Next display subtasks and deleted subtasks on task page
+
+Deleted subtasks are colored red
+
+SlideToggle deleted subtasks work

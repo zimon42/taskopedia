@@ -37,6 +37,7 @@ class TaskPage extends SkeletonPage {
 			$task_hierarchy = TaskHierarchy::render($this->taskType, $this->mainTaskId, $this->taskId);
 		}
 		
+		$waste_bin = self::renderWastebin($this->mainTaskId, $arr["subtasks"]);
 		
 		$html = "";
 		$html .= <<<HTML
@@ -78,6 +79,10 @@ HTML;
 <hr>
 
 <span class=header3>Task Hierarchy:</span><br> {$task_hierarchy}
+
+<hr>
+
+<span class=header3>Waste Bin:</span><br> {$waste_bin}
 	
 HTML;
 		return $html;
@@ -111,6 +116,22 @@ HTML;
 		return $html;
 	}
 
+	public static function renderWastebin($main_task_id, $subtasksArr) {
+		$html = "";
+		$html .= "<br><button id=show_deleted_subtasks_button>Show deleted subtasks</button><br>";
+		$html .= "<ul id=deleted_subtasks_list style='display:none'>";
+		for ($i=0; $i<count($subtasksArr); $i++) {
+			$subtaskPageId = $subtasksArr[$i];
+			$subtaskPageData = TaskopediaData::getTaskPageData($main_task_id, $subtaskPageId);
+			if (isset($subtaskPageData["is_deleted"]) && $subtaskPageData["is_deleted"] == true) {
+				$subtaskTitle = $subtaskPageData["title"];
+				$html .= "<li><a class=deleted_subtask href='index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=".$subtaskPageId."'>" . $subtaskTitle . "</a></li>";
+			}
+		}		
+		$html .= "</ul>";
+		return $html;
+	}
+	
 	public static function renderWorkLogs($workLogArr) {
 		$isLoggedIn = LoginHandler::userIsLoggedIn();
 		$loggedInUserName = LoginHandler::loggedInUserName();
@@ -321,7 +342,9 @@ $(document).ready(function() {
 	$("#leave_team_button").click(function() {
 		location="index.php?page=leave_team_submit&$taskParams";
 	});
-	
+	$("#show_deleted_subtasks_button").click(function() {
+		$("#deleted_subtasks_list").slideToggle();
+	});
 });
 </script>
 HTML;
