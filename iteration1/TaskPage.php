@@ -21,6 +21,7 @@ class TaskPage extends SkeletonPage {
 		if ($this->taskType == "subtask") {
 			$arr = TaskopediaData::getTaskPageData($this->mainTaskId, $this->taskId);
 		}
+		$deleted_task_warning = self::renderDeletedTaskWarning($arr);
 		$title = $arr["title"];
 		$description = $arr["description"];
 		$more_info = $arr["more_info"];
@@ -41,6 +42,7 @@ class TaskPage extends SkeletonPage {
 		
 		$html = "";
 		$html .= <<<HTML
+{$deleted_task_warning}
 <span class=header3>Task: {$title}</span><br><br>
 <div class=header_content>
 	<span class=header2>Description/Background:</span> {$description}<br><br>
@@ -216,6 +218,22 @@ HTML;
 	}		
 	*/
 	
+	public function renderDeletedTaskWarning($arr) {
+		if (isset($arr["is_deleted"]) && $arr["is_deleted"] == true) {
+			$html = "";
+			$html .= <<<HTML
+<img src=red_triangle.png width=30 height=30>
+<span style="color:red">Note: This task is currently deleted. To restore the task press the button below</span><br><br>
+<button id=restore_task_button>Restore task</button>
+<hr>			
+HTML;
+			return $html;
+		}
+		else {
+			return "";
+		}
+	}
+	
 	public function getAddToHead() {
 		$taskParams = TaskHandler::getTaskParams($this);
 		$isLoggedInBoolVal = LoginHandler::userIsLoggedIn() ? "true" : "false";
@@ -344,6 +362,9 @@ $(document).ready(function() {
 	});
 	$("#show_deleted_subtasks_button").click(function() {
 		$("#deleted_subtasks_list").slideToggle();
+	});
+	$("#restore_task_button").click(function() {
+		location="index.php?page=restore_task_submit&$taskParams";
 	});
 });
 </script>

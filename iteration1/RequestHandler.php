@@ -21,6 +21,7 @@ include_once("YourPage.php");
 include_once("login_module/LoginHandler.php");
 include_once("login_module/LoginPage.php");
 include_once("TaskNewsPage.php");
+include_once("RestoreTaskSubmit.php");
 
 class RequestHandler {
 	
@@ -135,6 +136,11 @@ class RequestHandler {
 		}
 		if ($pageName == "task_news_page") {
 			$page = new TaskNewsPage();
+			TaskHandler::setTaskParams($page);
+			return $page;
+		}
+		if ($pageName == "restore_task_submit") {
+			$page = new RestoreTaskSubmit();
 			TaskHandler::setTaskParams($page);
 			return $page;
 		}
