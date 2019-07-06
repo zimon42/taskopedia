@@ -80,7 +80,9 @@ HTML;
 		for ($i=0; $i<count($subtaskIdsArr); $i++) {
 			$subtaskId = $subtaskIdsArr[$i];
 			$subtaskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $subtaskId);
-			$html .= "	addDragableSubtask({id:'" . $subtaskId . "',title:'". $subtaskArr["title"] . "'});\n";
+			if (!(isset($subtaskArr["is_deleted"]) && $subtaskArr["is_deleted"] == true)) {			
+				$html .= "	addDragableSubtask({id:'" . $subtaskId . "',title:'". $subtaskArr["title"] . "'});\n";
+			}
 		}		
 		$html .= <<<HTML
 		

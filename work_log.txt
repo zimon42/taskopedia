@@ -283,3 +283,9 @@ Red triangle displays correctly
 Restores task works - next go to task buttons
 
 RestoreTaskSubmit go to task buttons work
+
+Deleted tasks show up in subtasks section. renderSubtasks missing if clause - disappeared when TaskPage.php got empty?
+
+Fixed! Next fix edit subtasks page - do not show deleted items
+
+Fixed! Next fix task hierarchy - do not show deleted items

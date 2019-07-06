@@ -111,8 +111,10 @@ HTML;
 		for ($i=0; $i<count($subtasksArr); $i++) {
 			$subtaskPageId = $subtasksArr[$i];
 			$subtaskPageData = TaskopediaData::getTaskPageData($main_task_id, $subtaskPageId);
-			$subtaskTitle = $subtaskPageData["title"];
-			$html .= "<li><a href='index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=".$subtaskPageId."'>" . $subtaskTitle . "</a></li>";
+			if (!(isset($subtaskPageData["is_deleted"]) && $subtaskPageData["is_deleted"] == true)) {			
+				$subtaskTitle = $subtaskPageData["title"];
+				$html .= "<li><a href='index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=".$subtaskPageId."'>" . $subtaskTitle . "</a></li>";
+			}
 		}
 		$html .= "</ul>";
 		return $html;
