@@ -289,3 +289,9 @@ Deleted tasks show up in subtasks section. renderSubtasks missing if clause - di
 Fixed! Next fix edit subtasks page - do not show deleted items
 
 Fixed! Next fix task hierarchy - do not show deleted items
+
+Fixed renderAll does not show deleted task!
+
+Fixed render method - does not display deleted sibling tasks
+
+Fixed render method - colors deleted ancestor links red

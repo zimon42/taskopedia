@@ -6,10 +6,11 @@
     "result": "",
     "team_members": [],
     "subtasks": [
-        "be44a5f1",
         "897e6709",
         "9581fc11",
-        "e9bbe8cb"
+        "e9bbe8cb",
+        "be44a5f1"
     ],
-    "worklogs": []
+    "worklogs": [],
+    "is_deleted": true
 }

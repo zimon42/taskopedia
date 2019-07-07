@@ -62,7 +62,14 @@ class TaskHierarchy {
 			} else {
 				$href="index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=".$subtaskPageId;
 			}
-			$html .= $indent . "&gt; <a href='$href'>" . $label . $subtaskTitle . "</a><br>";
+			$style = "";
+			
+			// Make deleted ancestor links red
+			if (isset($subtaskPageData["is_deleted"]) && $subtaskPageData["is_deleted"] == true) {
+				$style .= "color:red;";
+			}
+			
+			$html .= $indent . "&gt; <a style='$style' href='$href'>" . $label . $subtaskTitle . "</a><br>";
 			$indent .= "&nbsp;&nbsp;&nbsp;&nbsp;";
 		}
 			
@@ -73,6 +80,12 @@ class TaskHierarchy {
 		for ($i=0; $i<count($subtasks); $i++) {
 			$subtaskPageId = $subtasks[$i];
 			$subtaskPageData = TaskopediaData::getTaskPageData($main_task_id, $subtaskPageId);
+			
+			// Do not print deleted link that is not the current link
+			if (isset($subtaskPageData["is_deleted"]) && $subtaskPageData["is_deleted"] == true && $subtaskPageId != $toTaskId) {
+				continue;
+			}
+			
 			$subtaskTitle = $subtaskPageData["title"];
 			$class = $subtaskPageId == $toTaskId ? "current_link" : "";
 			$label = $subtaskPageId == $toTaskId ? "This task: " : "Sibling task: ";
@@ -156,6 +169,12 @@ class TaskHierarchy {
 			$indent .= "&nbsp;&nbsp;&nbsp;&nbsp;";
 		}		
 		$taskArr = TaskopediaData::getTaskPageData($main_task_id, $task_id);
+		
+		// Don't display deleted tasks
+		if (isset($taskArr["is_deleted"]) && $taskArr["is_deleted"] == true) {
+			return "";
+		}
+		
 		$class = $level==0 ? "class=current_link " : "";
 		if ($level==0) {
 			$href="index.php?page=main_task_page&task_type=main_task&main_task_id=".$main_task_id;
