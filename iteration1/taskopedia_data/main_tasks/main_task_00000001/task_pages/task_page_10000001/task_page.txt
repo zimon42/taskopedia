@@ -6,7 +6,9 @@
     "result": "Hello world wee",
     "team_members": [
         "John",
-        "Eric"
+        "Eric",
+        "Bill",
+        "Simon"
     ],
     "subtasks": [
         "10000002",
@@ -51,6 +53,10 @@
         {
             "name": "Eric",
             "content": "Hello world 2"
+        },
+        {
+            "name": "Bill",
+            "content": ""
         }
     ]
 }

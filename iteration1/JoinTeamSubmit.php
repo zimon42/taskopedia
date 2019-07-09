@@ -24,10 +24,16 @@ class JoinTeamSubmit extends SkeletonPage {
 		
 		array_push($teamMemberArr, $userName);
 		
+		// If not exists, add user entry in work logs
+		if (!self::userExistsInWorklogs($userName, $taskArr["worklogs"])) {
+			$worklogEntry = array("name" => $userName, "content" => "");
+			array_push($taskArr["worklogs"], $worklogEntry);
+		}
+		
 		TaskopediaData::setTaskPageData($this->mainTaskId, $taskId, $taskArr);	
 
 		// Register news event
-		TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, array("type" => "user_joined"));
+		TaskNewsData::addEvent3($this->taskType, $this->mainTaskId, $this->taskId, array("type" => "user_joined"));		
 	
 		$this->gTaskId = $taskId;
 	}
@@ -37,7 +43,7 @@ class JoinTeamSubmit extends SkeletonPage {
 		$html = "";
 		$html .= <<<HTML
 You have successfully joined the team!<br><br>
-<b>Note</b>: you do not have to be a member of a task team to work with the task page. However being member of a task team lets other users see who are currently working on the task page. Also, if you are a member of a task team, those tasks will show up when you click the "Your page" link at the top of the task page.<br><br>
+<b>Note</b>: you do not have to be a member of a task team to work with the task page. However being member of a task team lets other users see who are currently working on the task page. Also, if you are a member of a task team, those tasks will show up when you click the "Your page" link at the top of the task page. Plus you need to join a team to create an entry in the work log with your name<br><br>
 <button id=go_to_task_button>Go back to task</button>
 HTML;
 		return $html;
@@ -57,6 +63,15 @@ $(document).ready(function() {
 </script>
 HTML;
 		return $html;
+	}
+	
+	public static function userExistsInWorklogs($userName, $worklogsArr) {
+		for ($i=0; $i<count($worklogsArr); $i++) {
+			if ($userName == $worklogsArr[$i]["name"]) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 }

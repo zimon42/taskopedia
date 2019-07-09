@@ -574,5 +574,41 @@
         "event_id": "d153b3fe",
         "user": "Simon",
         "date_time": "2019-06-26 19:23:24"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "069250fb",
+        "user": "Bill",
+        "date_time": "2019-07-09 15:58:06"
+    },
+    {
+        "type": "user_left",
+        "event_id": "9acb4079",
+        "user": "Bill",
+        "date_time": "2019-07-09 16:00:56"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "85d6f448",
+        "user": "Bill",
+        "date_time": "2019-07-09 16:01:08"
+    },
+    {
+        "type": "user_left",
+        "event_id": "2b6e23b4",
+        "user": "Bill",
+        "date_time": "2019-07-09 16:02:02"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "0b30542e",
+        "user": "Bill",
+        "date_time": "2019-07-09 16:02:12"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "074586d1",
+        "user": "Simon",
+        "date_time": "2019-07-09 16:02:53"
     }
 ]

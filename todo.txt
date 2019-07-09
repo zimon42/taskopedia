@@ -23,3 +23,7 @@ mysql lock doesnt cover locking the scripts in resource_locker module. In iterat
 What if you move a task that has been deleted
 
 Handle if user goes back and reloads the submit page
+
+Add help bubbles in task page
+
+Restore button? in EditSubtasksPage
