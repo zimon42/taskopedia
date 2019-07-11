@@ -297,3 +297,5 @@ Fixed render method - does not display deleted sibling tasks
 Fixed render method - colors deleted ancestor links red
 
 Fixed add entry in work log section when joining team in JoinTeamSubmit
+
+Working on TextHandler
