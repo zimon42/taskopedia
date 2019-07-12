@@ -299,3 +299,7 @@ Fixed render method - colors deleted ancestor links red
 Fixed add entry in work log section when joining team in JoinTeamSubmit
 
 Working on TextHandler
+
+StringHandler::replace_part works!
+
+TextHandler complete!
