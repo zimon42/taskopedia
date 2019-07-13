@@ -20,12 +20,11 @@ class TextHandler {
 	}
 	
 	public static function test1() {
-		// warning: must add space before </b>, see below, otherwise </b> gets included as part of the address
 		echo self::processAllFilters("This address <b>http://www.google.se </b> is safe");
 	}
 	
 }
 
-TextHandler::test1();
+// TextHandler::test1();
 
 ?>

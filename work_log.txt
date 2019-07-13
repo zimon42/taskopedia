@@ -303,3 +303,5 @@ Working on TextHandler
 StringHandler::replace_part works!
 
 TextHandler complete!
+
+TextHandler complete, using all three filters, and used in TaskPage.php

@@ -11,6 +11,7 @@ include_once("TaskHierarchy.php");
 include_once("login_module/LoginHandler.php");
 include_once("TaskopediaDataHelper.php");
 include_once("MoveTaskHandler.php");
+include_once("utils/TextHandler.php");
 
 class TaskPage extends SkeletonPage {
 	
@@ -23,11 +24,19 @@ class TaskPage extends SkeletonPage {
 		}
 		$deleted_task_warning = self::renderDeletedTaskWarning($arr);
 		$title = $arr["title"];
-		$description = $arr["description"];
-		$more_info = $arr["more_info"];
+		
+		// $description = $arr["description"];
+		$description = TextHandler::processAllFilters($arr["description"]);
+		
+		// $more_info = $arr["more_info"];
+		$more_info = TextHandler::processAllFilters($arr["more_info"]);
+		
 		$team_members = self::renderTeamMembers($arr);
 		$status = $arr["status"];
-		$result = $arr["result"];
+		
+		// $result = $arr["result"];
+		$result = TextHandler::processAllFilters($arr["result"]);
+		
 		$subtasks = self::renderSubtasks($this->mainTaskId, $arr["subtasks"]);
 		$work_logs = self::renderWorkLogs($arr["worklogs"]);
 		
@@ -143,7 +152,10 @@ HTML;
 		for ($i=0; $i<count($workLogArr); $i++) {
 			$workLog = $workLogArr[$i];
 			$name = $workLog["name"];
-			$content = $workLog["content"];
+			
+			// $content = $workLog["content"];
+			$content = TextHandler::processAllFilters($workLog["content"]);
+			
 			$html .= "<b>$name</b>: " . $content;
 			$html .= "<br>";
 			// Add edit worklog button

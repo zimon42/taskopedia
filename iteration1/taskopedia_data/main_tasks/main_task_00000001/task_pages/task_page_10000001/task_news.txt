@@ -610,5 +610,11 @@
         "event_id": "074586d1",
         "user": "Simon",
         "date_time": "2019-07-09 16:02:53"
+    },
+    {
+        "type": "updated_result",
+        "event_id": "c294de5a",
+        "user": "Simon",
+        "date_time": "2019-07-13 17:24:59"
     }
 ]
