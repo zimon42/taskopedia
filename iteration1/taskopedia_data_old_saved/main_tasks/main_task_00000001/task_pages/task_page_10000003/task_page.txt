@@ -1,0 +1,28 @@
+{
+    "title": "Gathering resources on DIPG",
+    "description": "Here we collect resuorces, such as web pages, books etc. on DIPG",
+    "more_info": "",
+    "status": "work in progress",
+    "result": "",
+    "team_members": [
+        "Simon",
+        "Jill",
+        "Rosa"
+    ],
+    "subtasks": [],
+    "worklogs": [
+        {
+            "name": "Simon",
+			"content": ""
+        },
+        {
+            "name": "Jill",
+			"content": ""
+        },
+		{
+            "name": "Rosa",
+			"content": ""
+        }
+
+    ]
+}

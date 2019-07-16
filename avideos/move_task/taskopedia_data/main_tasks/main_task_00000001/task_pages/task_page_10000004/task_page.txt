@@ -1,5 +1,5 @@
 {
-    "title": "Monitoring research on DIPG",
+    "title": "Studying Wikipedias entry on DIPG",
     "description": "",
     "more_info": "",
     "status": "work in progress",
