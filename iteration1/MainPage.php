@@ -51,6 +51,20 @@ $(document).ready(function() {
 			<li>Using work-logs. As you progress in solving a subtask, you write down your progress in a so called work-log, like a diary. Here you can write down what you google, which web pages you visit, what book you read. In this way you can for example backtrack and try other paths in sovling a task
 		</ol>
 	</p>
+	
+	<span id=taskopedia_videos_title>Taskopedia videos:</span>
+
+	<p>Here are som videos on how to use Taskopedia</p>
+
+	<ol id=video_list>
+		<li><a href=videos/intro.mp4>Introduction to Taskopedia</a></li>
+		<li><a href=videos/overview.mp4>Overview of the task page</a></li>
+		<li><a href=videos/create_task.mp4>Creating a new subtask</a></li>
+		<li><a href=videos/reorder_task.mp4>Reordering subtasks</a></li>
+		<li><a href=videos/move_task.mp4>Moving subtasks</a></li>
+		<li><a href=videos/delete_task.mp4>Deleting subtasks</a></li>
+	</ol>
+	
 </body>
 </html>
 HTML;
