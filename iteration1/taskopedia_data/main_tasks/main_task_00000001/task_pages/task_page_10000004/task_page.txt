@@ -4,10 +4,8 @@
     "more_info": "",
     "status": "work in progress",
     "result": "",
-    "team_members": [
-    ],
-    "subtasks": [
-    ],
-    "worklogs": [
-    ]
+    "team_members": [],
+    "subtasks": [],
+    "worklogs": [],
+    "is_deleted": false
 }

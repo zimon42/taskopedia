@@ -22,5 +22,13 @@
         "event_id": "841be323",
         "user": "Simon",
         "date_time": "2019-07-17 18:19:45"
+    },
+    {
+        "type": "moved_this_task",
+        "old_parent_title": "Gathering resources online on DIPG",
+        "new_parent_title": "Finding treatments for DIPG cancer",
+        "event_id": "30b377ca",
+        "user": "Simon",
+        "date_time": "2019-07-18 20:15:28"
     }
 ]

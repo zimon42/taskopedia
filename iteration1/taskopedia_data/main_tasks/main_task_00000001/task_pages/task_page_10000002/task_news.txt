@@ -22,5 +22,13 @@
         "event_id": "308dae64",
         "user": "Simon",
         "date_time": "2019-07-17 18:19:45"
+    },
+    {
+        "type": "moved_subtask_away",
+        "subtask_title": "Studying Wikipedias entry on DIPG",
+        "new_parent_title": "Finding treatments for DIPG cancer",
+        "event_id": "5d3d525a",
+        "user": "Simon",
+        "date_time": "2019-07-18 20:15:28"
     }
 ]
