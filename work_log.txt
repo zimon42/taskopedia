@@ -309,3 +309,5 @@ TextHandler complete, using all three filters, and used in TaskPage.php
 JsonFileHandler handles quotation marks. They are escaped with back slash in the json file.
 
 Working on the first video. Taskopedia_data is now setup for the first video on how to move tasks
+
+The third video reorder_task is now complete

@@ -1,0 +1,11 @@
+{
+    "title": "Studying Wikipedias entry on DIPG",
+    "description": "",
+    "more_info": "",
+    "status": "work in progress",
+    "result": "",
+    "team_members": [],
+    "subtasks": [],
+    "worklogs": [],
+    "is_deleted": false
+}
