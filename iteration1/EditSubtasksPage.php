@@ -80,7 +80,8 @@ HTML;
 		for ($i=0; $i<count($subtaskIdsArr); $i++) {
 			$subtaskId = $subtaskIdsArr[$i];
 			$subtaskArr = TaskopediaData::getTaskPageData($this->mainTaskId, $subtaskId);
-			if (!(isset($subtaskArr["is_deleted"]) && $subtaskArr["is_deleted"] == true)) {			
+			if (!(isset($subtaskArr["is_deleted"]) && $subtaskArr["is_deleted"] == true)) {	
+				$subtaskArr["title"] = str_replace("'", "", $subtaskArr["title"]); // Solve the apostrophy in title bug
 				$html .= "	addDragableSubtask({id:'" . $subtaskId . "',title:'". $subtaskArr["title"] . "'});\n";
 			}
 		}		

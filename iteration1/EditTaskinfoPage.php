@@ -18,6 +18,9 @@ class EditTaskinfoPage extends SkeletonPage {
 		if ($taskArr["status"] == "work in progress") $statusWorkInProgress = " checked";
 		if ($taskArr["status"] == "task solved") $statusTaskSolved = " checked";
 		
+		// Solve the quotation mark in title bug
+		$title = str_replace('"', '&quot;', $title);
+		
 		$html = "";
 		$html .= <<<HTML
 <h3 id=header>Edit task info</h3>

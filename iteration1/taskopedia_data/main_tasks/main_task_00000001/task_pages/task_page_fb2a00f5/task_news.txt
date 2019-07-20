@@ -29,5 +29,37 @@
         "event_id": "0983b219",
         "user": "Simon",
         "date_time": "2019-07-20 16:27:36"
+    },
+    {
+        "type": "changed_title",
+        "old_title": "Study Wikipedias entry on DIPG",
+        "new_title": "Study Wikipedia's entry on DIPG",
+        "event_id": "acad487d",
+        "user": "Simon",
+        "date_time": "2019-07-20 16:31:34"
+    },
+    {
+        "type": "changed_title",
+        "old_title": "Study Wikipedia's entry on DIPG",
+        "new_title": "Study Wikipedia\"s entry on DIPG",
+        "event_id": "9f4e144e",
+        "user": "Simon",
+        "date_time": "2019-07-20 16:34:03"
+    },
+    {
+        "type": "changed_title",
+        "old_title": "Study Wikipedia\"s entry on DIPG",
+        "new_title": "Study Wikipedia's entry on DIPG",
+        "event_id": "af33d249",
+        "user": "Simon",
+        "date_time": "2019-07-20 16:46:43"
+    },
+    {
+        "type": "changed_title",
+        "old_title": "Study Wikipedia's entry on DIPG",
+        "new_title": "Study \"Wikipedia's\" entry on DIPG",
+        "event_id": "97376f39",
+        "user": "Simon",
+        "date_time": "2019-07-20 16:56:06"
     }
 ]
