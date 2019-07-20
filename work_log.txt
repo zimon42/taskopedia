@@ -311,3 +311,6 @@ JsonFileHandler handles quotation marks. They are escaped with back slash in the
 Working on the first video. Taskopedia_data is now setup for the first video on how to move tasks
 
 The third video reorder_task is now complete
+
+The fourth video is complete - creating new subtasks
+Bug discovered: Subtasks show up on the main task page, but when clicing "Edit subtasks" there are now subtasks. Could it be the apostrophy in the title? It is!

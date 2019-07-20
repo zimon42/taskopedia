@@ -30,5 +30,13 @@
         "event_id": "52c6ecdf",
         "user": "Simon",
         "date_time": "2019-07-18 20:15:28"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "fb2a00f5",
+        "title": "Study Wikipedias entry on DIPG",
+        "event_id": "1b45a756",
+        "user": "Simon",
+        "date_time": "2019-07-20 16:13:27"
     }
 ]

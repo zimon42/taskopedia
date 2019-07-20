@@ -11,3 +11,5 @@ Join team already member of, creates duplicate names in list
 In LeaveTeamSubmit hadnt set $this->taskId. The program hung when clicking the button.
 
 Potential problem: $this->taskId is also set in setTaskParams. Collide?
+
+Bug discovered: Subtasks show up on the main task page, but when clicing "Edit subtasks" there are now subtasks

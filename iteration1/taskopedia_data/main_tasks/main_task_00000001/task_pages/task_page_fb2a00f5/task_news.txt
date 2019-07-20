@@ -1,0 +1,33 @@
+[
+    {
+        "type": "created_this_task",
+        "title": "Study Wikipedias entry on DIPG",
+        "event_id": "f5165a99",
+        "user": "Simon",
+        "date_time": "2019-07-20 16:13:27"
+    },
+    {
+        "type": "changed_title",
+        "old_title": "Study Wikipedias entry on DIPG",
+        "new_title": "Study Wikipedia's entry on DIPG",
+        "event_id": "5982a2de",
+        "user": "Simon",
+        "date_time": "2019-07-20 16:14:32"
+    },
+    {
+        "type": "changed_status",
+        "old_status": "Work in progress",
+        "new_status": "undefined",
+        "event_id": "32c61e27",
+        "user": "Simon",
+        "date_time": "2019-07-20 16:14:32"
+    },
+    {
+        "type": "changed_title",
+        "old_title": "Study Wikipedia's entry on DIPG",
+        "new_title": "Study Wikipedias entry on DIPG",
+        "event_id": "0983b219",
+        "user": "Simon",
+        "date_time": "2019-07-20 16:27:36"
+    }
+]

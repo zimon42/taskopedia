@@ -1,0 +1,10 @@
+{
+    "title": "Study Wikipedias entry on DIPG",
+    "description": "Studying Wikipedia's entry on DIPG can give us ideas on how to find treatmemnts for DIPG",
+    "more_info": "The link is https:\/\/en.wikipedia.org\/wiki\/Diffuse_intrinsic_pontine_glioma",
+    "status": "undefined",
+    "result": "",
+    "team_members": [],
+    "subtasks": [],
+    "worklogs": []
+}

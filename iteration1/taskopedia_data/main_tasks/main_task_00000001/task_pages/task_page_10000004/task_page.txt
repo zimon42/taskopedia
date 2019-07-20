@@ -7,5 +7,5 @@
     "team_members": [],
     "subtasks": [],
     "worklogs": [],
-    "is_deleted": false
+    "is_deleted": true
 }
