@@ -57,8 +57,10 @@ $(document).ready(function() {
 	<p>Here are som videos on how to use Taskopedia</p>
 
 	<ol id=video_list>
-		<li><a href=videos/intro.mp4>Introduction to Taskopedia</a></li>
-		<li><a href=videos/overview.mp4>Overview of the task page</a></li>
+		<li><a href=videos/short_intro.mp4>Short introduction</a></li>
+		<li><a href=videos/overview_page.mp4>Overview of the task page</a></li>
+		<li><a href=videos/work_process.mp4>The work process</a></li>
+		<li><a href=videos/join_team.mp4>Joining a task team</a></li>		
 		<li><a href=videos/create_task.mp4>Creating a new subtask</a></li>
 		<li><a href=videos/reorder_task.mp4>Reordering subtasks</a></li>
 		<li><a href=videos/move_task.mp4>Moving subtasks</a></li>

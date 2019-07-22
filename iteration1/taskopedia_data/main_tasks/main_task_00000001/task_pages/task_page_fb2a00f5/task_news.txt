@@ -61,5 +61,43 @@
         "event_id": "97376f39",
         "user": "Simon",
         "date_time": "2019-07-20 16:56:06"
+    },
+    {
+        "type": "changed_title",
+        "old_title": "Study \"Wikipedia's\" entry on DIPG",
+        "new_title": "Study Wikipedia's entry on DIPG",
+        "event_id": "e049bd0d",
+        "user": "Simon",
+        "date_time": "2019-07-21 14:56:12"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "3947f7d7",
+        "user": "Simon",
+        "date_time": "2019-07-21 14:56:53"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "1fb92a3d",
+        "user": "Simon",
+        "date_time": "2019-07-21 14:57:05"
+    },
+    {
+        "type": "user_left",
+        "event_id": "8bd04372",
+        "user": "Simon",
+        "date_time": "2019-07-21 14:57:12"
+    },
+    {
+        "type": "user_left",
+        "event_id": "80d6114c",
+        "user": "Simon",
+        "date_time": "2019-07-21 14:58:40"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "6f9ba8cd",
+        "user": "Simon",
+        "date_time": "2019-07-22 19:41:03"
     }
 ]
