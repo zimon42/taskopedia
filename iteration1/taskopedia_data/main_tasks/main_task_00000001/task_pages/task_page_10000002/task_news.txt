@@ -30,5 +30,13 @@
         "event_id": "5d3d525a",
         "user": "Simon",
         "date_time": "2019-07-18 20:15:28"
+    },
+    {
+        "type": "changed_status",
+        "old_status": "work in progress",
+        "new_status": "task solved",
+        "event_id": "81535836",
+        "user": "Simon",
+        "date_time": "2019-07-23 18:01:18"
     }
 ]

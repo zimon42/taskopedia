@@ -122,7 +122,11 @@ HTML;
 			$subtaskPageData = TaskopediaData::getTaskPageData($main_task_id, $subtaskPageId);
 			if (!(isset($subtaskPageData["is_deleted"]) && $subtaskPageData["is_deleted"] == true)) {			
 				$subtaskTitle = $subtaskPageData["title"];
-				$html .= "<li><a href='index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=".$subtaskPageId."'>" . $subtaskTitle . "</a></li>";
+				$html .= "<li><a href='index.php?page=task_page&task_type=subtask&main_task_id=".$main_task_id."&task_id=".$subtaskPageId."'>" . $subtaskTitle . "</a>";
+				if (isset($subtaskPageData["status"]) && $subtaskPageData["status"] == "task solved") {
+					$html .= " <img src=green_tick.png width=20 height=15 />";
+				}				
+				$html .= "</li>";
 			}
 		}
 		$html .= "</ul>";

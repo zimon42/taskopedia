@@ -2,12 +2,9 @@
     "title": "Monitoring research on DIPG",
     "description": "",
     "more_info": "",
-    "status": "work in progress",
+    "status": "task solved",
     "result": "",
-    "team_members": [
-    ],
-    "subtasks": [
-    ],
-    "worklogs": [
-    ]
+    "team_members": [],
+    "subtasks": [],
+    "worklogs": []
 }

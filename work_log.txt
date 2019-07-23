@@ -314,3 +314,5 @@ The third video reorder_task is now complete
 
 The fourth video is complete - creating new subtasks
 Bug discovered: Subtasks show up on the main task page, but when clicking "Edit subtasks" there are now subtasks. Could it be the apostrophy in the title? It is! Temporary solution: In EditSubtasksPage before creating the addDraggableSubtask js code, replace apostrophies with nothing. Replacing it with &apos; didn't work. Also discovered that quotation marks in the title on the EditTaskinfoPage cut off the title in the text field. Solved it in the EditTaskinfoPage by replacing quotation marks with "&quot;"
+
+Green tick works!
