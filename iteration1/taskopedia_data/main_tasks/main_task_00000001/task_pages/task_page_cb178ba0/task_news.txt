@@ -1,0 +1,21 @@
+[
+    {
+        "type": "created_this_task",
+        "title": "What is DIPG in French?",
+        "event_id": "67809ca1",
+        "user": "Simon",
+        "date_time": "2019-07-24 15:43:46"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "b4e067ab",
+        "user": "Simon",
+        "date_time": "2019-07-24 15:44:24"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "346a300f",
+        "user": "Simon",
+        "date_time": "2019-07-24 16:40:40"
+    }
+]

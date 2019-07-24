@@ -93,7 +93,7 @@ class AddressesToLinksConverter {
 		$address_found_n = $address_found_i;
 		$address_found_i = 0;
 		for ($address_found_i=0; $address_found_i<$address_found_n; $address_found_i++) {
-			$replace_with = "<a href='".$addresses_arr[$address_found_i]."' style='color:blue'>".$addresses_arr[$address_found_i]."</a>";
+			$replace_with = "<a href='".$addresses_arr[$address_found_i]."' style='color:gray'>".$addresses_arr[$address_found_i]."</a>";
 			$text = str_replace("[".$address_found_i."]", $replace_with, $text);
 		}
 		

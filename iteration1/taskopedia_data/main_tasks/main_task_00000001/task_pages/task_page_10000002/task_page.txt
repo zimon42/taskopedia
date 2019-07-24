@@ -2,7 +2,7 @@
     "title": "Gathering resources online on DIPG",
     "description": "",
     "more_info": "",
-    "status": "task solved",
+    "status": "work in progress",
     "result": "",
     "team_members": [],
     "subtasks": [],

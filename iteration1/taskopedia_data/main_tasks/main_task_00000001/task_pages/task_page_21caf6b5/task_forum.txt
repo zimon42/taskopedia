@@ -1,0 +1,12 @@
+[
+    {
+        "topic_id": "75b5a162",
+        "title": "Introduce yourself",
+        "user": "Simon",
+        "content": "Hi my name is Simon and because I like languages I have decided to work on this task",
+        "date": "2019-07-24 17:08:06",
+        "views": 1,
+        "replies": [],
+        "sticky": true
+    }
+]

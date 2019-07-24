@@ -1,5 +1,5 @@
 {
-    "title": "Monitoring research on DIPG",
+    "title": "What is DIPG in German",
     "description": "",
     "more_info": "",
     "status": "work in progress",

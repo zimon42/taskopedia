@@ -26,7 +26,7 @@ class CreateTaskSubmit extends SkeletonPage {
 		$taskArr["title"] = $this->title;
 		$taskArr["description"] = $this->desc;
 		$taskArr["more_info"] = $this->moreInfo;
-		$taskArr["status"] = "Work in progress";
+		$taskArr["status"] = "work in progress";
 		$taskArr["result"] = "";
 		$taskArr["team_members"] = array();
 		$taskArr["subtasks"] = array();

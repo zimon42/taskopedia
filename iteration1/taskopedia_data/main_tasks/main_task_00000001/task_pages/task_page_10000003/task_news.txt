@@ -6,5 +6,13 @@
         "event_id": "0f7bd39a",
         "user": "Simon",
         "date_time": "2019-07-23 18:10:39"
+    },
+    {
+        "type": "changed_status",
+        "old_status": "task solved",
+        "new_status": "work in progress",
+        "event_id": "26d008ce",
+        "user": "Simon",
+        "date_time": "2019-07-24 16:42:40"
     }
 ]

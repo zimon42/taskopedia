@@ -1,0 +1,21 @@
+{
+    "title": "What is DIPG in other languages?",
+    "description": "By knowing DIPG in other languages we ca use Google Translate to translate pages in other languages",
+    "more_info": "In Google translate you can translate a page by pasting in a web address in the left text area",
+    "status": "work in progress",
+    "result": "Swedish: Ponsgliom or \"Diffust inneboende pontint gliom\nFrench: ?\nGerman: ?",
+    "team_members": [
+        "Simon"
+    ],
+    "subtasks": [
+        "640e6c92",
+        "445f0e0a",
+        "98077347"
+    ],
+    "worklogs": [
+        {
+            "name": "Simon",
+            "content": "As I'm Swedish I will start with that language. \nCreated a new subtask. \nTask solved, see result!"
+        }
+    ]
+}

@@ -13,3 +13,5 @@ In LeaveTeamSubmit hadnt set $this->taskId. The program hung when clicking the b
 Potential problem: $this->taskId is also set in setTaskParams. Collide?
 
 Bug discovered: Subtasks show up on the main task page, but when clicing "Edit subtasks" there are now subtasks
+
+Bug: Task status sometimes says undefined, and no radio buttons are selected - solved: Used capital letter "W" in Work in progress in CreateTaskSubmit, but should have been small letter "w"
