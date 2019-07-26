@@ -1,0 +1,29 @@
+[
+    {
+        "type": "created_this_task",
+        "title": "What is DIPG in Swedish",
+        "event_id": "aba03638",
+        "user": "Simon",
+        "date_time": "2019-07-24 17:45:14"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "93690e8d",
+        "user": "Simon",
+        "date_time": "2019-07-24 17:47:06"
+    },
+    {
+        "type": "updated_result",
+        "event_id": "d6ea2160",
+        "user": "Simon",
+        "date_time": "2019-07-24 17:48:00"
+    },
+    {
+        "type": "changed_status",
+        "old_status": "work in progress",
+        "new_status": "task solved",
+        "event_id": "9a6634bd",
+        "user": "Simon",
+        "date_time": "2019-07-24 17:48:43"
+    }
+]

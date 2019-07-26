@@ -58,7 +58,7 @@ $(document).ready(function() {
 
 	<ol id=video_list>
 		<li><a href=videos/short_intro.mp4>Short introduction</a></li>
-		<li><a href=videos/overview_page.mp4>Overview of the task page</a></li>
+		<li><a href=videos/taskpage_overview.mp4>Overview of the task page</a></li>
 		<li><a href=videos/work_process.mp4>The work process</a></li>
 		<li><a href=videos/join_team.mp4>Joining a task team</a></li>		
 		<li><a href=videos/create_task.mp4>Creating a new subtask</a></li>
