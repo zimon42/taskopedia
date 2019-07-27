@@ -1,0 +1,15 @@
+[
+    {
+        "type": "created_this_task",
+        "title": "What is DIPG in Swedish",
+        "event_id": "54105a1c",
+        "user": "Simon",
+        "date_time": "2019-07-27 18:43:51"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "b31c7492",
+        "user": "Simon",
+        "date_time": "2019-07-27 18:44:00"
+    }
+]

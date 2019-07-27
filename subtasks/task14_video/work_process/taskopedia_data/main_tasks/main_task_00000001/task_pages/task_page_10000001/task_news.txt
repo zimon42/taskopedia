@@ -78,13 +78,5 @@
         "event_id": "b01934fa",
         "user": "Simon",
         "date_time": "2019-07-24 17:03:36"
-    },
-    {
-        "type": "new_subtask",
-        "subtask_id": "23f666cb",
-        "title": "What is DIPG in other languages?",
-        "event_id": "1907e302",
-        "user": "Simon",
-        "date_time": "2019-07-27 18:32:40"
     }
 ]

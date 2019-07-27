@@ -1,0 +1,17 @@
+{
+    "title": "What is DIPG in Swedish",
+    "description": "",
+    "more_info": "",
+    "status": "work in progress",
+    "result": "",
+    "team_members": [
+        "Simon"
+    ],
+    "subtasks": [],
+    "worklogs": [
+        {
+            "name": "Simon",
+            "content": ""
+        }
+    ]
+}

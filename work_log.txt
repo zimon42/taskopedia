@@ -326,3 +326,5 @@ Discovered windows 10 video editor. Type video in the windows search bar.
 Made all 6 parts to the task page overview video
 
 Created a low resolution task page overview video
+
+Made the first 5 parts to the work process video

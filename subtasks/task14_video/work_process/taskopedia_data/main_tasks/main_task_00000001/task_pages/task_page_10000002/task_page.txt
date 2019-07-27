@@ -1,0 +1,10 @@
+{
+    "title": "Gathering resources online on DIPG",
+    "description": "",
+    "more_info": "",
+    "status": "work in progress",
+    "result": "",
+    "team_members": [],
+    "subtasks": [],
+    "worklogs": []
+}

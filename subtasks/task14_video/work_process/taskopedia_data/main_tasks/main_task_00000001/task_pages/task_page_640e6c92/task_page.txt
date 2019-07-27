@@ -1,0 +1,17 @@
+{
+    "title": "What is DIPG in Swedish",
+    "description": "",
+    "more_info": "",
+    "status": "task solved",
+    "result": "Ponsgliom, Pons gliom, or Diffust Inneboende Pontint Gliom",
+    "team_members": [
+        "Simon"
+    ],
+    "subtasks": [],
+    "worklogs": [
+        {
+            "name": "Simon",
+            "content": "Google translate gave:\ndiffust inneboende pontingliom\n\nSearch that term in google:\nOnly 30 hits. \n\nTry the \"Did you mean\"\ndiffust inneboende pontint gliom\n1000 hits\n\nSeems to be the exact translation.\n\nSearch \"DIPG in Swedish\"\nPonsgliom"
+        }
+    ]
+}

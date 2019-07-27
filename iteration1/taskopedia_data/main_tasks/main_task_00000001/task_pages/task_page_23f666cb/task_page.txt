@@ -1,0 +1,19 @@
+{
+    "title": "What is DIPG in other languages?",
+    "description": "By knowing DIPG in other languages we can use Google Translate to translate those pages in other languages",
+    "more_info": "",
+    "status": "work in progress",
+    "result": "",
+    "team_members": [
+        "Simon"
+    ],
+    "subtasks": [
+        "79a1dab1"
+    ],
+    "worklogs": [
+        {
+            "name": "Simon",
+            "content": ""
+        }
+    ]
+}

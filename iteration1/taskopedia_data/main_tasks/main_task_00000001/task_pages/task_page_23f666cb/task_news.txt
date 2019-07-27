@@ -1,0 +1,31 @@
+[
+    {
+        "type": "created_this_task",
+        "title": "What is DIPG in other languages?",
+        "event_id": "105da3da",
+        "user": "Simon",
+        "date_time": "2019-07-27 18:32:40"
+    },
+    {
+        "type": "new_forum_topic",
+        "topic_id": "0bb0e130",
+        "title": "Introduce yourself",
+        "event_id": "80356a0f",
+        "user": "Simon",
+        "date_time": "2019-07-27 18:36:52"
+    },
+    {
+        "type": "user_joined",
+        "event_id": "7741294b",
+        "user": "Simon",
+        "date_time": "2019-07-27 18:40:41"
+    },
+    {
+        "type": "new_subtask",
+        "subtask_id": "79a1dab1",
+        "title": "What is DIPG in Swedish",
+        "event_id": "d45a4419",
+        "user": "Simon",
+        "date_time": "2019-07-27 18:43:51"
+    }
+]
